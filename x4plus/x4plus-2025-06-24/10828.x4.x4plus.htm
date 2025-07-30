@@ -1,0 +1,1479 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>EXFOR-Interpreted, V.Zerkin, IAEA, 2012-2025</title>
+<style>
+
+p,ul,li {
+  font-family:verdana,geneva,helvetica,sans-serif;
+/* font-size:12px;*/
+  color:black;
+/*	font-weight: bold;*/
+}
+
+tt,pre {
+  font-family:courier new,courier;
+  white-space:0px;
+  font-size:8pt;
+  color:black;
+  letter-spacing:0px;
+  font-weight: normal;
+	margin-top: 0;
+/*	line-height:9pt;*/
+}
+
+div.x4top {
+  font-family:verdana,geneva,helvetica,sans-serif;
+  font-size:8pt;
+  color:#777;
+  letter-spacing:0px;
+  font-weight: normal;
+	margin-left: 2px;
+	margin-top: 5px;
+	margin-bottom: 10px;
+/*	line-height:12pt;*/
+  border:1px solid #777;
+  background-color:#ffc;
+  padding: 4px;
+  width: 330pt;
+}
+div.x4top1 {
+  font-family:verdana,geneva,helvetica,sans-serif;
+  font-size:9pt;
+  color:black;
+}
+
+tt.hdr {
+	text-decoration: none;
+	color: red;
+}
+tt.hdr0 {
+	text-decoration: none;
+	color: blue;
+}
+
+tt.lf {
+	line-height:3pt;
+}
+tt.ENTRY {
+	background-color: #d8d0f0;
+}
+tt.SUBENT {
+	background-color: #ffa0a0;
+}
+tt.data {
+	color:blue;
+}
+tt.common {
+	color:blue;
+}
+tt.intr {
+	font-family:verdana,geneva,helvetica,sans-serif;
+	color:#c000c0;
+/*	background-color: #ffffa0;*/
+}
+.intr {
+	font-family:verdana,geneva,helvetica,sans-serif;
+	color:#c000c0;
+}
+
+TABLE {
+	font-size: 9pt; 
+	font-family: verdana,helvetica; 
+	text-decoration: none;
+/*	white-space:nowrap;*/
+/*	vertical-align:top;*/
+/*	border: 0px solid #000;*/
+	border-bottom: 1px solid #000;
+	border-right: 1px solid #000;
+}
+
+TD {
+	font-size: 8pt; 
+	font-family: verdana,helvetica;
+	text-decoration: none;
+	white-space:nowrap;
+	vertical-align:top;
+/*	border: 1px solid #000;*/
+	border-top: 1px solid #000;
+	border-left: 1px solid #000;
+	padding-left: 6px;
+	padding-right: 5px;
+}
+
+form {
+  white-space:11pt;
+	margin-top: 0;
+	margin-left: 0;
+	margin-right: 0;
+	margin-bottom: 0;
+	margin-height: 0;
+	margin-width: 0;
+}
+
+BODY {
+	margin-top: 4px;
+	margin-left: 6px;
+	margin-right: 0;
+	margin-bottom: 0;
+	margin-height: 0;
+	margin-width: 0;
+	background-color: white;
+/*	background-color: #d8d0f0;*/
+  font-family:verdana,geneva,helvetica,sans-serif;
+  font-size:10pt;
+  color:black;
+
+}
+
+A.kw {
+	text-decoration: none;
+	color: #000000;
+/*	font-style:italic;*/
+	background-color: #e0ffff;
+}
+
+a.hdr {
+	text-decoration: none;
+	color: blue;
+	background-color: #e0ffff;
+}
+
+A {
+	text-decoration: none;
+	color: blue;
+}
+
+A:hover   {
+	text-decoration: underline;
+	color: red;
+}
+
+.x4legend {
+  margin:4px;
+  margin-left:0px;
+  font-size:8pt;
+  border: 1px dotted #aaa;
+  border-collapse:collapse;
+  line-height: 8pt;
+  vertical-align:top;
+}
+.x4code {
+    color: green;
+/*    font-weight: bold;*/
+}
+.x4hlp {
+    font-size:8pt;
+/*  font-style: italic;*/
+    color: #a0a;
+    margin-left: 8px;
+}
+.x4ptr {
+    background-color: red;
+    color: yellow;
+/*    padding-left:  3px;
+    padding-right: 3px;
+*/
+}
+</style>
+<script language=javascript>
+var href0='http://www.nndc.bnl.gov/nudat3/getdataset.jsp?nucleus=';
+var href1='&unc=nds';
+var hrefDataDecay0='http://www.nndc.bnl.gov/nudat3/decaysearchdirect.jsp?nuc=';
+var hrefDataDecay1='&unc=nds';
+
+//to link to the IAEA-Livechart, uncomment following 2 lines
+//href0='http://nds.iaea.org/relnsd/NdsEnsdf/nuclide.jsp?NUCID='
+//hrefDataDecay0='http://nds.iaea.org/relnsd/NdsEnsdf/nuclide.jsp?NUCID='
+
+
+    function outX4kw(kw0)
+    {
+	var kw,help;
+//	document.write(kw0);
+	kw=delSpaces(kw0);
+//	if (kw=='SUBENT') document.write("<tt class=lf>\n</tt>");
+	help=getKeywordHelp(kw);
+	if (help=='') {
+	    document.write(kw0);
+	    return;
+	}
+	document.writeln('<a href="javascript:akwlink(\''+kw+'\')" ');
+	document.writeln(' class="kw" ');
+	document.writeln(' title="'+help+'" ');
+//	document.writeln(' onmouseover="javascript:startTipSIG('+mf+')" ');
+//	document.writeln(' onmouseout="javascript:stopTip()" ');
+	document.write('>');
+	document.write(kw0);
+	document.write('</a>');
+    }
+
+    function delSpaces(str0) {
+	var i,n,ll,str;
+        //alert(' addIt: ['+str+'] to:['+str0+']');
+	str=str0;
+	ll=str.length;
+        for (n=0, i=0; n<ll; n++) {
+	    if (str.charAt(i)==' ') {
+		str=str.substring(0,i)+str.substring(i+1,str.length);
+		//break;
+	    }
+	    else i++;
+	}
+	//alert ('str=['+str+']');
+	return(str);
+    }
+
+    function getKeywordHelp00(kw) {
+	var i,n,ll,str,help;
+//	help='---help---['+kw+']---';
+	help='';
+	if (kw=='DECAY-MON')	return('Standard decay data');
+	if (kw=='MONITOR')	return('Standard');
+	if (kw=='EN-SEC')	return('Secondary energy');
+	if (kw=='INC-SOURCE')	return('Incident particle source');
+	if (kw=='INC-SPECT')	return('Incident spectrum');
+	if (kw=='HISTORY')	return('History of this ENTRY in the database');
+	return(help);
+    }
+    function getKeywordHelp(kw) {
+	var i,n,ll,str,help;
+//	help='---help---['+kw+']---';
+	help='';
+	for (i=0; i<kwhlp.length; i++) {
+	    if (kw==kwhlp[i].code) return kwhlp[i].help;
+	}
+	return(help);
+    }
+
+
+    function outX4hdr(kw0,pointer)
+    {
+	var kw,help;
+//	document.write(kw0);
+	kw=delSpaces(kw0);
+	help=getHeaderHelp(kw);
+	if (help=='') {
+	    document.write('<tt ');
+	    document.write(' class="hdr0" ');
+	    document.write('>');
+	    document.write(kw0);
+	    document.write(pointer);
+	    document.write('</tt>');
+	    return;
+	}
+	document.writeln('<a href="javascript:ahdlink(\''+kw+'\')" ');
+	document.writeln(' class="hdr" ');
+	document.writeln(' title="'+help+'" ');
+	document.write('>');
+	document.write(kw0);
+	document.write(pointer);
+	document.write('</a>');
+    }
+    function getHeaderHelp(kw) {
+	var i,n,ll,str,help;
+//	help='---help---['+kw+']---';
+	help='';
+	for (i=0; i<hdrhlp.length; i++) {
+	    if (kw==hdrhlp[i].code) return hdrhlp[i].help;
+	}
+	return(help);
+    }
+
+    function akwlink(kw)
+    {
+	var str,help;
+	help=getKeywordHelp(kw);
+	str='---BIB Keyword--- \n';
+	str=str+'['+kw+']\n';
+	if (help!='') {
+	    str=str+''+help;
+	}
+	alert(str);
+    }
+
+    function ahdlink(kw)
+    {
+	var str,help;
+	help=getHeaderHelp(kw);
+	str='---DATA Header--- \n';
+	str=str+'['+kw+']\n';
+	if (help!='') {
+	    str=str+''+help;
+	}
+	alert(str);
+    }
+
+    function myencodeURI(str0) {
+	var str=str0;
+//	str=encodeURI(str0);
+//	str=encodeURIComponent(str0);
+//	str=str0.replace(/+/g,'%2B');
+	str=str0.replace(/ /g,'%20');
+	return str;
+    }
+
+    function outLinkToEntry(server,accnum,UpdateDateTxt)
+    {
+	var str,link,str1;
+//	alert('host=['+window.location.hostname+']\n'+'server='+server);
+//	if (server=='localhost')
+	server=window.location.hostname;
+	link="http://"+server+"/EXFOR/"+accnum;
+	document.writeln("<div class=x4top>");
+	link="http://"+server+"/EXFOR/"+accnum;
+	document.writeln("<div class=x4top1>");
+	document.writeln("EXFOR data: ");
+	document.writeln("<a href="+link+">");
+	document.writeln(""+link);
+	document.writeln("</a>");
+	document.writeln("</div>");
+	document.writeln("Data retrieved from the EXFOR database version of "+UpdateDateTxt+".");
+	document.writeln("</div>");
+    }
+
+    function outLinkToAuthor(link,author)
+    {
+	var str;
+	link=myencodeURI(link);
+	document.writeln("<a href="+link+">");
+	document.writeln(""+author);
+	document.writeln("</a>");
+	document.writeln("<br>");
+    }
+
+    function outLinkToEntry00(server,accnum,UpdateDateTxt)
+    {
+	var str,link;
+	link="http://"+server+"/EXFOR/"+accnum;
+	document.writeln("<div class=x4top>");
+	link="http://"+server+"/EXFOR/"+accnum;
+	document.writeln("#<br>");
+	document.writeln("#EXFOR data: ");
+	document.writeln("<a href="+link+">");
+	document.writeln(""+link);
+	document.writeln("</a>");
+	document.writeln("<br>");
+	document.writeln("#<br>");
+	document.writeln("#Data retrieved from the EXFOR database (version of "+UpdateDateTxt+")");
+	document.writeln("</div>");
+    }
+
+
+
+    function begKwCode(last,pointer,iinum) {
+    }
+    function endKwCode() {
+    }
+    function begCommon0() {
+    }
+    function outX4Code2(code,shortHelp) {
+//??09	document.write('<div>');
+	if (code.charAt(0)=='+')
+	document.write('           <tt class=intr>#'+code+shortHelp+'</tt>');
+	else
+	document.write('           <tt class=intr>#<tt class=x4code>'+code+'</tt> '+shortHelp+'</tt>');
+//??09	document.write('</div>');
+	document.writeln('');
+    }
+
+//http://www.nndc.bnl.gov/nudat2/getdataset.jsp?nucleus=157HO&unc=nds
+    function outX4ReacProduct(zz,sym,aa,meta) {
+	var str,url,str1,meta1;
+	var shortHelp='';
+	str1=''+zz+'-'+sym+'-'+aa;
+	meta1=meta;
+//	if (meta!='') str1+='-'+meta1;
+	url=href0+aa+sym+href1;
+	str='# Product: ';
+	str=str+'<a href="'+url+'"';
+	str=str+' title="See it in nuclear structure database..." ';
+	str=str+' target="_blank" ';
+	str=str+' >';
+	str=str+'['+str1+']';
+	str=str+'</a>';
+	document.write('           <tt class=intr>'+str+' '+shortHelp+'</tt>');
+	document.writeln('');
+    }
+
+//http://www.nndc.bnl.gov/nudat2/decaysearchdirect.jsp?nuc=131XE&unc=nds
+    function outX4DecayData(zz,sym,aa,meta,shortHelp) {
+	var str,url,str1,meta1;
+//	var shortHelp='';
+	str1=''+zz+'-'+sym+'-'+aa;
+	meta1=meta;
+//	if (meta!='') str1+='-'+meta1;
+	url=hrefDataDecay0+aa+sym+hrefDataDecay1;
+	str='# Decay-data:';
+	str=str+'<a href="'+url+'"';
+	str=str+' title="See it in nuclear structure database..." ';
+	str=str+' target="_blank" ';
+	str=str+' >';
+	str=str+'['+str1+']';
+	str=str+'</a>';
+//	document.write('           <tt class=intr>'+str+' '+shortHelp+'</tt>');
+	document.write('           <tt class=intr>'+str+' <tt class=x4code>'+shortHelp+'</tt></tt>');
+	document.writeln('');
+    }
+
+    function begKW_Data(code,iCol,iRaw,iw,accnum,shortHelp,open,last) {
+	var text='';
+	text+=code;
+//	text=text+' '+iCol+' x '+iRaw+' x 12';
+	text=text+' '+iCol+' '+iRaw+' '+iw;
+	document.writeln(text);
+    }
+    function begLegend(iCol,iRow,iWidth) {
+//	document.write('<tt class=intr>                      #Legend: '+iCol+' x '+iRow+' x '+iWidth+' : data columns * lines * column width'+'</tt>');
+//	document.write('<div style="padding-left:65pt;">');
+//	document.write('<div style="padding-left:60pt;padding-bottom:8pt;">');
+	document.write('<div style="padding-left:60pt;">');
+	document.write('<tt class=intr>#Legend: '+iCol+' x '+iRow+' x '+iWidth+' : data columns * lines * column width'+'</tt>');
+	document.write('<table border=1 cellpadding=2 cellspacing=0 class="x4legend intr" style="background-color:#e8ffff;">');
+    }
+    function endLegend() {
+	document.write('</table>');
+	document.writeln('<span class=intr>#/Legend</span>');
+	document.write('</div>');
+//	document.writeln('<span class=intr>                      #/Legend</span>');
+    }
+
+var headerHelpImagesDir='../x4js/x4ppimg/';
+    function outLegendLine(header,pointer,help,ucode,uhelp) {
+	var headerOut=header;
+	var ll=header.length;
+	document.writeln('<tr>');
+//	outHdr(header,pointer);
+
+//	document.writeln('<td class=x4legend>#<span class=x4code>'+header+'</span></td>');
+	if (ll>3) if (header.indexOf('-CM')==ll-3)
+	headerOut='<a href="'+headerHelpImagesDir+'header-CM.png" title="Centre of Mass System" target="_blank">'+header+'</a>';
+	document.writeln('<td class=x4legend>#<span class=x4code>'+headerOut+'</span></td>');
+
+	document.writeln('<td class=x4legend><span class=x4ptr>'+pointer+'</span></td>');
+	document.writeln('<td class=x4legend><span class=x4hlp>'+help+'</span></td>');
+	document.writeln('<td class=x4legend><span class=x4code>'+ucode+'</span></td>');
+	document.writeln('<td class=x4legend><span class=x4hlp>'+uhelp+'</span></td>');
+	document.writeln('</tr>');
+    }
+    function begReactionCode(reacode,hlp,last,pointer) {
+	var strPointer='';
+//	outX4Code2(reacode,'');
+	if (pointer)
+	if (pointer!='')
+	if (pointer!=' ')
+	{
+	strPointer='<span class="x4ptr">'+pointer+'</span> ';
+	}
+	document.write('           <tt class=intr># '+strPointer+reacode+'  '+hlp+'</tt>');
+	document.writeln('');
+    }
+    function endReactionCode() {
+    }
+    function outX4Code1(code) {
+//	outX4Code2(code,'');
+    }
+function hhlp(code,help) {
+    this.code=code;
+    this.help=help;
+}
+
+hdrhlp=[
+ new hhlp('+ANG-RSL','+ Unsymmetric Angular Resolution')
+,new hhlp('+DATA-ERR','+ Unsymmetric Data Error, see `ERR-ANALYS`')
+,new hhlp('+DATA-ERR1','+ Unsymmetric data uncertainty')
+,new hhlp('+DATA-ERR2','+ Unsymmetric 2nd data uncertainty')
+,new hhlp('+E-ERR','+ Unsymmetric Outgoing Particle Energy Error')
+,new hhlp('+E-LVL-ERR','+ Unsymmetric Level Energy Error')
+,new hhlp('+EN-ERR','+ Unsymmetric Energy Error')
+,new hhlp('+EN-RES-ER','+ Unsymmetric Resonance Energy Error')
+,new hhlp('+EN-RSL','+ Unsymmetric Energy Resolution')
+,new hhlp('+ERR-5','+ Unsymmetric 5th Systematic Error, see `ERR-ANALYS`.')
+,new hhlp('+ERR-S','+ Unsymmetric Statistical Error')
+,new hhlp('+ERR-SYS','+ Unsymmetric Systematic Error')
+,new hhlp('+ERR-T','+ Unsymmetric Total Error')
+,new hhlp('+MISC-ERR','+ Unsymemtric Error in Miscellaneous Value')
+,new hhlp('+MONIT-ERR','+ Unsymmetric Error in Value Assumed for Normalization')
+,new hhlp('+RATIO-ERR','+ Unsymmetric Ratio Error, see `ERR-ANALYS`.')
+,new hhlp('+SUM-ERR','+ Unsymmetric Error in Sum, see `ERR-ANALYS`.')
+,new hhlp('ANAL-STEP','Analysis Energy Step')
+,new hhlp('ANG','Angle, Laboratory System')
+,new hhlp('ANG1','1st Angle, definition given in BIB Section')
+,new hhlp('ANG1-CM','Angle, C.M. System, definition given in BIB')
+,new hhlp('ANG1-CM-MN','Lower Limit of First Angle, C.M. System')
+,new hhlp('ANG1-CM-MX','Upper Limit of First Angle, C.M. System')
+,new hhlp('ANG1-ERR','1st Angle Error, definition given in BIB Section')
+,new hhlp('ANG2','2nd Angle, definition given in BIB Section')
+,new hhlp('ANG2-CM','Angle, C.M. System, definition given in BIB')
+,new hhlp('ANG2-ERR','2nd Angle Error, definition given in BIB Section')
+,new hhlp('ANG2-RL-CM','Relative 2nd Angle, C.M. System')
+,new hhlp('ANG3','3rd Angle, definition given in BIB Section')
+,new hhlp('ANG4','4th Angle, definition given in BIB Section')
+,new hhlp('ANG-AZ','Azimuthal Angle')
+,new hhlp('ANG-AZ1','Azimuthal Angle')
+,new hhlp('ANG-AZ2','Azimuthal Angle')
+,new hhlp('ANG-AZ-RL','Azimuthal Angle Between 2 Reaction Planes')
+,new hhlp('ANG-CM','Angle, C.M. System')
+,new hhlp('ANG-CM-DN','Angle for Reaction Ratio Denominator, C.M. System')
+,new hhlp('ANG-CM-MAX','Upper Limit of Angular Range, C.M. System')
+,new hhlp('ANG-CM-MIN','Lower Limit of Angular Range, C.M. System')
+,new hhlp('ANG-CM-NM','Angle for Reaction Ratio Numerator, C.M. System')
+,new hhlp('ANG-DN','Angle, Reaction Ratio Denominator')
+,new hhlp('ANG-ERR','Angle Error')
+,new hhlp('ANG-ERR-D','Digitizing error of angle')
+,new hhlp('ANG-MAX','Upper Limit of Angular Range, Lab. System')
+,new hhlp('ANG-MIN','Lower Limit of Angular Range, Lab. System')
+,new hhlp('ANG-MN','Mean angle of correlated pair')
+,new hhlp('ANG-MN-ERR','Error of Mean angle of correlated pair')
+,new hhlp('ANG-NM','Angle, Reaction Ratio Numerator')
+,new hhlp('ANG-NRM','Angle at which normalization was made')
+,new hhlp('ANG-RL','Relative Angle')
+,new hhlp('ANG-RL-CM','Relative Angle, C.M. System')
+,new hhlp('-ANG-RSL','- Unsymmetric Angular Resolution')
+,new hhlp('ANG-RSL','Angular Resolution')
+,new hhlp('ASSUM','Assumed Value, defined under `ASSUMED`.')
+,new hhlp('ASSUM1','1st Assumed Value, defined under `ASSUMED`.')
+,new hhlp('ASSUM1-ERR','1st Assumed Value Error')
+,new hhlp('ASSUM1-MAX','Upper Limit of 1st Assumed Value')
+,new hhlp('ASSUM1-MIN','Lower Limit of 1st Assumed Value')
+,new hhlp('ASSUM2','2nd Assumed Value, defined under `ASSUMED`.')
+,new hhlp('ASSUM2-ERR','2nd Assumed Value Error')
+,new hhlp('ASSUM2-MAX','Upper Limit of 2nd Assumed Value')
+,new hhlp('ASSUM2-MIN','Lower Limit of 2nd Assumed Value')
+,new hhlp('ASSUM3','3rd Assumed Value, defined under `ASSUMED`.')
+,new hhlp('ASSUM3-ERR','3th Assumed Value Error')
+,new hhlp('ASSUM4','4th Assumed Value, defined under `ASSUMED`.')
+,new hhlp('ASSUM4-ERR','4th Assumed Value Error')
+,new hhlp('ASSUM5','5th Assumed Value, defined under `ASSUMED`.')
+,new hhlp('ASSUM5-ERR','5th Assumed Value Error')
+,new hhlp('ASSUM-ERR','Error in Assumed Value')
+,new hhlp('ASSUM-MAX','Upper Limit of Assumed Value')
+,new hhlp('ASSUM-MIN','Lower Limit of Assumed Value')
+,new hhlp('CNTY','Centrality')
+,new hhlp('CNTY-ERR','Centrality error')
+,new hhlp('CNTY-MAX','Upper limit of Centrality')
+,new hhlp('CNTY-MIN','Lower limit of Centrality')
+,new hhlp('COS','Cosine of Angle, Laboratory System')
+,new hhlp('COS-CM','Cosine of Angle, C.M.System')
+,new hhlp('COS-CM-MAX','Upper Limit of Cosine Range, C.M. System')
+,new hhlp('COS-CM-MIN','Lower Limit of Cosine Range, C.M. System')
+,new hhlp('COS-ERR','Cosine Error')
+,new hhlp('COS-ERR-D','Digitizing Error of Cosine')
+,new hhlp('COS-MAX','Upper Limit of Cosine Range, Lab. System')
+,new hhlp('COS-MIN','Lower Limit of Cosine Range, Lab. System')
+,new hhlp('COS-RSL','Cosine Angular Resolution')
+,new hhlp('DATA','Value of Quantity Specified under `REACTION`')
+,new hhlp('DATA-APRX','Approximate Value of Quantity specif. under `REACTION`')
+,new hhlp('DATA-CM','Value of Quantity specif. under `REACTION`, C.M. Sys.')
+,new hhlp('-DATA-ERR','- Unsymmetric Data Error, see `ERR-ANALYS`.')
+,new hhlp('DATA-ERR','Error in Value of Quantity, defined under `ERR-ANALYS`')
+,new hhlp('-DATA-ERR1','- Unsymmetric data uncertainty')
+,new hhlp('DATA-ERR1','1st Data Uncertainty, defined under `ERR-ANALYS`')
+,new hhlp('-DATA-ERR2','- Unsymmetric 2nd data uncertainty')
+,new hhlp('DATA-ERR2','2nd Data Uncertainty, defined under `ERR-ANALYS`')
+,new hhlp('DATA-ERR3','3rd Data Uncertainty, defined under `ERR-ANALYS`')
+,new hhlp('DATA-ERR4','4th Data Uncertainty, defined under `ERR-ANALYS`')
+,new hhlp('DATA-ERR5','5th Data Uncertainty, defined under `ERR-ANALYS`')
+,new hhlp('DATA-ERR6','6th Data Uncertainty, defined under `ERR-ANALYS`')
+,new hhlp('DATA-MAX','Upper Limit of Quantity specified under `REACTION`')
+,new hhlp('DATA-MIN','Lower Limit of Quantity specified under `REACTION`')
+,new hhlp('DATA-MN-CM','Lower Lim.of Quant.specif.under `REACTION`, C.M.Sys.')
+,new hhlp('DATA-MX-CM','Upper Lim.of Quant.specif.under `REACTION`, C.M.Sys.')
+,new hhlp('DCNST','Decay constant')
+,new hhlp('DCNST-ERR','Error in decay constant')
+,new hhlp('DECAY-FLAG','Decay Flag. See corresponding Flag in BIB section')
+,new hhlp('E','Energy of Outgoing Particle, Lab. System')
+,new hhlp('E1','1st Outgoing Part. En., defined under `EN-SEC`')
+,new hhlp('E1-CM','1st Outgoing Part. En., C.M. defined under `EN-SEC`')
+,new hhlp('E1-MAX','Upper Limit, 1st Outgoing Part. En.Range, see `EN-SEC`')
+,new hhlp('E1-MIN','Lower Limit, 1st Outgoing Part. En.Range, see `EN-SEC`')
+,new hhlp('E2','2nd Outgoing Part. Energy, defined under `EN-SEC`')
+,new hhlp('E2-MAX','Upper Limit, 2nd Outgoing Part. En.Range, see `EN-SEC`')
+,new hhlp('E2-MIN','Lower Limit, 2nd Outgoing Part. En.Range, see `EN-SEC`')
+,new hhlp('E3','3rd Outgoing Particle Energy, defined under `EN-SEC`')
+,new hhlp('E3-MIN','Lower Limit, 3rd Outgoing Part. En.Range, see `EN-SEC`')
+,new hhlp('E4','4th Outgoing Particle Energy, defined under `EN-SEC`')
+,new hhlp('E5','5th Outgoing Particle Energy, defined under `EN-SEC`')
+,new hhlp('E-APRX','Approx. Energy of Outgoing Particle, Lab. System')
+,new hhlp('E-CM','Energy of Outgoing Particle, C.M. System')
+,new hhlp('E-CM-MAX','Upper Limit of Outgoing Part. En. Range, C.M. Sys.')
+,new hhlp('E-CM-MIN','Lower Limit of Outgoing Part. En. Range, C.M. Sys.')
+,new hhlp('E-DGD','Degradation in Incident vs. Outgoing Particle Energy')
+,new hhlp('E-DGD-ERR','Error in Degradation in Incident vs. Outgoing Part.En.')
+,new hhlp('E-DGD-MAX','Upper Limit of Degradat. in Inc. vs. Outgoing Part.En.')
+,new hhlp('E-DGD-MIN','Lower Limit of Degradat. in Inc. vs. Outgoing Part.En.')
+,new hhlp('E-DN','Outgoing Particle Enery, Reaction Ratio Denominator')
+,new hhlp('-E-ERR','- Unsymmetric Outgoing Particle Energy Error')
+,new hhlp('E-ERR','Outgoing Particle Energy Error')
+,new hhlp('E-ERR-DIG','Digitizing error of outgoing particle energy')
+,new hhlp('E-EXC','Excitation Energy')
+,new hhlp('E-EXC1','1st Excitation Energy, defined under EN-SEC`')
+,new hhlp('E-EXC1-MAX','Upper Limit of 1st Excitation Energy Range')
+,new hhlp('E-EXC1-MIN','Lower Limit of 1st Excitation Energy Range')
+,new hhlp('E-EXC2','2nd Excitation Energy, defined under EN-SEC`.')
+,new hhlp('E-EXC3','3rd Excitation Energy, defined under EN-SEC`.')
+,new hhlp('E-EXC-DN','Excitation Energy for denominator of reaction ratio')
+,new hhlp('E-EXC-ERR','Excitation Energy Error')
+,new hhlp('E-EXC-MAX','Upper Limit of Excitation Energy Range')
+,new hhlp('E-EXC-MEAN','Mean Excitation Energy')
+,new hhlp('E-EXC-MIN','Lower Limit of Excitation Energy Range')
+,new hhlp('E-EXC-NM','Excitation Energy for numerator of reaction ratio')
+,new hhlp('E-GAIN','Gain in Incident vs. Outgoing Particle Energy')
+,new hhlp('E-GAIN-ERR','Error in Gain in Incident vs. Outgoing Particle Energy')
+,new hhlp('E-K','Kinetic energy, Lab.system')
+,new hhlp('ELEM1','Atomic Number of 1st Element')
+,new hhlp('ELEM2','Atomic Number of 2nd Element')
+,new hhlp('ELEM3','Atomic Number of 3rd Element')
+,new hhlp('ELEM-DN','Atomic Number, Reaction Ratio Denominator')
+,new hhlp('ELEMENT','Atomic Number of Element')
+,new hhlp('ELEM-MAX','Upper Limit of Atomic Number Range')
+,new hhlp('ELEM-MIN','Lower Limit of Atomic Number Range')
+,new hhlp('ELEM-NM','Atomic Number, Reaction Ratio Numerator')
+,new hhlp('ELEM-NRM','Atomic Number of Nuclide Used for Normalization')
+,new hhlp('E-LVL','Level Energy')
+,new hhlp('E-LVL1','1st Level Energy, defined under `EN-SEC`')
+,new hhlp('E-LVL2','2nd Level Energy, defined under `EN-SEC`')
+,new hhlp('E-LVL-DN','Level Energy, Reaction Ratio Denominator')
+,new hhlp('-E-LVL-ERR','- Unsymmetric Level Energy Error')
+,new hhlp('E-LVL-ERR','Level Energy Error')
+,new hhlp('E-LVL-FIN','Final Level of Gamma Transition')
+,new hhlp('E-LVL-FIN1','Final Level of Gamma Transition, def.under EN-SEC')
+,new hhlp('E-LVL-FIN2','Final Level of Gamma Transition, def.under EN-SEC')
+,new hhlp('E-LVL-INI','Initial Level of Gamma Transition')
+,new hhlp('E-LVL-INI1','Initial Level of Gamma Transition, def.under EN-SEC')
+,new hhlp('E-LVL-INI2','Initial Level of Gamma Transition, def.under EN-SEC')
+,new hhlp('E-LVL-MAX','Upper Energy Limit of Discrete Level Group')
+,new hhlp('E-LVL-MEAN','Mean Level Energy')
+,new hhlp('E-LVL-MIN','Lower Energy Limit of Discrete Level Group')
+,new hhlp('E-LVL-NM','Level Energy, Reaction Ratio Numerator')
+,new hhlp('E-LVL-NRM','Level Energy Used for Normalization')
+,new hhlp('E-MAX','Upper Limit of Outgoing Particle En. Range, Lab. Sys.')
+,new hhlp('E-MAX-CM','Upper Limit of Outgoing Particle En. Range, C.M. Sys.')
+,new hhlp('E-MAX-DN','Outgoing Particle Energy, Reaction Ratio Denominator')
+,new hhlp('E-MAX-NM','Outgoing Particle Energy, Reaction Ratio Numerator')
+,new hhlp('E-MEAN','Mean Energy of Outgoing Particles, Lab. System')
+,new hhlp('E-MIN','Lower Limit of Outgoing Particle En. Range, Lab. Sys.')
+,new hhlp('E-MIN-CM','Lower Limit of Outgoing Particle En. Range, C.M. Sys.')
+,new hhlp('E-MIN-DN','Outgoing Particle Enery, Reaction Ratio Denominator')
+,new hhlp('E-MIN-NM','Outgoing Particle Enery, Reaction Ratio Numerator')
+,new hhlp('EMS','Effective Mass Squared')
+,new hhlp('EMS1','1st Effective Mass Squared, defined under `MOM-SEC`.')
+,new hhlp('EMS1-MAX','Upper Limit, 1st Effective Mass Squared, see `MOM-SEC`')
+,new hhlp('EMS1-MIN','Lower Limit, 1st Effective Mass Squared, see `MOM-SEC`')
+,new hhlp('EMS2','2nd Effective Mass Squared, defined under `MOM-SEC`.')
+,new hhlp('EMS2-MAX','Upper Limit, 2nd Effective Mass Squared, see `MOM-SEC`')
+,new hhlp('EMS2-MIN','Lower Limit, 2nd Effective Mass Squared, see `MOM-SEC`')
+,new hhlp('EMS3','3rd Effective Mass Squared, defined under `MOM-SEC`')
+,new hhlp('EMS4','4th Effective Mass Squared, defined under `MOM-SEC`')
+,new hhlp('EMS5','5th Effective Mass Squared, defined under `MOM-SEC`')
+,new hhlp('EN','Energy of Incident Projectile, Laboratory System')
+,new hhlp('EN-APRX','Approximate Value of Incident Projectile Energy')
+,new hhlp('EN-CM','Incident Projectile Energy relative to target')
+,new hhlp('EN-CM-MAX','Upper Limit of C.M. Incident Projectile Energy Range')
+,new hhlp('EN-CM-MIN','Lower Limit of C.M. Incident Projectile Energy Range')
+,new hhlp('EN-CM-NRM','Inc.Proj. Energy (in c.m.) Used for Normalization')
+,new hhlp('EN-DN','Incident Energy for Reaction Ratio Denominator')
+,new hhlp('EN-DUM-DN','Dummy Incident Energy, Reaction Ratio Denominator')
+,new hhlp('EN-DUMMY','Dummy Incident Proj. Energy, for broad spectrum')
+,new hhlp('EN-DUM-NM','Dummy Incident Energy, Reaction Ratio Numerator')
+,new hhlp('-EN-ERR','- Unsymmetric Energy Error')
+,new hhlp('EN-ERR','Uncertainty in Incident Projectile Energy')
+,new hhlp('EN-ERR1','1st Incident Projectile Energy Error, see `ERR-ANALYS`')
+,new hhlp('EN-ERR2','2nd Incident Projectile Energy Error, see `ERR-ANALYS`')
+,new hhlp('EN-ERR3','3rd Incident Projectile Energy Error, see `ERR-ANALYS`')
+,new hhlp('EN-ERR-DIG','Digitizing error of incident particle energy')
+,new hhlp('E-NM','Outgoing Particle Energy, Reaction Ratio Numerator')
+,new hhlp('EN-MAX','Upper Limit of Incident Projectile Energy Range')
+,new hhlp('EN-MEAN','Mean Energy of Incident Projectile Spectrum')
+,new hhlp('EN-MEAN-DN','Inc. Spectr. Mean Energy, Reaction Ratio Denominator')
+,new hhlp('EN-MEAN-NM','Inc. Spectr. Mean Energy, Reaction Ratio Numerator')
+,new hhlp('E-NM-ERR','Error in Outgoing Particle En., Reaction Ratio Numerator')
+,new hhlp('EN-MIN','Lower Limit of Incident Projectile Energy Range')
+,new hhlp('EN-MIN-APX','Approximate Lower Limit Incident Projectile Energy')
+,new hhlp('EN-MIN-DN','Lower Limit of Inc. En. Range, Reaction Ratio Denom.')
+,new hhlp('EN-MIN-NM','Lower Limit of Inc. En. Range, Reaction Ratio Numer.')
+,new hhlp('EN-NM','Incident Projectile Energy, Reaction Ratio Numerator')
+,new hhlp('EN-NRM','Incident Projectile Energy Used for Normalization')
+,new hhlp('EN-NRM1','1st Incident Proj.En. for Normalization, see `MONITOR`')
+,new hhlp('EN-NRM2','2nd Incident Proj.En. for Normalization, see `MONITOR`')
+,new hhlp('EN-NRM3','3rd Incident Proj.En. for Normalization, see `MONITOR`')
+,new hhlp('EN-NRM-MAX','Upper Limit of Incident En. Range for Normalization')
+,new hhlp('EN-NRM-MIN','Lower Limit of Incident En. Range for Normalization')
+,new hhlp('EN-NRM-RSL','Energy Resolution of Normalization Incident Energy')
+,new hhlp('EN-RES','Resonance Energy')
+,new hhlp('EN-RES-CM','Resonance Energy, C.M. System')
+,new hhlp('-EN-RES-ER','- Unsymmetric Resonance Energy Error')
+,new hhlp('EN-RES-ERR','Error in Resonance Energy')
+,new hhlp('EN-RES-MAX','Upper Limit of Resonance Energy')
+,new hhlp('EN-RES-MIN','Lower Limit of Resonance Energy')
+,new hhlp('E-NRM','Energy of Outgoing Particle Used for Normalization')
+,new hhlp('E-NRM1','Energy of First Outgoing Particle Used for Normalization')
+,new hhlp('E-NRM2','Energy of Second Outgoing Particle Used for Normalization')
+,new hhlp('-EN-RSL','- Unsymmetric Energy Resolution')
+,new hhlp('EN-RSL','Incident Projectile Energy Resolution (Unspecified)')
+,new hhlp('EN-RSL-DN','Inc.Proj.Energy Resol.(FWHM), Reaction Ratio Denominator')
+,new hhlp('EN-RSL-FW','Incident Projectile Energy Resolution (FWHM)')
+,new hhlp('EN-RSL-HW','Incident Projectile Energy Resolution (+-1/2 FWHM)')
+,new hhlp('EN-RSL-NM','Inc.Proj.Energy Resol.(FWHM), Reaction Ratio Numerator')
+,new hhlp('E-RL','Relative Energy of Outgoing Particle, Lab. System')
+,new hhlp('E-RL-CM','Relative Energy of Outgoing Particle, C.M. System')
+,new hhlp('ERR-1','1st Systematic Uncertainty, defined under `ERR-ANALYS`')
+,new hhlp('ERR-10','10th Systematic Uncert., defined under `ERR-ANALYS`')
+,new hhlp('ERR-11','11th Systematic Uncert., defined under `ERR-ANALYS`')
+,new hhlp('ERR-12','12th Systematic Uncert., defined under `ERR-ANALYS`')
+,new hhlp('ERR-13','13th Systematic Uncert., defined under `ERR-ANALYS`')
+,new hhlp('ERR-14','14th Systematic Uncert., defined under `ERR-ANALYS`')
+,new hhlp('ERR-15','15th Systematic Uncert., defined under `ERR-ANALYS`')
+,new hhlp('ERR-2','2nd Systematic Uncertainty, defined under `ERR-ANALYS`')
+,new hhlp('ERR-3','3rd Systematic Uncertainty, defined under `ERR-ANALYS`')
+,new hhlp('ERR-4','4th Systematic Uncertainty, defined under `ERR-ANALYS`')
+,new hhlp('-ERR-5','- Unsymmetric 5th Systematic Error, see `ERR-ANALYS`.')
+,new hhlp('ERR-5','5th Systematic Uncertainty, defined under `ERR-ANALYS`')
+,new hhlp('ERR-6','6th Systematic Uncertainty, defined under `ERR-ANALYS`')
+,new hhlp('ERR-7','7th Systematic Uncertainty, defined under `ERR-ANALYS`')
+,new hhlp('ERR-8','8th Systematic Uncertainty, defined under `ERR-ANALYS`')
+,new hhlp('ERR-9','9th Systematic Uncertainty, defined under `ERR-ANALYS`')
+,new hhlp('ERR-DIG','Digitizing error (of DATA)')
+,new hhlp('ERR-EDD','Error of energy value given under DECAY-DATA')
+,new hhlp('ERR-HL','Error of half-life value givein under DECAY-DATA')
+,new hhlp('ERR-IDD','Error of intensity value given under DECAY-DATA')
+,new hhlp('-ERR-S','- Unsymmetric Statistical Uncertainty')
+,new hhlp('ERR-S','Statistical Uncertainty (1-Sigma)')
+,new hhlp('-ERR-SYS','- Unsymmetric Systematic Error')
+,new hhlp('ERR-SYS','Total Systematic Uncertainty')
+,new hhlp('-ERR-T','- Unsymmetric Total Uncertainty')
+,new hhlp('ERR-T','Total Uncertainty (1-Sigma)')
+,new hhlp('E-RSL','Otugoing Projectile Energy Resolution')
+,new hhlp('E-RSL-FW','Secondary energy resolution (full width at half maximum)')
+,new hhlp('E-TPB','Transverse kinetic energy, lab. sys., in Pb glass detector')
+,new hhlp('E-TPB-MAX','Upper limit, transv.kin.energy, lab.sys., in Pb glass det.')
+,new hhlp('E-TPB-MIN','Lower limit, transv.kin.energy, lab.sys., in Pb glass det.')
+,new hhlp('E-TR','Transverse kinetic energy, laboratory system')
+,new hhlp('E-TR-CM','Transverse kinetic energy, center-of-mass system')
+,new hhlp('E-TR-MAX','Upper limit of transverse kinetic energy, lab.system')
+,new hhlp('E-TR-MIN','Lower limit of transverse kinetic energy, lab.system')
+,new hhlp('E-ZCAL','Transverse kin. energy, Lab.sys., in zero-degr.calorimeter')
+,new hhlp('FLAG','Flag, defined under `FLAG`.')
+,new hhlp('GRP-NUM','Group number (of delayed neutrons)')
+,new hhlp('HL','Half-Life of Nuclide Specified.')
+,new hhlp('HL1','Half-Life of 1st Nucleus Specified')
+,new hhlp('HL1-ERR','Error in Half-Life of 1st Nucleus Specified')
+,new hhlp('HL2','Half-Life of 2nd Nucleus Specified')
+,new hhlp('HL2-ERR','Error in Half-Life of 2nd Nucleus Specified')
+,new hhlp('HL3','Half-Life of 3rd Nucleus Specified')
+,new hhlp('HL3-ERR','Error in Half-Life of 3rd Nucleus Specified')
+,new hhlp('HL4','Half-Life of 4th Nucleus Specified')
+,new hhlp('HL4-ERR','Error in Half-Life of 4th Nucleus Specified')
+,new hhlp('HL-DN','Half-Life of nuclide specified in ratio denominator')
+,new hhlp('HL-ERR','Error in Half-Life')
+,new hhlp('HL-NM','Half-Life of nuclide specified in ratio numerator')
+,new hhlp('HL-NRM','Half-Life of nuclide to which data is normalized')
+,new hhlp('IAS-NUMB','Level Number of Isobaric Analog State')
+,new hhlp('ISOMER','Isomer for Nuclide Given')
+,new hhlp('ISOMER1','1st Isomer for Nuclide')
+,new hhlp('ISOMER2','2nd Isomer for Nuclide')
+,new hhlp('ISOMER-DN','Isomer for Nuclide, REACTION Ratio Denominator')
+,new hhlp('ISOMER-NM','Isomer for Nuclide, REACTION Ratio Numerator')
+,new hhlp('ISO-NUMB','Level Number of Isobaric Analog State')
+,new hhlp('KQ','Indices for tensor analyzing power')
+,new hhlp('KT','Spectrum Temperature (energy units)')
+,new hhlp('KT-DN','Spectrum Temperature, Reaction Ratio Denominator')
+,new hhlp('KT-ERR','Error in Spectrum Temperature')
+,new hhlp('KT-K','Spectrum Temperature (temperature units)')
+,new hhlp('KT-NM','Spectrum Temperature, Reaction Ratio Numerator')
+,new hhlp('KT-NRM','Temperature of reference Maxwellian spectrum')
+,new hhlp('LVL','Level Energy as additional information')
+,new hhlp('LVL-FIN','Final Level Energy as additional information')
+,new hhlp('LVL-FIN1','1st Final Level Energy as additional information')
+,new hhlp('LVL-FIN2','2nd Final Level Energy as additional information')
+,new hhlp('LVL-FLAG','Level Flag, Link to information under `LEVEL-PROP`')
+,new hhlp('LVL-INI','Initial Level Energy as additional information')
+,new hhlp('LVL-INI1','1st Initial Level Energy as additional information')
+,new hhlp('LVL-INI2','2nd Initial Level Energy as additional information')
+,new hhlp('LVL-NUMB','Level Number')
+,new hhlp('LVL-NUM-DN','Level Number, Reaction Ratio Denominator')
+,new hhlp('LVL-NUM-NM','Level Number, Reaction Ratio Numerator')
+,new hhlp('M1','Linear Momentum of 1st Outgoing Particle')
+,new hhlp('M1-MAX','Upper Limit of 1st Outgoing Particle Linear Momentum')
+,new hhlp('M1-MIN','Lower Limit of 1st Outgoing Particle Linear Momentum')
+,new hhlp('M1-SEC-MAX','Upper Limit of 1st Outgoing Particle Linear Momentum')
+,new hhlp('M1-SEC-MIN','Lower Limit of 1st Outgoing Particle Linear Momentum')
+,new hhlp('M2','Linear Momentum of 2nd Outgoing Particle')
+,new hhlp('M2-MAX','Upper Limit of 2nd Outgoing Particle Linear Momentum')
+,new hhlp('M2-MIN','Lower Limit of 2nd Outgoing Particle Linear Momentum')
+,new hhlp('M2-SEC-MAX','Upper Limit of 2nd Outgoing Particle Linear Momentum')
+,new hhlp('M2-SEC-MIN','Lower Limit of 2nd Outgoing Particle Linear Momentum')
+,new hhlp('M3','Linear Momentum of 3rd Outgoing Particle')
+,new hhlp('M4','Linear Momentum of 4th Outgoing Particle')
+,new hhlp('M5','Linear Momentum of 5th Outgoing Particle')
+,new hhlp('MASS','Atomic Mass of Nuclide')
+,new hhlp('MASS1','Atomic Mass of 1st Nuclide')
+,new hhlp('MASS1-MAX','Maximum Atomic Mass of 1st Nuclide')
+,new hhlp('MASS2','Atomic Mass of 2nd Nuclide')
+,new hhlp('MASS2-MIN','Minimum Atomic Mass of 2nd Nuclide')
+,new hhlp('MASS3','Atomic Mass of 3rd Nuclide')
+,new hhlp('MASS-DN','Atomic Mass of Nuclide, Reaction Ratio Denominator')
+,new hhlp('MASS-MAX','Upper Limit of Atomic Mass Range')
+,new hhlp('MASS-MIN','Lower Limit of Atomic Mass Range')
+,new hhlp('MASS-NM','Atomic Mass of Nuclide, Reaction Ratio Numerator')
+,new hhlp('MASS-NRM','Atomic Mass of Nuclide used for Normalization')
+,new hhlp('MASS-RATIO','Ratio of Atomic Masses of Fission Fragments')
+,new hhlp('MASS-RSL','Mass Resolution')
+,new hhlp('MISC','Miscellaneous Information, defined under `MISC-COL`.')
+,new hhlp('MISC1','1st Miscellaneous Field, defined under `MISC-COL`')
+,new hhlp('MISC10','10th Miscellaneous Field, defined under `MISC-COL`')
+,new hhlp('MISC1-ERR','Error in 1st Miscellaneous Field')
+,new hhlp('MISC2','2nd Miscellaneous Field, defined under `MISC-COL`')
+,new hhlp('MISC2-ERR','Error in 2nd Miscellaneous Field')
+,new hhlp('MISC3','3rd Miscellaneous Field, defined under `MISC-COL`')
+,new hhlp('MISC3-ERR','Error in 3rd Miscellaneous Field')
+,new hhlp('MISC4','4th Miscellaneous Field, defined under `MISC-COL`')
+,new hhlp('MISC4-ERR','Error in 4th Miscellaneous Field')
+,new hhlp('MISC5','5th Miscellaneous Field, defined under `MISC-COL`')
+,new hhlp('MISC5-ERR','Error in 5th Miscellaneous Field')
+,new hhlp('MISC6','6th Miscellaneous Field, defined under `MISC-COL`')
+,new hhlp('MISC6-ERR','Error in 6th Miscellaneous Field')
+,new hhlp('MISC7','7th Miscellaneous Field, defined under `MISC-COL`')
+,new hhlp('MISC7-ERR','Error in 7th Miscellaneous Field')
+,new hhlp('MISC8','8th Miscellaneous Field, defined under `MISC-COL`')
+,new hhlp('MISC8-ERR','Error in 8th Miscellaneous Field')
+,new hhlp('MISC9','9th Miscellaneous Field, defined under `MISC-COL`')
+,new hhlp('-MISC-ERR','- Unsymemtric Error in Miscellaneous Value')
+,new hhlp('MISC-ERR','Error in Miscellaneous Value')
+,new hhlp('MISC-ERR-D','Digitizng Error in Miscellaneous Value')
+,new hhlp('MOM','Linear Momentum of Incident Projectile')
+,new hhlp('MOMENTUM L','Angular Momentum (L) of Resonance')
+,new hhlp('MOM-ERR','Error of Linear Momentum of Incident Projectile')
+,new hhlp('MOM-MAX','Maximum Linear Momentum of Incident Projectile')
+,new hhlp('MOM-MIN','Minimum Linear Momentum of Incident Projectile')
+,new hhlp('MOM-RSL','Incident Projectile Linear Momentum Resolution')
+,new hhlp('MOM-SEC','Linear Momentum of Outgoing Particle')
+,new hhlp('MOM-SEC1','1st Linear Momentum of Outgoing Particle')
+,new hhlp('MOM-SEC2','2nd Linear Momentum of Outgoing Particle')
+,new hhlp('MOM-SEC3','3rd Linear Momentum of Outgoing Particle')
+,new hhlp('MOM-SEC4','4th Linear Momentum of Outgoing Particle')
+,new hhlp('MOM-SEC5','5th Linear Momentum of Outgoing Particle')
+,new hhlp('MOM-SEC-MN','Minimum Linear Momentum of Outgoing Particle')
+,new hhlp('MOM-TR','Momentum transfer (in units MeV/c or equiv.)')
+,new hhlp('MOM-TR-ERR','Error of momentum transfer')
+,new hhlp('MONIT','Normalization Value for Reaction given under `MONITOR`')
+,new hhlp('MONIT1','1st Normalization Value, see `MONITOR`')
+,new hhlp('MONIT1-ERR','Error in 1st Normalization Value')
+,new hhlp('MONIT2','2nd Normalization Value, see `MONITOR`')
+,new hhlp('MONIT2-ERR','Error in 2nd Normalization Value')
+,new hhlp('MONIT3','3rd Normalization Value, see `MONITOR`')
+,new hhlp('MONIT3-ERR','Error in 3rd Normalization Value')
+,new hhlp('MONIT4','4th Normalization Value, see `MONITOR`')
+,new hhlp('MONIT4-ERR','Error in 4th Normalization Value')
+,new hhlp('MONIT5','5th Normalization Value, see `MONITOR`')
+,new hhlp('MONIT5-ERR','Error in 5th Normalization Value')
+,new hhlp('MONIT6','6th Normalization Value, see `MONITOR`')
+,new hhlp('MONIT6-ERR','Error in 6th Normalization Value')
+,new hhlp('MONIT7','7th Normalization Value, see `MONITOR`')
+,new hhlp('MONIT8','8th Normalization Value, see `MONITOR`')
+,new hhlp('MONIT-CM','Normalization Value, C.M. System, see `MONITOR`')
+,new hhlp('MONIT-DN','Normalization Value for denominator of reaction ratio')
+,new hhlp('-MONIT-ERR','- Unsymmetric Error in Value Assumed for Normalization')
+,new hhlp('MONIT-ERR','Error in Normalization Value')
+,new hhlp('MONIT-NM','Normalization value for numerator of ratio')
+,new hhlp('MSS-T','Transverse mass of outgoing proj.')
+,new hhlp('MSS-TK','Transverse - rest mass of outgoing proj.')
+,new hhlp('MSS-TK-MAX','Maximum value of outgoing proj.transverse - rest mass')
+,new hhlp('MSS-TK-MIN','Minimum value of outgoing proj.transverse - rest mass')
+,new hhlp('MU-ADLER','Mu')
+,new hhlp('N-OUT','Number of Emitted Neutrons')
+,new hhlp('NUMBER','Fitting Coefficient Number')
+,new hhlp('NUMBER-CM','Fitting Coefficient Number, for Data in C.M. System')
+,new hhlp('PARITY','Parity of Resonance')
+,new hhlp('PART-OUT','Number of Emitted Particles')
+,new hhlp('POLAR','Polarity')
+,new hhlp('POLAR-DN','Polarity for denominator of reaction ratio')
+,new hhlp('POLAR-NM','Polarity for numerator of reaction ratio')
+,new hhlp('POL-BM','Beam Polarization')
+,new hhlp('POL-BM-ERR','Beam Polarization Error')
+,new hhlp('POL-BM-MAX','Upper Limit of Beam Polarization')
+,new hhlp('POL-BM-MIN','Lower Limit of Beam Polarization')
+,new hhlp('POL-TR','Target Polarization')
+,new hhlp('POL-TR-ERR','Target Polarization Error')
+,new hhlp('P-OUT','Number of Emitted Protons')
+,new hhlp('PRJ','Number of participating projectiles')
+,new hhlp('PRJ-AV','Average number of participating projectiles')
+,new hhlp('q','Momentum transfer, q')
+,new hhlp('q-CM','Momentum transfer, q, center of mass system')
+,new hhlp('Q-VAL','Q-Value')
+,new hhlp('Q-VAL-APRX','Approximate Q-Value')
+,new hhlp('Q-VAL-ERR','Q-Value Uncertainty')
+,new hhlp('Q-VAL-MAX','Upper Limit of Q-Value')
+,new hhlp('Q-VAL-MIN','Lower Limit of Q-Value')
+,new hhlp('Q-VAL-RSL','Q-Value Resolution')
+,new hhlp('RAP','Rapidity (fn En+mom(par)/En-mom(par))')
+,new hhlp('RAP-AV','Avg.Rapidity (fn En+mom(par)/En-mom(par))')
+,new hhlp('RAP-AV-ERR','Avg.Rapidity error')
+,new hhlp('RAP-ERR','Rapidity (relativistic data)')
+,new hhlp('RAP-MAX','Upper limit of rapidity (relativistic data)')
+,new hhlp('RAP-MIN','Lower limit of rapidity (relativistic data)')
+,new hhlp('RAP-PS','Pseudo rapidity (fn mon+mom(par)/mon-mom(par)')
+,new hhlp('RAP-PS-MAX','Upper limit of pseudo rapidity (fn mon+mom(par)/mon-mom(par)')
+,new hhlp('RAP-PS-MIN','Lower limit of pseudo rapidity (fn mon+mom(par)/mon-mom(par)')
+,new hhlp('RATIO','Ratio Value of Quantity specified under `REACTION`')
+,new hhlp('RATIO-APRX','Approximate Value of Ratio')
+,new hhlp('-RATIO-ERR','- Unsymmetric Ratio Error')
+,new hhlp('RATIO-ERR','Ratio Error')
+,new hhlp('RATIO-ERR1','1st Ratio Error')
+,new hhlp('RATIO-ERR2','2nd Ratio Error')
+,new hhlp('RATIO-ERR3','3rd Ratio Error')
+,new hhlp('RATIO-MAX','Upper Limit of Ratio')
+,new hhlp('RATIO-MIN','Lower Limit of Ratio')
+,new hhlp('S','Distance along S-curve for range of E1 and E2')
+,new hhlp('S-MEAN','Mean distance along S-curve for range of E1 and E2')
+,new hhlp('SPIN J','Spin (J)')
+,new hhlp('STAND','Numerical Value Assumed')
+,new hhlp('STAND1','1st Standard Value, see `STANDARD`')
+,new hhlp('STAND1-ERR','Error in 1st Standard Value')
+,new hhlp('STAND2','2nd Standard Value, see `STANDARD`.')
+,new hhlp('STAND2-ERR','Error in 2nd Standard Value')
+,new hhlp('STAND3','3rd Standard Value, see `STANDARD`.')
+,new hhlp('STAND3-ERR','Error in 3rd Standard Value')
+,new hhlp('STAND-ERR','Standard Error')
+,new hhlp('STAT-W G','Statistical-Weight Factor (g)')
+,new hhlp('SUM','Sum value of Quantity specified under `REACTION`')
+,new hhlp('-SUM-ERR','- Unsymmetric Error in Sum')
+,new hhlp('SUM-ERR','Error in Sum')
+,new hhlp('-t','4-momentum transfer squared')
+,new hhlp('TEMP','Sample Temperature')
+,new hhlp('TEMP-ERR','Error in Sample Temperature')
+,new hhlp('THICKNESS','Sample Thickness')
+,new hhlp('WVE-LN','Wave length of incident particle')
+,new hhlp('WVE-NM','Wave Number')
+];
+function kwdhlp(code,help) {
+    this.code=code;
+    this.help=help;
+}
+
+kwhlp=[
+ new kwdhlp('DECAY-MON'	, 'Standard decay data')
+,new kwdhlp('MONITOR'	, 'Standard')
+,new kwdhlp('EN-SEC'	, 'Secondary energy')
+,new kwdhlp('INC-SOURCE', 'Incident particle source')
+,new kwdhlp('INC-SPECT'	, 'Incident spectrum')
+,new kwdhlp('HISTORY'	, 'History of this ENTRY in EXFOR library')
+];
+</script>
+<style>.err0 { color:red; font-weight:bold; font-style:italic;}</style>
+<script language=javascript>
+    function copydata(dataid) {
+	var text=dataid;
+	var xx=document.getElementById(dataid);
+	if (!xx) return;
+	var span=xx.children[0];
+	text=span.innerHTML;
+	span=xx.children[1];
+	text+='\n'+span.innerHTML;
+	text=dataDelSpan(text);
+	try {
+	    navigator.clipboard.writeText(text);
+	    alert('Copied to clipboard OK.\nID: '+dataid);
+//	    console.log('Copied to clipboard:\n'+text);
+//	    console.log('Copied to clipboard:[\n'+text+'\n]');
+//	    console.log('Copied to clipboard: OK.');
+	} catch (e) {
+	    console.log('Error: Copy to clipboard: '+e);
+	}
+    }
+
+    function dataDelSpan(txt0) {
+	var text='';
+	var arr1=[];
+	var arr0=txt0.split('\n');
+	var ii,str,ind0,ind1;
+	for (ii=0; ii<arr0.length; ii++) {
+	    str=arr0[ii];
+	    for (;;) {
+		ind0=str.indexOf('<');	if (ind0<0) break;
+		ind1=str.indexOf('>');	if (ind1<ind0) break;
+		str=str.substring(0,ind0)+str.substring(ind1+1);
+	    }
+	    arr1.push(str);
+	}
+	text=arr1.join('\n');
+	return text;
+    }
+
+</script>
+</head>
+
+<body>
+<small>Converted from EXFOR by [x4tox4+], ver.2025-06-24, V.Zerkin, Vienna, 2007-2025<br></small>
+<pre>
+<tt class="ENTRY"><script language=javascript>outX4kw('ENTRY     ');</script>   10828001   20171126   20180209   20180207       1437              </tt>
+<tt class="SUBENT"><script language=javascript>outX4kw('SUBENT    ');</script>   10828001   20171126   20180209   20180207       1437              </tt>
+<tt class="BIB"><script language=javascript>outX4kw('BIB       ');</script>         15         97                                               </tt>
+<tt class="INSTITUTE"><script language=javascript>outX4kw('INSTITUTE ');</script> (1USALRL) Mc Clellan Central Lab, USAF</tt>
+<script language=javascript>
+     begKwCode(true,' ',0);
+      outX4Code2('(1USALRL)','Lawrence Livermore National Laboratory, Livermore, CA, United States of America');
+     endKwCode();
+</script><tt class="REFERENCE"><script language=javascript>outX4kw('REFERENCE ');</script> (J,PR/C,17,1089,1978)</tt>
+<script language=javascript>
+     begKwCode(true,' ',0);
+      outX4Code2('(J,PR/C,17,1089,1978)','#URL=<a href="http://journals.aps.org/prc/abstract/10.1103/PhysRevC.17.1089" target="Journal_window">http://journals.aps.org/prc/abstract/10.1103/PhysRevC.17.1089</a>, Jour: Physical Review, Part C, Nuclear Physics, Vol.17, p.1089 (1978), USA');
+     endKwCode();
+</script><tt class="AUTHOR"><script language=javascript>outX4kw('AUTHOR    ');</script> (T.C.Chapman,G.A.Anzelon,G.C.Spitale,D.R.Nethaway)</tt>
+<script language=javascript>
+     begKwCode(true,' ',0);
+      outX4Code1('(T.C.Chapman, G.A.Anzelon, G.C.Spitale, D.R.Nethaway)');
+     endKwCode();
+</script><tt class="TITLE"><script language=javascript>outX4kw('TITLE     ');</script> Fission product yields from 6-9 MeV neutron-induced</tt>
+            fission of 235U and 238U
+<script language=javascript>
+     begKwCode(true,' ',0);
+     endKwCode();
+</script><tt class="FACILITY"><script language=javascript>outX4kw('FACILITY  ');</script> (ACCEL,1USALRL) Insulated core transformer accelerator</tt>
+           (CYGFF,1USALRL) Cyclograaff accelerator
+<script language=javascript>
+     begKwCode(false,' ',0);
+      outX4Code2('(ACCEL','Accelerator');
+      outX4Code2(',1USALRL)','Lawrence Livermore National Laboratory, Livermore, CA, United States of America');
+     endKwCode();
+</script><script language=javascript>
+     begKwCode(true,' ',1);
+      outX4Code2('(CYGFF','Cyclograaff');
+      outX4Code2(',1USALRL)','Lawrence Livermore National Laboratory, Livermore, CA, United States of America');
+     endKwCode();
+</script><tt class="INC-SOURCE"><script language=javascript>outX4kw('INC-SOURCE');</script> (D-D) Deuterons on deuterium for neutron energies of</tt>
+            6,7,8, and 9-MeV.
+<script language=javascript>
+     begKwCode(true,' ',0);
+      outX4Code2('(D-D)','2H(d,n)');
+     endKwCode();
+</script><tt class="SAMPLE"><script language=javascript>outX4kw('SAMPLE    ');</script> Disk foils, 9.52-mm diameter, 1.27-mm thick, mass of</tt>
+            1.7-gms
+<script language=javascript>
+     begKwCode(true,' ',0);
+     endKwCode();
+</script><tt class="DETECTOR"><script language=javascript>outX4kw('DETECTOR  ');</script> (GELI) GeLi detectors used for measuring gammas</tt>
+           (PROPC) Gas flow proportional counters used for beta
+            detection
+<script language=javascript>
+     begKwCode(false,' ',0);
+      outX4Code2('(GELI)','Germanium-Lithium detector');
+     endKwCode();
+</script><script language=javascript>
+     begKwCode(true,' ',1);
+      outX4Code2('(PROPC)','Proportional counter');
+     endKwCode();
+</script><tt class="MONITOR"><script language=javascript>outX4kw('MONITOR   ');</script> Both detector efficiencies determined using 14.8-MeV</tt>
+            neutron induced fission of U-235 and U-238.
+           Number of fissions based on weighted average of
+            results calculated from Zr-97, Mo-99 and Ba-140.
+           Linear interpolations between published yields for
+            fission spectrum and 14 MeV neutrons.
+<script language=javascript>
+     begKwCode(true,' ',0);
+     endKwCode();
+</script><tt class="METHOD"><script language=javascript>outX4kw('METHOD    ');</script> (CHSEP) Sample foils wrapped in al to catch recoil</tt>
+            fission products. Cadmium used to minimize thermal
+            neutron effects.
+           Gold monitor foils used to verify negligible thermal
+            neutron effects.
+           For half-lives greater than 9-hrs, irradiation time was
+            10-hrs. For  shorter half-lives, irradiation time was
+            50-min.
+           Chemical analysis used on 10-hr irradiated foils.
+           (GSPEC) Gamma spectroscopy analysis used on others.
+<script language=javascript>
+     begKwCode(false,' ',0);
+      outX4Code2('(CHSEP)','Chemical separation of products');
+     endKwCode();
+</script><script language=javascript>
+     begKwCode(true,' ',1);
+      outX4Code2('(GSPEC)','Gamma ray spectrometry');
+     endKwCode();
+</script><tt class="CORRECTION"><script language=javascript>outX4kw('CORRECTION');</script> Number of fissions corrected for non-primary-energy</tt>
+            induced fission. Corrected for fission product decay
+            during irradiation.
+<script language=javascript>
+     begKwCode(true,' ',0);
+     endKwCode();
+</script><tt class="ERR-ANALYS"><script language=javascript>outX4kw('ERR-ANALYS');</script> Less than 5% uncertainty for weighted average of</tt>
+            number of fissions.
+           Number of atoms of each isotope taken to be the larger
+            of 2% or the statistical estimate from the computer
+            programs used in the calculation.
+           (DATA-ERR1) Total error with respect to 'true' value
+           Errors caused by uncertainties in-
+            -Nuclide measurement efficiency
+            -Radiochemical procedure
+            -Number of fissions by primary energy neutrons
+            -Uncertainty in fission yields and cross sections used
+             in calculations
+            -Neutron spectra
+            -Measurement efficiency
+           (DATA-ERR2) Error relative to same nuclei at other
+            energies
+<script language=javascript>
+     begKwCode(false,' ',0);
+     endKwCode();
+</script><script language=javascript>
+     begKwCode(false,' ',1);
+      outX4Code1('(DATA-ERR1)');
+     endKwCode();
+</script><script language=javascript>
+     begKwCode(true,' ',2);
+      outX4Code1('(DATA-ERR2)');
+     endKwCode();
+</script><tt class="DECAY-DATA"><script language=javascript>outX4kw('DECAY-DATA');</script> ((1.)35-BR-84-G,31.8MIN,DG,881.5,0.42)</tt>
+           ((2.)36-KR-87,1.267HR,DG,402.47,0.473,
+            DG,2554.92,0.0847)
+           ((3.)38-SR-89,50.55D,B)
+           ((4.)38-SR-91,9.48HR,DG,555.63,0.58,DG,749.77,0.24,
+            DG,1024.25,0.33)
+           ((5.)40-ZR-95,65.0D,B,,,DG,756.72,0.546,
+            DG,765.80,0.990)
+           ((6.)40-ZR-97,16.82HR,B,,,DG,658.18,0.990,
+            DG,743.37,0.940)
+           ((7.)42-MO-99,2.752D,B,,,DG,140.514,0.805,
+            DG,181.092,0.0604,DG,739.481,0.120,DG,777.900,0.0424)
+           ((8.)44-RU-103,39.6D,DG,497.09,0.900)
+           ((9.)43-TC-104,18.2MIN,DG,358.0,0.90,DG,530.5,0.15,
+            DG,535.1,0.14)
+           ((10.)45-RH-105-G,1.476D,DG,319.24,0.196)
+           ((11.)47-AG-111-G,7.431D,B,,,DG,342.14,0.0668)
+           ((12.)46-PD-112,21.12HR,DG,617.40,0.435)
+           ((13.)48-CD-115-G,2.208D,B,,,DG,336.25,0.465,
+            DG,492.29,0.0826,DG,527.86,0.280)
+           ((14.)48-CD-115-M,44.6D,B)
+           ((15.)51-SB-127,3.87D,DG,473.20,0.248,DG,684.90,0.368)
+           ((16.)50-SN-128-G,1.00HR,DG,482.0,0.66)
+           ((17.)51-SB-130-G,0.667HR,DG,330.9,0.78,DG,839.4,1.00)
+           ((18.)52-TE-132,3.24D,DG,228.2,0.88,DG,522.60,0.156,
+            DG,630.20,0.135)
+           ((19.)53-I-133-G,21.0HR,DG,529.91,0.83)
+           ((20.)55-CS-136-G,12.98D,B)
+           ((21.)55-CS-137,30.174YR,B)
+           ((22.)56-BA-140,12.80D,B,,,DG,537.261,0.2446,
+            DG,1596.20,0.9552)
+           ((23.)58-CE-141,32.38D,B,,,DG,145.44,0.493)
+           ((24.)57-LA-142,1.545HR,DG,641.21,0.465,
+            DG,2398.0,0.117,DG,2542.9,0.088)
+           ((25.)58-CE-143,1.379D,DG,293.20,0.435)
+           ((26.)58-CE-144,284.6D,B,,,DG,133.50,0.110)
+           ((27.)60-ND-147,11.04D,B,,,DG,531.00,0.1295)
+           ((28.)61-PM-151,1.183D,DG,167.73/168.38,0.092,
+            DG,240.08,0.036,DG,340.08,0.224)
+           ((29.)63-EU-156,15.19D,B)
+<script language=javascript>
+     begKwCode(false,' ',0);
+      outX4DecayData(35, 'BR', 84, 'G','(1.)35-BR-84-G,31.8MIN,DG,881.5,0.42');
+     endKwCode();
+</script><script language=javascript>
+     begKwCode(false,' ',1);
+      outX4DecayData(36, 'KR', 87, '','(2.)36-KR-87,1.267HR,DG,402.47,0.473,DG,2554.92,0.0847');
+     endKwCode();
+</script><script language=javascript>
+     begKwCode(false,' ',2);
+      outX4DecayData(38, 'SR', 89, '','(3.)38-SR-89,50.55D,B');
+     endKwCode();
+</script><script language=javascript>
+     begKwCode(false,' ',3);
+      outX4DecayData(38, 'SR', 91, '','(4.)38-SR-91,9.48HR,DG,555.63,0.58,DG,749.77,0.24,DG,1024.25,0.33');
+     endKwCode();
+</script><script language=javascript>
+     begKwCode(false,' ',4);
+      outX4DecayData(40, 'ZR', 95, '','(5.)40-ZR-95,65.0D,B,,,DG,756.72,0.546,DG,765.80,0.990');
+     endKwCode();
+</script><script language=javascript>
+     begKwCode(false,' ',5);
+      outX4DecayData(40, 'ZR', 97, '','(6.)40-ZR-97,16.82HR,B,,,DG,658.18,0.990,DG,743.37,0.940');
+     endKwCode();
+</script><script language=javascript>
+     begKwCode(false,' ',6);
+      outX4DecayData(42, 'MO', 99, '','(7.)42-MO-99,2.752D,B,,,DG,140.514,0.805,DG,181.092,0.0604,DG,739.481,0.120,DG,777.900,0.0424');
+     endKwCode();
+</script><script language=javascript>
+     begKwCode(false,' ',7);
+      outX4DecayData(44, 'RU', 103, '','(8.)44-RU-103,39.6D,DG,497.09,0.900');
+     endKwCode();
+</script><script language=javascript>
+     begKwCode(false,' ',8);
+      outX4DecayData(43, 'TC', 104, '','(9.)43-TC-104,18.2MIN,DG,358.0,0.90,DG,530.5,0.15,DG,535.1,0.14');
+     endKwCode();
+</script><script language=javascript>
+     begKwCode(false,' ',9);
+      outX4DecayData(45, 'RH', 105, 'G','(10.)45-RH-105-G,1.476D,DG,319.24,0.196');
+     endKwCode();
+</script><script language=javascript>
+     begKwCode(false,' ',10);
+      outX4DecayData(47, 'AG', 111, 'G','(11.)47-AG-111-G,7.431D,B,,,DG,342.14,0.0668');
+     endKwCode();
+</script><script language=javascript>
+     begKwCode(false,' ',11);
+      outX4DecayData(46, 'PD', 112, '','(12.)46-PD-112,21.12HR,DG,617.40,0.435');
+     endKwCode();
+</script><script language=javascript>
+     begKwCode(false,' ',12);
+      outX4DecayData(48, 'CD', 115, 'G','(13.)48-CD-115-G,2.208D,B,,,DG,336.25,0.465,DG,492.29,0.0826,DG,527.86,0.280');
+     endKwCode();
+</script><script language=javascript>
+     begKwCode(false,' ',13);
+     endKwCode();
+</script><script language=javascript>
+     begKwCode(false,' ',14);
+      outX4DecayData(51, 'SB', 127, '','(15.)51-SB-127,3.87D,DG,473.20,0.248,DG,684.90,0.368');
+     endKwCode();
+</script><script language=javascript>
+     begKwCode(false,' ',15);
+      outX4DecayData(50, 'SN', 128, 'G','(16.)50-SN-128-G,1.00HR,DG,482.0,0.66');
+     endKwCode();
+</script><script language=javascript>
+     begKwCode(false,' ',16);
+      outX4DecayData(51, 'SB', 130, 'G','(17.)51-SB-130-G,0.667HR,DG,330.9,0.78,DG,839.4,1.00');
+     endKwCode();
+</script><script language=javascript>
+     begKwCode(false,' ',17);
+      outX4DecayData(52, 'TE', 132, '','(18.)52-TE-132,3.24D,DG,228.2,0.88,DG,522.60,0.156,DG,630.20,0.135');
+     endKwCode();
+</script><script language=javascript>
+     begKwCode(false,' ',18);
+      outX4DecayData(53, 'I', 133, 'G','(19.)53-I-133-G,21.0HR,DG,529.91,0.83');
+     endKwCode();
+</script><script language=javascript>
+     begKwCode(false,' ',19);
+      outX4DecayData(55, 'CS', 136, 'G','(20.)55-CS-136-G,12.98D,B');
+     endKwCode();
+</script><script language=javascript>
+     begKwCode(false,' ',20);
+      outX4DecayData(55, 'CS', 137, '','(21.)55-CS-137,30.174YR,B');
+     endKwCode();
+</script><script language=javascript>
+     begKwCode(false,' ',21);
+      outX4DecayData(56, 'BA', 140, '','(22.)56-BA-140,12.80D,B,,,DG,537.261,0.2446,DG,1596.20,0.9552');
+     endKwCode();
+</script><script language=javascript>
+     begKwCode(false,' ',22);
+      outX4DecayData(58, 'CE', 141, '','(23.)58-CE-141,32.38D,B,,,DG,145.44,0.493');
+     endKwCode();
+</script><script language=javascript>
+     begKwCode(false,' ',23);
+      outX4DecayData(57, 'LA', 142, '','(24.)57-LA-142,1.545HR,DG,641.21,0.465,DG,2398.0,0.117,DG,2542.9,0.088');
+     endKwCode();
+</script><script language=javascript>
+     begKwCode(false,' ',24);
+      outX4DecayData(58, 'CE', 143, '','(25.)58-CE-143,1.379D,DG,293.20,0.435');
+     endKwCode();
+</script><script language=javascript>
+     begKwCode(false,' ',25);
+      outX4DecayData(58, 'CE', 144, '','(26.)58-CE-144,284.6D,B,,,DG,133.50,0.110');
+     endKwCode();
+</script><script language=javascript>
+     begKwCode(false,' ',26);
+      outX4DecayData(60, 'ND', 147, '','(27.)60-ND-147,11.04D,B,,,DG,531.00,0.1295');
+     endKwCode();
+</script><script language=javascript>
+     begKwCode(false,' ',27);
+      outX4DecayData(61, 'PM', 151, '','(28.)61-PM-151,1.183D,DG,167.73/168.38,0.092,DG,240.08,0.036,DG,340.08,0.224');
+     endKwCode();
+</script><script language=javascript>
+     begKwCode(true,' ',28);
+      outX4DecayData(63, 'EU', 156, '','(29.)63-EU-156,15.19D,B');
+     endKwCode();
+</script><tt class="STATUS"><script language=javascript>outX4kw('STATUS    ');</script> (APRVD) Approved by D.R.Nethaway, 80/10/10.</tt>
+           (TABLE) Table I, Phys.Rev.C17,1089,1978
+<script language=javascript>
+     begKwCode(false,' ',0);
+      outX4Code2('(APRVD)','Approved by author');
+      outX4Code1('(APRVD)');
+     endKwCode();
+</script><script language=javascript>
+     begKwCode(true,' ',1);
+      outX4Code2('(TABLE)','Data presented by authors');
+      outX4Code1('(TABLE)');
+     endKwCode();
+</script><tt class="HISTORY"><script language=javascript>outX4kw('HISTORY   ');</script> (19791214C)</tt>
+           (19811218A) Decay-data corrections.
+           (19880914A) Isomer field added. BIB corrections.
+           (19900404A) BIB update. data heading update.
+           (20171115A) OS. Correction in DECAY-DATA (Cs137).
+            Converted to lower case, several BIB changes.
+<script language=javascript>
+     begKwCode(false,' ',0);
+      outX4Code1('(19791214C)');
+     endKwCode();
+</script><script language=javascript>
+     begKwCode(false,' ',1);
+      outX4Code1('(19811218A)');
+     endKwCode();
+</script><script language=javascript>
+     begKwCode(false,' ',2);
+      outX4Code1('(19880914A)');
+     endKwCode();
+</script><script language=javascript>
+     begKwCode(false,' ',3);
+      outX4Code1('(19900404A)');
+     endKwCode();
+</script><script language=javascript>
+     begKwCode(true,' ',4);
+      outX4Code1('(20171115A)');
+     endKwCode();
+</script>ENDBIB              97
+NOCOMMON
+ENDSUBENT          100
+<tt class="SUBENT"><script language=javascript>outX4kw('SUBENT    ');</script>   10828003   20171126   20180209   20180207       1437              </tt>
+<tt class="BIB"><script language=javascript>outX4kw('BIB       ');</script>          2          3                                               </tt>
+<tt class="REACTION"><script language=javascript>outX4kw('REACTION  ');</script> (92-U-238(N,F)ELEM/MASS,CUM,FY)</tt>
+<script language=javascript>
+   begReactionCode('(92-U-238(N,F)ELEM/MASS,CUM,FY)','',true,' ');
+     begKwCode(true,' ',-1);
+      outX4Code2('','Target:<span class=x4code>U-238</span>&nbsp;#Projectile:<span class=x4code>N</span>&nbsp;#Reaction:<span class=x4code>N,F</span> <!br>&nbsp;#Process:<span class=x4code>F</span>:Fission <!br>&nbsp;#Quantity:<span class=x4code>CUM,FY</span>:FY:Cumulative fission-product yield ');
+     endKwCode();
+   endReactionCode();
+</script><tt class="SAMPLE"><script language=javascript>outX4kw('SAMPLE    ');</script> (92-U-238,ENR=0.9980)</tt>
+           (92-U-235,ENR=0.0020)
+<script language=javascript>
+     begKwCode(false,' ',0);
+      outX4Code1('(92-U-238,ENR=0.9980)');
+     endKwCode();
+</script><script language=javascript>
+     begKwCode(true,' ',1);
+      outX4Code1('(92-U-235,ENR=0.0020)');
+     endKwCode();
+</script>ENDBIB               3
+NOCOMMON
+<script language=javascript>
+   begKW_Data('DATA       ','         9','       116','        12','10828003','',true,true);
+</script><script language=javascript>
+    begLegend(9,116,12);
+outLegendLine('EN','','Energy of incident projectile, laboratory system','MEV','MeV');
+outLegendLine('EN-RSL-FW','','Incident projectile energy resolution (Full width)','MEV','MeV');
+outLegendLine('ELEMENT','','Atomic number of element','NO-DIM','no Dimensions');
+outLegendLine('MASS','','Atomic mass of nuclide','NO-DIM','no Dimensions');
+outLegendLine('ISOMER','','Isomer for nuclide given','NO-DIM','no Dimensions');
+outLegendLine('DATA','','Cumulative fission-product yield <br><font color=#aaaaaa>#+ 92-U-238(N,F)ELEM/MASS,CUM,FY</font>','PC/FIS','particles per 100 fissions');
+outLegendLine('DATA-ERR1','','1st data uncertainty, defined under ERR-ANALYS','PER-CENT','per-cent');
+outLegendLine('DATA-ERR2','','2nd data uncertainty, defined under ERR-ANALYS','PER-CENT','per-cent');
+outLegendLine('DECAY-FLAG','','Decay flag. See corresponding flag in BIB section','NO-DIM','no Dimensions');
+    endLegend();
+</script><tt class=x4code>EN          EN-RSL-FW   ELEMENT     MASS        ISOMER      DATA        DATA-ERR1   DATA-ERR2   DECAY-FLAG  </tt>
+<tt class=x4code>MEV         MEV         NO-DIM      NO-DIM      NO-DIM      PC/FIS      PER-CENT    PER-CENT    NO-DIM      </tt>
+<div style="display:table-cell;" id="DATA_10828003"><div onclick="copydata('DATA_10828003'); return false;" title="Click to copy CSV to clipboard" style="color:blue;font-family:Arial Narrow;font-size:7pt;">#EN:MEV, EN-RSL-FW:MEV, ELEMENT:NO-DIM, MASS:NO-DIM, ISOMER:NO-DIM, DATA:PC/FIS, DATA-ERR1:PER-CENT, DATA-ERR2:PER-CENT, DECAY-FLAG:NO-DIM</div><span >6.0        ,0.5        ,35.        ,84.        ,0.         ,0.7671     ,51.2       ,55.5       ,1.         
+6.0        ,0.5        ,36.        ,87.        ,           ,1.5447     ,21.1       ,23.4       ,2.         
+6.0        ,0.5        ,38.        ,89.        ,           ,2.6825     ,5.4        ,7.4        ,3.         
+6.0        ,0.5        ,38.        ,91.        ,           ,3.9198     ,5.9        ,9.2        ,4.         
+6.0        ,0.5        ,40.        ,95.        ,           ,5.1949     ,5.4        ,7.4        ,5.         
+6.0        ,0.5        ,40.        ,97.        ,           ,5.6423     ,5.4        ,9.3        ,6.         
+6.0        ,0.5        ,42.        ,99.        ,           ,6.2551     ,5.4        ,7.4        ,7.         
+6.0        ,0.5        ,43.        ,104.       ,           ,4.4748     ,28.0       ,34.5       ,9.         
+6.0        ,0.5        ,44.        ,103.       ,           ,5.2271     ,5.9        ,7.8        ,8.         
+6.0        ,0.5        ,45.        ,105.       ,           ,3.9812     ,6.8        ,10.2       ,10.        
+6.0        ,0.5        ,46.        ,112.       ,           ,0.1526     ,6.1        ,7.9        ,12.        
+6.0        ,0.5        ,47.        ,111.       ,           ,0.1933     ,5.4        ,7.4        ,11.        
+6.0        ,0.5        ,48.        ,115.       ,0.         ,0.1026     ,5.4        ,7.4        ,13.        
+6.0        ,0.5        ,48.        ,115.       ,1.         ,0.0216     ,39.0       ,39.6       ,14.        
+6.0        ,0.5        ,50.        ,128.       ,           ,0.4745     ,26.1       ,30.2       ,16.        
+6.0        ,0.5        ,51.        ,127.       ,           ,0.5787     ,50.3       ,50.8       ,15.        
+6.0        ,0.5        ,51.        ,130.       ,0.         ,0.5961     ,21.7       ,26.4       ,17.        
+6.0        ,0.5        ,52.        ,132.       ,           ,4.1981     ,5.7        ,7.6        ,18.        
+6.0        ,0.5        ,53.        ,133.       ,           ,6.1323     ,11.4       ,15.2       ,19.        
+6.0        ,0.5        ,55.        ,136.       ,           ,0.0220     ,60.9       ,61.3       ,20.        
+6.0        ,0.5        ,55.        ,137.       ,           ,5.3644     ,15.1       ,16.9       ,21.        
+6.0        ,0.5        ,56.        ,140.       ,           ,5.3836     ,5.4        ,7.4        ,22.        
+6.0        ,0.5        ,57.        ,142.       ,           ,4.4261     ,12.1       ,19.4       ,24.        
+6.0        ,0.5        ,58.        ,141.       ,           ,4.7188     ,5.4        ,8.9        ,23.        
+6.0        ,0.5        ,58.        ,143.       ,           ,4.3329     ,8.7        ,11.6       ,25.        
+6.0        ,0.5        ,58.        ,144.       ,           ,4.3256     ,5.6        ,9.0        ,26.        
+6.0        ,0.5        ,60.        ,147.       ,           ,2.5490     ,5.4        ,8.9        ,27.        
+6.0        ,0.5        ,61.        ,151.       ,           ,1.6858     ,45.0       ,46.1       ,28.        
+6.0        ,0.5        ,63.        ,156.       ,           ,0.1047     ,5.6        ,9.4        ,29.        
+7.1        ,0.3        ,35.        ,84.        ,           ,1.0700     ,34.3       ,40.3       ,1.         
+7.1        ,0.3        ,36.        ,87.        ,           ,1.8406     ,12.0       ,15.7       ,2.         
+7.1        ,0.3        ,38.        ,89.        ,           ,2.5700     ,5.5        ,7.5        ,3.         
+7.1        ,0.3        ,38.        ,91.        ,           ,4.1402     ,6.0        ,9.3        ,4.         
+7.1        ,0.3        ,40.        ,95.        ,           ,5.1907     ,5.5        ,7.5        ,5.         
+7.1        ,0.3        ,40.        ,97.        ,           ,5.5406     ,5.5        ,9.4        ,6.         
+7.1        ,0.3        ,42.        ,99.        ,           ,6.0815     ,5.5        ,7.5        ,7.         
+7.1        ,0.3        ,43.        ,104.       ,           ,4.5112     ,15.9       ,25.9       ,9.         
+7.1        ,0.3        ,44.        ,103.       ,           ,5.9156     ,6.8        ,8.5        ,8.         
+7.1        ,0.3        ,45.        ,105.       ,           ,3.4919     ,6.8        ,10.2       ,10.        
+7.1        ,0.3        ,46.        ,112.       ,           ,0.1393     ,5.7        ,7.6        ,12.        
+7.1        ,0.3        ,47.        ,111.       ,           ,0.1731     ,5.5        ,7.4        ,11.        
+7.1        ,0.3        ,48.        ,115.       ,           ,0.0981     ,5.8        ,7.7        ,13.        
+7.1        ,0.3        ,48.        ,115.       ,           ,0.0226     ,31.4       ,32.1       ,14.        
+7.1        ,0.3        ,50.        ,128.       ,           ,0.4416     ,12.1       ,19.5       ,16.        
+7.1        ,0.3        ,51.        ,127.       ,           ,1.0065     ,50.3       ,50.8       ,15.        
+7.1        ,0.3        ,51.        ,130.       ,           ,0.6161     ,14.4       ,20.8       ,17.        
+7.1        ,0.3        ,52.        ,132.       ,           ,4.4889     ,5.7        ,7.6        ,18.        
+7.1        ,0.3        ,53.        ,133.       ,           ,6.8391     ,8.7        ,13.4       ,19.        
+7.1        ,0.3        ,55.        ,136.       ,           ,0.0166     ,32.2       ,33.0       ,20.        
+7.1        ,0.3        ,55.        ,137.       ,           ,2.6593     ,44.5       ,45.2       ,21.        
+7.1        ,0.3        ,56.        ,140.       ,           ,5.3458     ,5.5        ,7.5        ,22.        
+7.1        ,0.3        ,57.        ,142.       ,           ,4.7617     ,9.6        ,18.0       ,24.        
+7.1        ,0.3        ,58.        ,141.       ,           ,4.7372     ,5.5        ,9.0        ,23.        
+7.1        ,0.3        ,58.        ,143.       ,           ,4.6913     ,6.0        ,9.7        ,25.        
+7.1        ,0.3        ,58.        ,144.       ,           ,5.0795     ,5.8        ,9.1        ,26.        
+7.1        ,0.3        ,60.        ,147.       ,           ,2.5756     ,5.5        ,9.0        ,27.        
+7.1        ,0.3        ,61.        ,151.       ,           ,0.7015     ,27.9       ,29.7       ,28.        
+7.1        ,0.3        ,63.        ,156.       ,           ,0.0773     ,6.2        ,9.8        ,29.        
+8.1        ,0.4        ,35.        ,84.        ,           ,1.1102     ,33.0       ,39.8       ,1.         
+8.1        ,0.4        ,36.        ,87.        ,           ,1.7395     ,15.0       ,18.5       ,2.         
+8.1        ,0.4        ,38.        ,89.        ,           ,2.6125     ,6.4        ,8.4        ,3.         
+8.1        ,0.4        ,38.        ,91.        ,           ,3.7717     ,6.6        ,10.0       ,4.         
+8.1        ,0.4        ,40.        ,95.        ,           ,4.9810     ,6.0        ,8.1        ,5.         
+8.1        ,0.4        ,40.        ,97.        ,           ,5.3968     ,5.9        ,10.1       ,6.         
+8.1        ,0.4        ,42.        ,99.        ,           ,6.0623     ,5.9        ,8.0        ,7.         
+8.1        ,0.4        ,43.        ,104.       ,           ,4.5611     ,16.3       ,27.4       ,9.         
+8.1        ,0.4        ,44.        ,103.       ,           ,5.2195     ,7.3        ,9.2        ,8.         
+8.1        ,0.4        ,45.        ,105.       ,           ,3.5643     ,7.4        ,10.9       ,10.        
+8.1        ,0.4        ,46.        ,112.       ,           ,0.1688     ,6.9        ,8.6        ,12.        
+8.1        ,0.4        ,47.        ,111.       ,           ,0.1945     ,6.9        ,8.6        ,11.        
+8.1        ,0.4        ,48.        ,115.       ,           ,0.1229     ,6.0        ,7.9        ,13.        
+8.1        ,0.4        ,48.        ,115.       ,           ,0.0123     ,32.3       ,33.1       ,14.        
+8.1        ,0.4        ,50.        ,128.       ,           ,0.4604     ,12.9       ,20.9       ,16.        
+8.1        ,0.4        ,51.        ,127.       ,           ,0.5390     ,51.1       ,51.6       ,15.        
+8.1        ,0.4        ,51.        ,130.       ,           ,0.7326     ,11.6       ,19.3       ,17.        
+8.1        ,0.4        ,52.        ,132.       ,           ,4.6621     ,5.9        ,8.1        ,18.        
+8.1        ,0.4        ,53.        ,133.       ,           ,6.7132     ,9.9        ,14.6       ,19.        
+8.1        ,0.4        ,55.        ,136.       ,           ,0.0105     ,27.8       ,28.7       ,20.        
+8.1        ,0.4        ,55.        ,137.       ,           ,3.8148     ,18.4       ,20.2       ,21.        
+8.1        ,0.4        ,56.        ,140.       ,           ,5.1455     ,6.0        ,8.2        ,22.        
+8.1        ,0.4        ,57.        ,142.       ,           ,4.6722     ,33.9       ,37.6       ,24.        
+8.1        ,0.4        ,58.        ,141.       ,           ,4.6197     ,5.9        ,9.7        ,23.        
+8.1        ,0.4        ,58.        ,143.       ,           ,4.7749     ,5.9        ,10.1       ,25.        
+8.1        ,0.4        ,58.        ,144.       ,           ,4.3396     ,6.0        ,9.7        ,26.        
+8.1        ,0.4        ,60.        ,147.       ,           ,2.6285     ,6.4        ,9.9        ,27.        
+8.1        ,0.4        ,61.        ,151.       ,           ,0.8208     ,13.5       ,17.3       ,28.        
+8.1        ,0.4        ,63.        ,156.       ,           ,0.0770     ,11.8       ,14.3       ,29.        
+9.1        ,0.3        ,35.        ,84.        ,           ,0.8941     ,31.8       ,39.9       ,1.         
+9.1        ,0.3        ,36.        ,87.        ,           ,1.9090     ,18.3       ,21.7       ,2.         
+9.1        ,0.3        ,38.        ,89.        ,           ,2.4176     ,9.1        ,10.9       ,3.         
+9.1        ,0.3        ,38.        ,91.        ,           ,4.0200     ,7.8        ,11.2       ,4.         
+9.1        ,0.3        ,40.        ,95.        ,           ,4.9878     ,7.3        ,9.4        ,5.         
+9.1        ,0.3        ,40.        ,97.        ,           ,5.2820     ,7.3        ,11.5       ,6.         
+9.1        ,0.3        ,42.        ,99.        ,           ,5.9758     ,7.2        ,9.3        ,7.         
+9.1        ,0.3        ,43.        ,104.       ,           ,4.5104     ,12.6       ,27.3       ,9.         
+9.1        ,0.3        ,44.        ,103.       ,           ,4.8741     ,10.5       ,12.1       ,8.         
+9.1        ,0.3        ,45.        ,105.       ,           ,2.6564     ,11.9       ,14.9       ,10.        
+9.1        ,0.3        ,46.        ,112.       ,           ,0.2225     ,8.5        ,10.0       ,12.        
+9.1        ,0.3        ,47.        ,111.       ,           ,0.2687     ,8.3        ,9.9        ,11.        
+9.1        ,0.3        ,48.        ,115.       ,           ,0.1687     ,6.8        ,8.5        ,13.        
+9.1        ,0.3        ,48.        ,115.       ,           ,0.0221     ,32.4       ,33.1       ,14.        
+9.1        ,0.3        ,50.        ,128.       ,           ,0.5671     ,15.2       ,23.0       ,16.        
+9.1        ,0.3        ,51.        ,127.       ,           ,0.5113     ,17.1       ,18.5       ,15.        
+9.1        ,0.3        ,51.        ,130.       ,           ,0.7524     ,15.7       ,22.2       ,17.        
+9.1        ,0.3        ,52.        ,132.       ,           ,4.3010     ,7.3        ,9.5        ,18.        
+9.1        ,0.3        ,53.        ,133.       ,           ,6.3075     ,10.9       ,16.0       ,19.        
+9.1        ,0.3        ,55.        ,136.       ,           ,0.0172     ,97.2       ,97.5       ,20.        
+9.1        ,0.3        ,55.        ,137.       ,           ,5.3348     ,16.7       ,18.9       ,21.        
+9.1        ,0.3        ,56.        ,140.       ,           ,4.9824     ,7.6        ,9.7        ,22.        
+9.1        ,0.3        ,57.        ,142.       ,           ,4.7060     ,11.6       ,21.2       ,24.        
+9.1        ,0.3        ,58.        ,141.       ,           ,4.4050     ,7.3        ,11.2       ,23.        
+9.1        ,0.3        ,58.        ,143.       ,           ,4.3702     ,7.4        ,11.6       ,25.        
+9.1        ,0.3        ,58.        ,144.       ,           ,4.2717     ,7.3        ,11.1       ,26.        
+9.1        ,0.3        ,60.        ,147.       ,           ,2.4378     ,8.9        ,12.2       ,27.        
+9.1        ,0.3        ,61.        ,151.       ,           ,1.0407     ,55.0       ,56.2       ,28.        
+9.1        ,0.3        ,63.        ,156.       ,           ,0.0834     ,14.1       ,16.5       ,29.        
+</span></div>ENDDATA
+ENDSUBENT          244
+ENDENTRY
+</body>
+</html>
