@@ -4,7 +4,7 @@ by V.Zerkin for NRDC, 2025-07-30
 ## Content
 
 - **[x4plus/](x4plus)** - translates EXFOR file to EXFOR-interpreted "X4+"
-- **[zchex/](zchex)** - zchex for MS-Windows, Linux, and MacOS: executables + testing scripts and samples
+- **[zchex/](zchex)** - codes for MS-Windows, Linux, and MacOS: executables + testing scripts and samples
   - **ZCHEX** - checks an input file in the EXFOR transmission format
   - **DANLO** - prepares dictionaries for ZCHEX from "Daniel-backup file"
   - **ZORDER** - adds record identification and bookkeeping information to an EXFOR file producing TRANS file
