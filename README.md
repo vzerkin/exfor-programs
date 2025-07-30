@@ -1,4 +1,4 @@
-# EXFOR-programs for EXFOR compilers
+# EXFOR-Programs for EXFOR compilers
 by V.Zerkin for NRDC, 2025-07-30
 
 ## Content
