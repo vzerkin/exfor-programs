@@ -1,4 +1,4 @@
-# EXFOR-Programs - codes for processing EXFOR files
+# EXFOR-Programs - processing EXFOR files
 by V.Zerkin for NRDC, 2025-07-30
 
 ## Content
