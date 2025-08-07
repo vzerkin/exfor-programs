@@ -1,0 +1,1172 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>EXFOR-Interpreted, V.Zerkin, IAEA, 2012-2025</title>
+<style>
+
+p,ul,li {
+  font-family:verdana,geneva,helvetica,sans-serif;
+/* font-size:12px;*/
+  color:black;
+/*	font-weight: bold;*/
+}
+
+tt,pre {
+  font-family:courier new,courier;
+  white-space:0px;
+  font-size:8pt;
+  color:black;
+  letter-spacing:0px;
+  font-weight: normal;
+	margin-top: 0;
+/*	line-height:9pt;*/
+}
+
+div.x4top {
+  font-family:verdana,geneva,helvetica,sans-serif;
+  font-size:8pt;
+  color:#777;
+  letter-spacing:0px;
+  font-weight: normal;
+	margin-left: 2px;
+	margin-top: 5px;
+	margin-bottom: 10px;
+/*	line-height:12pt;*/
+  border:1px solid #777;
+  background-color:#ffc;
+  padding: 4px;
+  width: 330pt;
+}
+div.x4top1 {
+  font-family:verdana,geneva,helvetica,sans-serif;
+  font-size:9pt;
+  color:black;
+}
+
+tt.hdr {
+	text-decoration: none;
+	color: red;
+}
+tt.hdr0 {
+	text-decoration: none;
+	color: blue;
+}
+
+tt.lf {
+	line-height:3pt;
+}
+tt.ENTRY {
+	background-color: #d8d0f0;
+}
+tt.SUBENT {
+	background-color: #ffa0a0;
+}
+tt.data {
+	color:blue;
+}
+tt.common {
+	color:blue;
+}
+tt.intr {
+	font-family:verdana,geneva,helvetica,sans-serif;
+	color:#c000c0;
+/*	background-color: #ffffa0;*/
+}
+.intr {
+	font-family:verdana,geneva,helvetica,sans-serif;
+	color:#c000c0;
+}
+
+TABLE {
+	font-size: 9pt; 
+	font-family: verdana,helvetica; 
+	text-decoration: none;
+/*	white-space:nowrap;*/
+/*	vertical-align:top;*/
+/*	border: 0px solid #000;*/
+	border-bottom: 1px solid #000;
+	border-right: 1px solid #000;
+}
+
+TD {
+	font-size: 8pt; 
+	font-family: verdana,helvetica;
+	text-decoration: none;
+	white-space:nowrap;
+	vertical-align:top;
+/*	border: 1px solid #000;*/
+	border-top: 1px solid #000;
+	border-left: 1px solid #000;
+	padding-left: 6px;
+	padding-right: 5px;
+}
+
+form {
+  white-space:11pt;
+	margin-top: 0;
+	margin-left: 0;
+	margin-right: 0;
+	margin-bottom: 0;
+	margin-height: 0;
+	margin-width: 0;
+}
+
+BODY {
+	margin-top: 4px;
+	margin-left: 6px;
+	margin-right: 0;
+	margin-bottom: 0;
+	margin-height: 0;
+	margin-width: 0;
+	background-color: white;
+/*	background-color: #d8d0f0;*/
+  font-family:verdana,geneva,helvetica,sans-serif;
+  font-size:10pt;
+  color:black;
+
+}
+
+A.kw {
+	text-decoration: none;
+	color: #000000;
+/*	font-style:italic;*/
+	background-color: #e0ffff;
+}
+
+a.hdr {
+	text-decoration: none;
+	color: blue;
+	background-color: #e0ffff;
+}
+
+A {
+	text-decoration: none;
+	color: blue;
+}
+
+A:hover   {
+	text-decoration: underline;
+	color: red;
+}
+
+.x4legend {
+  margin:4px;
+  margin-left:0px;
+  font-size:8pt;
+  border: 1px dotted #aaa;
+  border-collapse:collapse;
+  line-height: 8pt;
+  vertical-align:top;
+}
+.x4code {
+    color: green;
+/*    font-weight: bold;*/
+}
+.x4hlp {
+    font-size:8pt;
+/*  font-style: italic;*/
+    color: #a0a;
+    margin-left: 8px;
+}
+.x4ptr {
+    background-color: red;
+    color: yellow;
+/*    padding-left:  3px;
+    padding-right: 3px;
+*/
+}
+</style>
+<script language=javascript>
+var href0='http://www.nndc.bnl.gov/nudat3/getdataset.jsp?nucleus=';
+var href1='&unc=nds';
+var hrefDataDecay0='http://www.nndc.bnl.gov/nudat3/decaysearchdirect.jsp?nuc=';
+var hrefDataDecay1='&unc=nds';
+
+//to link to the IAEA-Livechart, uncomment following 2 lines
+//href0='http://nds.iaea.org/relnsd/NdsEnsdf/nuclide.jsp?NUCID='
+//hrefDataDecay0='http://nds.iaea.org/relnsd/NdsEnsdf/nuclide.jsp?NUCID='
+
+
+    function outX4kw(kw0)
+    {
+	var kw,help;
+//	document.write(kw0);
+	kw=delSpaces(kw0);
+//	if (kw=='SUBENT') document.write("<tt class=lf>\n</tt>");
+	help=getKeywordHelp(kw);
+	if (help=='') {
+	    document.write(kw0);
+	    return;
+	}
+	document.writeln('<a href="javascript:akwlink(\''+kw+'\')" ');
+	document.writeln(' class="kw" ');
+	document.writeln(' title="'+help+'" ');
+//	document.writeln(' onmouseover="javascript:startTipSIG('+mf+')" ');
+//	document.writeln(' onmouseout="javascript:stopTip()" ');
+	document.write('>');
+	document.write(kw0);
+	document.write('</a>');
+    }
+
+    function delSpaces(str0) {
+	var i,n,ll,str;
+        //alert(' addIt: ['+str+'] to:['+str0+']');
+	str=str0;
+	ll=str.length;
+        for (n=0, i=0; n<ll; n++) {
+	    if (str.charAt(i)==' ') {
+		str=str.substring(0,i)+str.substring(i+1,str.length);
+		//break;
+	    }
+	    else i++;
+	}
+	//alert ('str=['+str+']');
+	return(str);
+    }
+
+    function getKeywordHelp00(kw) {
+	var i,n,ll,str,help;
+//	help='---help---['+kw+']---';
+	help='';
+	if (kw=='DECAY-MON')	return('Standard decay data');
+	if (kw=='MONITOR')	return('Standard');
+	if (kw=='EN-SEC')	return('Secondary energy');
+	if (kw=='INC-SOURCE')	return('Incident particle source');
+	if (kw=='INC-SPECT')	return('Incident spectrum');
+	if (kw=='HISTORY')	return('History of this ENTRY in the database');
+	return(help);
+    }
+    function getKeywordHelp(kw) {
+	var i,n,ll,str,help;
+//	help='---help---['+kw+']---';
+	help='';
+	for (i=0; i<kwhlp.length; i++) {
+	    if (kw==kwhlp[i].code) return kwhlp[i].help;
+	}
+	return(help);
+    }
+
+
+    function outX4hdr(kw0,pointer)
+    {
+	var kw,help;
+//	document.write(kw0);
+	kw=delSpaces(kw0);
+	help=getHeaderHelp(kw);
+	if (help=='') {
+	    document.write('<tt ');
+	    document.write(' class="hdr0" ');
+	    document.write('>');
+	    document.write(kw0);
+	    document.write(pointer);
+	    document.write('</tt>');
+	    return;
+	}
+	document.writeln('<a href="javascript:ahdlink(\''+kw+'\')" ');
+	document.writeln(' class="hdr" ');
+	document.writeln(' title="'+help+'" ');
+	document.write('>');
+	document.write(kw0);
+	document.write(pointer);
+	document.write('</a>');
+    }
+    function getHeaderHelp(kw) {
+	var i,n,ll,str,help;
+//	help='---help---['+kw+']---';
+	help='';
+	for (i=0; i<hdrhlp.length; i++) {
+	    if (kw==hdrhlp[i].code) return hdrhlp[i].help;
+	}
+	return(help);
+    }
+
+    function akwlink(kw)
+    {
+	var str,help;
+	help=getKeywordHelp(kw);
+	str='---BIB Keyword--- \n';
+	str=str+'['+kw+']\n';
+	if (help!='') {
+	    str=str+''+help;
+	}
+	alert(str);
+    }
+
+    function ahdlink(kw)
+    {
+	var str,help;
+	help=getHeaderHelp(kw);
+	str='---DATA Header--- \n';
+	str=str+'['+kw+']\n';
+	if (help!='') {
+	    str=str+''+help;
+	}
+	alert(str);
+    }
+
+    function myencodeURI(str0) {
+	var str=str0;
+//	str=encodeURI(str0);
+//	str=encodeURIComponent(str0);
+//	str=str0.replace(/+/g,'%2B');
+	str=str0.replace(/ /g,'%20');
+	return str;
+    }
+
+    function outLinkToEntry(server,accnum,UpdateDateTxt)
+    {
+	var str,link,str1;
+//	alert('host=['+window.location.hostname+']\n'+'server='+server);
+//	if (server=='localhost')
+	server=window.location.hostname;
+	link="http://"+server+"/EXFOR/"+accnum;
+	document.writeln("<div class=x4top>");
+	link="http://"+server+"/EXFOR/"+accnum;
+	document.writeln("<div class=x4top1>");
+	document.writeln("EXFOR data: ");
+	document.writeln("<a href="+link+">");
+	document.writeln(""+link);
+	document.writeln("</a>");
+	document.writeln("</div>");
+	document.writeln("Data retrieved from the EXFOR database version of "+UpdateDateTxt+".");
+	document.writeln("</div>");
+    }
+
+    function outLinkToAuthor(link,author)
+    {
+	var str;
+	link=myencodeURI(link);
+	document.writeln("<a href="+link+">");
+	document.writeln(""+author);
+	document.writeln("</a>");
+	document.writeln("<br>");
+    }
+
+    function outLinkToEntry00(server,accnum,UpdateDateTxt)
+    {
+	var str,link;
+	link="http://"+server+"/EXFOR/"+accnum;
+	document.writeln("<div class=x4top>");
+	link="http://"+server+"/EXFOR/"+accnum;
+	document.writeln("#<br>");
+	document.writeln("#EXFOR data: ");
+	document.writeln("<a href="+link+">");
+	document.writeln(""+link);
+	document.writeln("</a>");
+	document.writeln("<br>");
+	document.writeln("#<br>");
+	document.writeln("#Data retrieved from the EXFOR database (version of "+UpdateDateTxt+")");
+	document.writeln("</div>");
+    }
+
+
+
+    function begKwCode(last,pointer,iinum) {
+    }
+    function endKwCode() {
+    }
+    function begCommon0() {
+    }
+    function outX4Code2(code,shortHelp) {
+//??09	document.write('<div>');
+	if (code.charAt(0)=='+')
+	document.write('           <tt class=intr>#'+code+shortHelp+'</tt>');
+	else
+	document.write('           <tt class=intr>#<tt class=x4code>'+code+'</tt> '+shortHelp+'</tt>');
+//??09	document.write('</div>');
+	document.writeln('');
+    }
+
+//http://www.nndc.bnl.gov/nudat2/getdataset.jsp?nucleus=157HO&unc=nds
+    function outX4ReacProduct(zz,sym,aa,meta) {
+	var str,url,str1,meta1;
+	var shortHelp='';
+	str1=''+zz+'-'+sym+'-'+aa;
+	meta1=meta;
+//	if (meta!='') str1+='-'+meta1;
+	url=href0+aa+sym+href1;
+	str='# Product: ';
+	str=str+'<a href="'+url+'"';
+	str=str+' title="See it in nuclear structure database..." ';
+	str=str+' target="_blank" ';
+	str=str+' >';
+	str=str+'['+str1+']';
+	str=str+'</a>';
+	document.write('           <tt class=intr>'+str+' '+shortHelp+'</tt>');
+	document.writeln('');
+    }
+
+//http://www.nndc.bnl.gov/nudat2/decaysearchdirect.jsp?nuc=131XE&unc=nds
+    function outX4DecayData(zz,sym,aa,meta,shortHelp) {
+	var str,url,str1,meta1;
+//	var shortHelp='';
+	str1=''+zz+'-'+sym+'-'+aa;
+	meta1=meta;
+//	if (meta!='') str1+='-'+meta1;
+	url=hrefDataDecay0+aa+sym+hrefDataDecay1;
+	str='# Decay-data:';
+	str=str+'<a href="'+url+'"';
+	str=str+' title="See it in nuclear structure database..." ';
+	str=str+' target="_blank" ';
+	str=str+' >';
+	str=str+'['+str1+']';
+	str=str+'</a>';
+//	document.write('           <tt class=intr>'+str+' '+shortHelp+'</tt>');
+	document.write('           <tt class=intr>'+str+' <tt class=x4code>'+shortHelp+'</tt></tt>');
+	document.writeln('');
+    }
+
+    function begKW_Data(code,iCol,iRaw,iw,accnum,shortHelp,open,last) {
+	var text='';
+	text+=code;
+//	text=text+' '+iCol+' x '+iRaw+' x 12';
+	text=text+' '+iCol+' '+iRaw+' '+iw;
+	document.writeln(text);
+    }
+    function begLegend(iCol,iRow,iWidth) {
+//	document.write('<tt class=intr>                      #Legend: '+iCol+' x '+iRow+' x '+iWidth+' : data columns * lines * column width'+'</tt>');
+//	document.write('<div style="padding-left:65pt;">');
+//	document.write('<div style="padding-left:60pt;padding-bottom:8pt;">');
+	document.write('<div style="padding-left:60pt;">');
+	document.write('<tt class=intr>#Legend: '+iCol+' x '+iRow+' x '+iWidth+' : data columns * lines * column width'+'</tt>');
+	document.write('<table border=1 cellpadding=2 cellspacing=0 class="x4legend intr" style="background-color:#e8ffff;">');
+    }
+    function endLegend() {
+	document.write('</table>');
+	document.writeln('<span class=intr>#/Legend</span>');
+	document.write('</div>');
+//	document.writeln('<span class=intr>                      #/Legend</span>');
+    }
+
+var headerHelpImagesDir='../x4js/x4ppimg/';
+    function outLegendLine(header,pointer,help,ucode,uhelp) {
+	var headerOut=header;
+	var ll=header.length;
+	document.writeln('<tr>');
+//	outHdr(header,pointer);
+
+//	document.writeln('<td class=x4legend>#<span class=x4code>'+header+'</span></td>');
+	if (ll>3) if (header.indexOf('-CM')==ll-3)
+	headerOut='<a href="'+headerHelpImagesDir+'header-CM.png" title="Centre of Mass System" target="_blank">'+header+'</a>';
+	document.writeln('<td class=x4legend>#<span class=x4code>'+headerOut+'</span></td>');
+
+	document.writeln('<td class=x4legend><span class=x4ptr>'+pointer+'</span></td>');
+	document.writeln('<td class=x4legend><span class=x4hlp>'+help+'</span></td>');
+	document.writeln('<td class=x4legend><span class=x4code>'+ucode+'</span></td>');
+	document.writeln('<td class=x4legend><span class=x4hlp>'+uhelp+'</span></td>');
+	document.writeln('</tr>');
+    }
+    function begReactionCode(reacode,hlp,last,pointer) {
+	var strPointer='';
+//	outX4Code2(reacode,'');
+	if (pointer)
+	if (pointer!='')
+	if (pointer!=' ')
+	{
+	strPointer='<span class="x4ptr">'+pointer+'</span> ';
+	}
+	document.write('           <tt class=intr># '+strPointer+reacode+'  '+hlp+'</tt>');
+	document.writeln('');
+    }
+    function endReactionCode() {
+    }
+    function outX4Code1(code) {
+//	outX4Code2(code,'');
+    }
+function hhlp(code,help) {
+    this.code=code;
+    this.help=help;
+}
+
+hdrhlp=[
+ new hhlp('+ANG-RSL','+ Unsymmetric Angular Resolution')
+,new hhlp('+DATA-ERR','+ Unsymmetric Data Error, see `ERR-ANALYS`')
+,new hhlp('+DATA-ERR1','+ Unsymmetric data uncertainty')
+,new hhlp('+DATA-ERR2','+ Unsymmetric 2nd data uncertainty')
+,new hhlp('+E-ERR','+ Unsymmetric Outgoing Particle Energy Error')
+,new hhlp('+E-LVL-ERR','+ Unsymmetric Level Energy Error')
+,new hhlp('+EN-ERR','+ Unsymmetric Energy Error')
+,new hhlp('+EN-RES-ER','+ Unsymmetric Resonance Energy Error')
+,new hhlp('+EN-RSL','+ Unsymmetric Energy Resolution')
+,new hhlp('+ERR-5','+ Unsymmetric 5th Systematic Error, see `ERR-ANALYS`.')
+,new hhlp('+ERR-S','+ Unsymmetric Statistical Error')
+,new hhlp('+ERR-SYS','+ Unsymmetric Systematic Error')
+,new hhlp('+ERR-T','+ Unsymmetric Total Error')
+,new hhlp('+MISC-ERR','+ Unsymemtric Error in Miscellaneous Value')
+,new hhlp('+MONIT-ERR','+ Unsymmetric Error in Value Assumed for Normalization')
+,new hhlp('+RATIO-ERR','+ Unsymmetric Ratio Error, see `ERR-ANALYS`.')
+,new hhlp('+SUM-ERR','+ Unsymmetric Error in Sum, see `ERR-ANALYS`.')
+,new hhlp('ANAL-STEP','Analysis Energy Step')
+,new hhlp('ANG','Angle, Laboratory System')
+,new hhlp('ANG1','1st Angle, definition given in BIB Section')
+,new hhlp('ANG1-CM','Angle, C.M. System, definition given in BIB')
+,new hhlp('ANG1-CM-MN','Lower Limit of First Angle, C.M. System')
+,new hhlp('ANG1-CM-MX','Upper Limit of First Angle, C.M. System')
+,new hhlp('ANG1-ERR','1st Angle Error, definition given in BIB Section')
+,new hhlp('ANG2','2nd Angle, definition given in BIB Section')
+,new hhlp('ANG2-CM','Angle, C.M. System, definition given in BIB')
+,new hhlp('ANG2-ERR','2nd Angle Error, definition given in BIB Section')
+,new hhlp('ANG2-RL-CM','Relative 2nd Angle, C.M. System')
+,new hhlp('ANG3','3rd Angle, definition given in BIB Section')
+,new hhlp('ANG4','4th Angle, definition given in BIB Section')
+,new hhlp('ANG-AZ','Azimuthal Angle')
+,new hhlp('ANG-AZ1','Azimuthal Angle')
+,new hhlp('ANG-AZ2','Azimuthal Angle')
+,new hhlp('ANG-AZ-RL','Azimuthal Angle Between 2 Reaction Planes')
+,new hhlp('ANG-CM','Angle, C.M. System')
+,new hhlp('ANG-CM-DN','Angle for Reaction Ratio Denominator, C.M. System')
+,new hhlp('ANG-CM-MAX','Upper Limit of Angular Range, C.M. System')
+,new hhlp('ANG-CM-MIN','Lower Limit of Angular Range, C.M. System')
+,new hhlp('ANG-CM-NM','Angle for Reaction Ratio Numerator, C.M. System')
+,new hhlp('ANG-DN','Angle, Reaction Ratio Denominator')
+,new hhlp('ANG-ERR','Angle Error')
+,new hhlp('ANG-ERR-D','Digitizing error of angle')
+,new hhlp('ANG-MAX','Upper Limit of Angular Range, Lab. System')
+,new hhlp('ANG-MIN','Lower Limit of Angular Range, Lab. System')
+,new hhlp('ANG-MN','Mean angle of correlated pair')
+,new hhlp('ANG-MN-ERR','Error of Mean angle of correlated pair')
+,new hhlp('ANG-NM','Angle, Reaction Ratio Numerator')
+,new hhlp('ANG-NRM','Angle at which normalization was made')
+,new hhlp('ANG-RL','Relative Angle')
+,new hhlp('ANG-RL-CM','Relative Angle, C.M. System')
+,new hhlp('-ANG-RSL','- Unsymmetric Angular Resolution')
+,new hhlp('ANG-RSL','Angular Resolution')
+,new hhlp('ASSUM','Assumed Value, defined under `ASSUMED`.')
+,new hhlp('ASSUM1','1st Assumed Value, defined under `ASSUMED`.')
+,new hhlp('ASSUM1-ERR','1st Assumed Value Error')
+,new hhlp('ASSUM1-MAX','Upper Limit of 1st Assumed Value')
+,new hhlp('ASSUM1-MIN','Lower Limit of 1st Assumed Value')
+,new hhlp('ASSUM2','2nd Assumed Value, defined under `ASSUMED`.')
+,new hhlp('ASSUM2-ERR','2nd Assumed Value Error')
+,new hhlp('ASSUM2-MAX','Upper Limit of 2nd Assumed Value')
+,new hhlp('ASSUM2-MIN','Lower Limit of 2nd Assumed Value')
+,new hhlp('ASSUM3','3rd Assumed Value, defined under `ASSUMED`.')
+,new hhlp('ASSUM3-ERR','3th Assumed Value Error')
+,new hhlp('ASSUM4','4th Assumed Value, defined under `ASSUMED`.')
+,new hhlp('ASSUM4-ERR','4th Assumed Value Error')
+,new hhlp('ASSUM5','5th Assumed Value, defined under `ASSUMED`.')
+,new hhlp('ASSUM5-ERR','5th Assumed Value Error')
+,new hhlp('ASSUM-ERR','Error in Assumed Value')
+,new hhlp('ASSUM-MAX','Upper Limit of Assumed Value')
+,new hhlp('ASSUM-MIN','Lower Limit of Assumed Value')
+,new hhlp('CNTY','Centrality')
+,new hhlp('CNTY-ERR','Centrality error')
+,new hhlp('CNTY-MAX','Upper limit of Centrality')
+,new hhlp('CNTY-MIN','Lower limit of Centrality')
+,new hhlp('COS','Cosine of Angle, Laboratory System')
+,new hhlp('COS-CM','Cosine of Angle, C.M.System')
+,new hhlp('COS-CM-MAX','Upper Limit of Cosine Range, C.M. System')
+,new hhlp('COS-CM-MIN','Lower Limit of Cosine Range, C.M. System')
+,new hhlp('COS-ERR','Cosine Error')
+,new hhlp('COS-ERR-D','Digitizing Error of Cosine')
+,new hhlp('COS-MAX','Upper Limit of Cosine Range, Lab. System')
+,new hhlp('COS-MIN','Lower Limit of Cosine Range, Lab. System')
+,new hhlp('COS-RSL','Cosine Angular Resolution')
+,new hhlp('DATA','Value of Quantity Specified under `REACTION`')
+,new hhlp('DATA-APRX','Approximate Value of Quantity specif. under `REACTION`')
+,new hhlp('DATA-CM','Value of Quantity specif. under `REACTION`, C.M. Sys.')
+,new hhlp('-DATA-ERR','- Unsymmetric Data Error, see `ERR-ANALYS`.')
+,new hhlp('DATA-ERR','Error in Value of Quantity, defined under `ERR-ANALYS`')
+,new hhlp('-DATA-ERR1','- Unsymmetric data uncertainty')
+,new hhlp('DATA-ERR1','1st Data Uncertainty, defined under `ERR-ANALYS`')
+,new hhlp('-DATA-ERR2','- Unsymmetric 2nd data uncertainty')
+,new hhlp('DATA-ERR2','2nd Data Uncertainty, defined under `ERR-ANALYS`')
+,new hhlp('DATA-ERR3','3rd Data Uncertainty, defined under `ERR-ANALYS`')
+,new hhlp('DATA-ERR4','4th Data Uncertainty, defined under `ERR-ANALYS`')
+,new hhlp('DATA-ERR5','5th Data Uncertainty, defined under `ERR-ANALYS`')
+,new hhlp('DATA-ERR6','6th Data Uncertainty, defined under `ERR-ANALYS`')
+,new hhlp('DATA-MAX','Upper Limit of Quantity specified under `REACTION`')
+,new hhlp('DATA-MIN','Lower Limit of Quantity specified under `REACTION`')
+,new hhlp('DATA-MN-CM','Lower Lim.of Quant.specif.under `REACTION`, C.M.Sys.')
+,new hhlp('DATA-MX-CM','Upper Lim.of Quant.specif.under `REACTION`, C.M.Sys.')
+,new hhlp('DCNST','Decay constant')
+,new hhlp('DCNST-ERR','Error in decay constant')
+,new hhlp('DECAY-FLAG','Decay Flag. See corresponding Flag in BIB section')
+,new hhlp('E','Energy of Outgoing Particle, Lab. System')
+,new hhlp('E1','1st Outgoing Part. En., defined under `EN-SEC`')
+,new hhlp('E1-CM','1st Outgoing Part. En., C.M. defined under `EN-SEC`')
+,new hhlp('E1-MAX','Upper Limit, 1st Outgoing Part. En.Range, see `EN-SEC`')
+,new hhlp('E1-MIN','Lower Limit, 1st Outgoing Part. En.Range, see `EN-SEC`')
+,new hhlp('E2','2nd Outgoing Part. Energy, defined under `EN-SEC`')
+,new hhlp('E2-MAX','Upper Limit, 2nd Outgoing Part. En.Range, see `EN-SEC`')
+,new hhlp('E2-MIN','Lower Limit, 2nd Outgoing Part. En.Range, see `EN-SEC`')
+,new hhlp('E3','3rd Outgoing Particle Energy, defined under `EN-SEC`')
+,new hhlp('E3-MIN','Lower Limit, 3rd Outgoing Part. En.Range, see `EN-SEC`')
+,new hhlp('E4','4th Outgoing Particle Energy, defined under `EN-SEC`')
+,new hhlp('E5','5th Outgoing Particle Energy, defined under `EN-SEC`')
+,new hhlp('E-APRX','Approx. Energy of Outgoing Particle, Lab. System')
+,new hhlp('E-CM','Energy of Outgoing Particle, C.M. System')
+,new hhlp('E-CM-MAX','Upper Limit of Outgoing Part. En. Range, C.M. Sys.')
+,new hhlp('E-CM-MIN','Lower Limit of Outgoing Part. En. Range, C.M. Sys.')
+,new hhlp('E-DGD','Degradation in Incident vs. Outgoing Particle Energy')
+,new hhlp('E-DGD-ERR','Error in Degradation in Incident vs. Outgoing Part.En.')
+,new hhlp('E-DGD-MAX','Upper Limit of Degradat. in Inc. vs. Outgoing Part.En.')
+,new hhlp('E-DGD-MIN','Lower Limit of Degradat. in Inc. vs. Outgoing Part.En.')
+,new hhlp('E-DN','Outgoing Particle Enery, Reaction Ratio Denominator')
+,new hhlp('-E-ERR','- Unsymmetric Outgoing Particle Energy Error')
+,new hhlp('E-ERR','Outgoing Particle Energy Error')
+,new hhlp('E-ERR-DIG','Digitizing error of outgoing particle energy')
+,new hhlp('E-EXC','Excitation Energy')
+,new hhlp('E-EXC1','1st Excitation Energy, defined under EN-SEC`')
+,new hhlp('E-EXC1-MAX','Upper Limit of 1st Excitation Energy Range')
+,new hhlp('E-EXC1-MIN','Lower Limit of 1st Excitation Energy Range')
+,new hhlp('E-EXC2','2nd Excitation Energy, defined under EN-SEC`.')
+,new hhlp('E-EXC3','3rd Excitation Energy, defined under EN-SEC`.')
+,new hhlp('E-EXC-DN','Excitation Energy for denominator of reaction ratio')
+,new hhlp('E-EXC-ERR','Excitation Energy Error')
+,new hhlp('E-EXC-MAX','Upper Limit of Excitation Energy Range')
+,new hhlp('E-EXC-MEAN','Mean Excitation Energy')
+,new hhlp('E-EXC-MIN','Lower Limit of Excitation Energy Range')
+,new hhlp('E-EXC-NM','Excitation Energy for numerator of reaction ratio')
+,new hhlp('E-GAIN','Gain in Incident vs. Outgoing Particle Energy')
+,new hhlp('E-GAIN-ERR','Error in Gain in Incident vs. Outgoing Particle Energy')
+,new hhlp('E-K','Kinetic energy, Lab.system')
+,new hhlp('ELEM1','Atomic Number of 1st Element')
+,new hhlp('ELEM2','Atomic Number of 2nd Element')
+,new hhlp('ELEM3','Atomic Number of 3rd Element')
+,new hhlp('ELEM-DN','Atomic Number, Reaction Ratio Denominator')
+,new hhlp('ELEMENT','Atomic Number of Element')
+,new hhlp('ELEM-MAX','Upper Limit of Atomic Number Range')
+,new hhlp('ELEM-MIN','Lower Limit of Atomic Number Range')
+,new hhlp('ELEM-NM','Atomic Number, Reaction Ratio Numerator')
+,new hhlp('ELEM-NRM','Atomic Number of Nuclide Used for Normalization')
+,new hhlp('E-LVL','Level Energy')
+,new hhlp('E-LVL1','1st Level Energy, defined under `EN-SEC`')
+,new hhlp('E-LVL2','2nd Level Energy, defined under `EN-SEC`')
+,new hhlp('E-LVL-DN','Level Energy, Reaction Ratio Denominator')
+,new hhlp('-E-LVL-ERR','- Unsymmetric Level Energy Error')
+,new hhlp('E-LVL-ERR','Level Energy Error')
+,new hhlp('E-LVL-FIN','Final Level of Gamma Transition')
+,new hhlp('E-LVL-FIN1','Final Level of Gamma Transition, def.under EN-SEC')
+,new hhlp('E-LVL-FIN2','Final Level of Gamma Transition, def.under EN-SEC')
+,new hhlp('E-LVL-INI','Initial Level of Gamma Transition')
+,new hhlp('E-LVL-INI1','Initial Level of Gamma Transition, def.under EN-SEC')
+,new hhlp('E-LVL-INI2','Initial Level of Gamma Transition, def.under EN-SEC')
+,new hhlp('E-LVL-MAX','Upper Energy Limit of Discrete Level Group')
+,new hhlp('E-LVL-MEAN','Mean Level Energy')
+,new hhlp('E-LVL-MIN','Lower Energy Limit of Discrete Level Group')
+,new hhlp('E-LVL-NM','Level Energy, Reaction Ratio Numerator')
+,new hhlp('E-LVL-NRM','Level Energy Used for Normalization')
+,new hhlp('E-MAX','Upper Limit of Outgoing Particle En. Range, Lab. Sys.')
+,new hhlp('E-MAX-CM','Upper Limit of Outgoing Particle En. Range, C.M. Sys.')
+,new hhlp('E-MAX-DN','Outgoing Particle Energy, Reaction Ratio Denominator')
+,new hhlp('E-MAX-NM','Outgoing Particle Energy, Reaction Ratio Numerator')
+,new hhlp('E-MEAN','Mean Energy of Outgoing Particles, Lab. System')
+,new hhlp('E-MIN','Lower Limit of Outgoing Particle En. Range, Lab. Sys.')
+,new hhlp('E-MIN-CM','Lower Limit of Outgoing Particle En. Range, C.M. Sys.')
+,new hhlp('E-MIN-DN','Outgoing Particle Enery, Reaction Ratio Denominator')
+,new hhlp('E-MIN-NM','Outgoing Particle Enery, Reaction Ratio Numerator')
+,new hhlp('EMS','Effective Mass Squared')
+,new hhlp('EMS1','1st Effective Mass Squared, defined under `MOM-SEC`.')
+,new hhlp('EMS1-MAX','Upper Limit, 1st Effective Mass Squared, see `MOM-SEC`')
+,new hhlp('EMS1-MIN','Lower Limit, 1st Effective Mass Squared, see `MOM-SEC`')
+,new hhlp('EMS2','2nd Effective Mass Squared, defined under `MOM-SEC`.')
+,new hhlp('EMS2-MAX','Upper Limit, 2nd Effective Mass Squared, see `MOM-SEC`')
+,new hhlp('EMS2-MIN','Lower Limit, 2nd Effective Mass Squared, see `MOM-SEC`')
+,new hhlp('EMS3','3rd Effective Mass Squared, defined under `MOM-SEC`')
+,new hhlp('EMS4','4th Effective Mass Squared, defined under `MOM-SEC`')
+,new hhlp('EMS5','5th Effective Mass Squared, defined under `MOM-SEC`')
+,new hhlp('EN','Energy of Incident Projectile, Laboratory System')
+,new hhlp('EN-APRX','Approximate Value of Incident Projectile Energy')
+,new hhlp('EN-CM','Incident Projectile Energy relative to target')
+,new hhlp('EN-CM-MAX','Upper Limit of C.M. Incident Projectile Energy Range')
+,new hhlp('EN-CM-MIN','Lower Limit of C.M. Incident Projectile Energy Range')
+,new hhlp('EN-CM-NRM','Inc.Proj. Energy (in c.m.) Used for Normalization')
+,new hhlp('EN-DN','Incident Energy for Reaction Ratio Denominator')
+,new hhlp('EN-DUM-DN','Dummy Incident Energy, Reaction Ratio Denominator')
+,new hhlp('EN-DUMMY','Dummy Incident Proj. Energy, for broad spectrum')
+,new hhlp('EN-DUM-NM','Dummy Incident Energy, Reaction Ratio Numerator')
+,new hhlp('-EN-ERR','- Unsymmetric Energy Error')
+,new hhlp('EN-ERR','Uncertainty in Incident Projectile Energy')
+,new hhlp('EN-ERR1','1st Incident Projectile Energy Error, see `ERR-ANALYS`')
+,new hhlp('EN-ERR2','2nd Incident Projectile Energy Error, see `ERR-ANALYS`')
+,new hhlp('EN-ERR3','3rd Incident Projectile Energy Error, see `ERR-ANALYS`')
+,new hhlp('EN-ERR-DIG','Digitizing error of incident particle energy')
+,new hhlp('E-NM','Outgoing Particle Energy, Reaction Ratio Numerator')
+,new hhlp('EN-MAX','Upper Limit of Incident Projectile Energy Range')
+,new hhlp('EN-MEAN','Mean Energy of Incident Projectile Spectrum')
+,new hhlp('EN-MEAN-DN','Inc. Spectr. Mean Energy, Reaction Ratio Denominator')
+,new hhlp('EN-MEAN-NM','Inc. Spectr. Mean Energy, Reaction Ratio Numerator')
+,new hhlp('E-NM-ERR','Error in Outgoing Particle En., Reaction Ratio Numerator')
+,new hhlp('EN-MIN','Lower Limit of Incident Projectile Energy Range')
+,new hhlp('EN-MIN-APX','Approximate Lower Limit Incident Projectile Energy')
+,new hhlp('EN-MIN-DN','Lower Limit of Inc. En. Range, Reaction Ratio Denom.')
+,new hhlp('EN-MIN-NM','Lower Limit of Inc. En. Range, Reaction Ratio Numer.')
+,new hhlp('EN-NM','Incident Projectile Energy, Reaction Ratio Numerator')
+,new hhlp('EN-NRM','Incident Projectile Energy Used for Normalization')
+,new hhlp('EN-NRM1','1st Incident Proj.En. for Normalization, see `MONITOR`')
+,new hhlp('EN-NRM2','2nd Incident Proj.En. for Normalization, see `MONITOR`')
+,new hhlp('EN-NRM3','3rd Incident Proj.En. for Normalization, see `MONITOR`')
+,new hhlp('EN-NRM-MAX','Upper Limit of Incident En. Range for Normalization')
+,new hhlp('EN-NRM-MIN','Lower Limit of Incident En. Range for Normalization')
+,new hhlp('EN-NRM-RSL','Energy Resolution of Normalization Incident Energy')
+,new hhlp('EN-RES','Resonance Energy')
+,new hhlp('EN-RES-CM','Resonance Energy, C.M. System')
+,new hhlp('-EN-RES-ER','- Unsymmetric Resonance Energy Error')
+,new hhlp('EN-RES-ERR','Error in Resonance Energy')
+,new hhlp('EN-RES-MAX','Upper Limit of Resonance Energy')
+,new hhlp('EN-RES-MIN','Lower Limit of Resonance Energy')
+,new hhlp('E-NRM','Energy of Outgoing Particle Used for Normalization')
+,new hhlp('E-NRM1','Energy of First Outgoing Particle Used for Normalization')
+,new hhlp('E-NRM2','Energy of Second Outgoing Particle Used for Normalization')
+,new hhlp('-EN-RSL','- Unsymmetric Energy Resolution')
+,new hhlp('EN-RSL','Incident Projectile Energy Resolution (Unspecified)')
+,new hhlp('EN-RSL-DN','Inc.Proj.Energy Resol.(FWHM), Reaction Ratio Denominator')
+,new hhlp('EN-RSL-FW','Incident Projectile Energy Resolution (FWHM)')
+,new hhlp('EN-RSL-HW','Incident Projectile Energy Resolution (+-1/2 FWHM)')
+,new hhlp('EN-RSL-NM','Inc.Proj.Energy Resol.(FWHM), Reaction Ratio Numerator')
+,new hhlp('E-RL','Relative Energy of Outgoing Particle, Lab. System')
+,new hhlp('E-RL-CM','Relative Energy of Outgoing Particle, C.M. System')
+,new hhlp('ERR-1','1st Systematic Uncertainty, defined under `ERR-ANALYS`')
+,new hhlp('ERR-10','10th Systematic Uncert., defined under `ERR-ANALYS`')
+,new hhlp('ERR-11','11th Systematic Uncert., defined under `ERR-ANALYS`')
+,new hhlp('ERR-12','12th Systematic Uncert., defined under `ERR-ANALYS`')
+,new hhlp('ERR-13','13th Systematic Uncert., defined under `ERR-ANALYS`')
+,new hhlp('ERR-14','14th Systematic Uncert., defined under `ERR-ANALYS`')
+,new hhlp('ERR-15','15th Systematic Uncert., defined under `ERR-ANALYS`')
+,new hhlp('ERR-2','2nd Systematic Uncertainty, defined under `ERR-ANALYS`')
+,new hhlp('ERR-3','3rd Systematic Uncertainty, defined under `ERR-ANALYS`')
+,new hhlp('ERR-4','4th Systematic Uncertainty, defined under `ERR-ANALYS`')
+,new hhlp('-ERR-5','- Unsymmetric 5th Systematic Error, see `ERR-ANALYS`.')
+,new hhlp('ERR-5','5th Systematic Uncertainty, defined under `ERR-ANALYS`')
+,new hhlp('ERR-6','6th Systematic Uncertainty, defined under `ERR-ANALYS`')
+,new hhlp('ERR-7','7th Systematic Uncertainty, defined under `ERR-ANALYS`')
+,new hhlp('ERR-8','8th Systematic Uncertainty, defined under `ERR-ANALYS`')
+,new hhlp('ERR-9','9th Systematic Uncertainty, defined under `ERR-ANALYS`')
+,new hhlp('ERR-DIG','Digitizing error (of DATA)')
+,new hhlp('ERR-EDD','Error of energy value given under DECAY-DATA')
+,new hhlp('ERR-HL','Error of half-life value givein under DECAY-DATA')
+,new hhlp('ERR-IDD','Error of intensity value given under DECAY-DATA')
+,new hhlp('-ERR-S','- Unsymmetric Statistical Uncertainty')
+,new hhlp('ERR-S','Statistical Uncertainty (1-Sigma)')
+,new hhlp('-ERR-SYS','- Unsymmetric Systematic Error')
+,new hhlp('ERR-SYS','Total Systematic Uncertainty')
+,new hhlp('-ERR-T','- Unsymmetric Total Uncertainty')
+,new hhlp('ERR-T','Total Uncertainty (1-Sigma)')
+,new hhlp('E-RSL','Otugoing Projectile Energy Resolution')
+,new hhlp('E-RSL-FW','Secondary energy resolution (full width at half maximum)')
+,new hhlp('E-TPB','Transverse kinetic energy, lab. sys., in Pb glass detector')
+,new hhlp('E-TPB-MAX','Upper limit, transv.kin.energy, lab.sys., in Pb glass det.')
+,new hhlp('E-TPB-MIN','Lower limit, transv.kin.energy, lab.sys., in Pb glass det.')
+,new hhlp('E-TR','Transverse kinetic energy, laboratory system')
+,new hhlp('E-TR-CM','Transverse kinetic energy, center-of-mass system')
+,new hhlp('E-TR-MAX','Upper limit of transverse kinetic energy, lab.system')
+,new hhlp('E-TR-MIN','Lower limit of transverse kinetic energy, lab.system')
+,new hhlp('E-ZCAL','Transverse kin. energy, Lab.sys., in zero-degr.calorimeter')
+,new hhlp('FLAG','Flag, defined under `FLAG`.')
+,new hhlp('GRP-NUM','Group number (of delayed neutrons)')
+,new hhlp('HL','Half-Life of Nuclide Specified.')
+,new hhlp('HL1','Half-Life of 1st Nucleus Specified')
+,new hhlp('HL1-ERR','Error in Half-Life of 1st Nucleus Specified')
+,new hhlp('HL2','Half-Life of 2nd Nucleus Specified')
+,new hhlp('HL2-ERR','Error in Half-Life of 2nd Nucleus Specified')
+,new hhlp('HL3','Half-Life of 3rd Nucleus Specified')
+,new hhlp('HL3-ERR','Error in Half-Life of 3rd Nucleus Specified')
+,new hhlp('HL4','Half-Life of 4th Nucleus Specified')
+,new hhlp('HL4-ERR','Error in Half-Life of 4th Nucleus Specified')
+,new hhlp('HL-DN','Half-Life of nuclide specified in ratio denominator')
+,new hhlp('HL-ERR','Error in Half-Life')
+,new hhlp('HL-NM','Half-Life of nuclide specified in ratio numerator')
+,new hhlp('HL-NRM','Half-Life of nuclide to which data is normalized')
+,new hhlp('IAS-NUMB','Level Number of Isobaric Analog State')
+,new hhlp('ISOMER','Isomer for Nuclide Given')
+,new hhlp('ISOMER1','1st Isomer for Nuclide')
+,new hhlp('ISOMER2','2nd Isomer for Nuclide')
+,new hhlp('ISOMER-DN','Isomer for Nuclide, REACTION Ratio Denominator')
+,new hhlp('ISOMER-NM','Isomer for Nuclide, REACTION Ratio Numerator')
+,new hhlp('ISO-NUMB','Level Number of Isobaric Analog State')
+,new hhlp('KQ','Indices for tensor analyzing power')
+,new hhlp('KT','Spectrum Temperature (energy units)')
+,new hhlp('KT-DN','Spectrum Temperature, Reaction Ratio Denominator')
+,new hhlp('KT-ERR','Error in Spectrum Temperature')
+,new hhlp('KT-K','Spectrum Temperature (temperature units)')
+,new hhlp('KT-NM','Spectrum Temperature, Reaction Ratio Numerator')
+,new hhlp('KT-NRM','Temperature of reference Maxwellian spectrum')
+,new hhlp('LVL','Level Energy as additional information')
+,new hhlp('LVL-FIN','Final Level Energy as additional information')
+,new hhlp('LVL-FIN1','1st Final Level Energy as additional information')
+,new hhlp('LVL-FIN2','2nd Final Level Energy as additional information')
+,new hhlp('LVL-FLAG','Level Flag, Link to information under `LEVEL-PROP`')
+,new hhlp('LVL-INI','Initial Level Energy as additional information')
+,new hhlp('LVL-INI1','1st Initial Level Energy as additional information')
+,new hhlp('LVL-INI2','2nd Initial Level Energy as additional information')
+,new hhlp('LVL-NUMB','Level Number')
+,new hhlp('LVL-NUM-DN','Level Number, Reaction Ratio Denominator')
+,new hhlp('LVL-NUM-NM','Level Number, Reaction Ratio Numerator')
+,new hhlp('M1','Linear Momentum of 1st Outgoing Particle')
+,new hhlp('M1-MAX','Upper Limit of 1st Outgoing Particle Linear Momentum')
+,new hhlp('M1-MIN','Lower Limit of 1st Outgoing Particle Linear Momentum')
+,new hhlp('M1-SEC-MAX','Upper Limit of 1st Outgoing Particle Linear Momentum')
+,new hhlp('M1-SEC-MIN','Lower Limit of 1st Outgoing Particle Linear Momentum')
+,new hhlp('M2','Linear Momentum of 2nd Outgoing Particle')
+,new hhlp('M2-MAX','Upper Limit of 2nd Outgoing Particle Linear Momentum')
+,new hhlp('M2-MIN','Lower Limit of 2nd Outgoing Particle Linear Momentum')
+,new hhlp('M2-SEC-MAX','Upper Limit of 2nd Outgoing Particle Linear Momentum')
+,new hhlp('M2-SEC-MIN','Lower Limit of 2nd Outgoing Particle Linear Momentum')
+,new hhlp('M3','Linear Momentum of 3rd Outgoing Particle')
+,new hhlp('M4','Linear Momentum of 4th Outgoing Particle')
+,new hhlp('M5','Linear Momentum of 5th Outgoing Particle')
+,new hhlp('MASS','Atomic Mass of Nuclide')
+,new hhlp('MASS1','Atomic Mass of 1st Nuclide')
+,new hhlp('MASS1-MAX','Maximum Atomic Mass of 1st Nuclide')
+,new hhlp('MASS2','Atomic Mass of 2nd Nuclide')
+,new hhlp('MASS2-MIN','Minimum Atomic Mass of 2nd Nuclide')
+,new hhlp('MASS3','Atomic Mass of 3rd Nuclide')
+,new hhlp('MASS-DN','Atomic Mass of Nuclide, Reaction Ratio Denominator')
+,new hhlp('MASS-MAX','Upper Limit of Atomic Mass Range')
+,new hhlp('MASS-MIN','Lower Limit of Atomic Mass Range')
+,new hhlp('MASS-NM','Atomic Mass of Nuclide, Reaction Ratio Numerator')
+,new hhlp('MASS-NRM','Atomic Mass of Nuclide used for Normalization')
+,new hhlp('MASS-RATIO','Ratio of Atomic Masses of Fission Fragments')
+,new hhlp('MASS-RSL','Mass Resolution')
+,new hhlp('MISC','Miscellaneous Information, defined under `MISC-COL`.')
+,new hhlp('MISC1','1st Miscellaneous Field, defined under `MISC-COL`')
+,new hhlp('MISC10','10th Miscellaneous Field, defined under `MISC-COL`')
+,new hhlp('MISC1-ERR','Error in 1st Miscellaneous Field')
+,new hhlp('MISC2','2nd Miscellaneous Field, defined under `MISC-COL`')
+,new hhlp('MISC2-ERR','Error in 2nd Miscellaneous Field')
+,new hhlp('MISC3','3rd Miscellaneous Field, defined under `MISC-COL`')
+,new hhlp('MISC3-ERR','Error in 3rd Miscellaneous Field')
+,new hhlp('MISC4','4th Miscellaneous Field, defined under `MISC-COL`')
+,new hhlp('MISC4-ERR','Error in 4th Miscellaneous Field')
+,new hhlp('MISC5','5th Miscellaneous Field, defined under `MISC-COL`')
+,new hhlp('MISC5-ERR','Error in 5th Miscellaneous Field')
+,new hhlp('MISC6','6th Miscellaneous Field, defined under `MISC-COL`')
+,new hhlp('MISC6-ERR','Error in 6th Miscellaneous Field')
+,new hhlp('MISC7','7th Miscellaneous Field, defined under `MISC-COL`')
+,new hhlp('MISC7-ERR','Error in 7th Miscellaneous Field')
+,new hhlp('MISC8','8th Miscellaneous Field, defined under `MISC-COL`')
+,new hhlp('MISC8-ERR','Error in 8th Miscellaneous Field')
+,new hhlp('MISC9','9th Miscellaneous Field, defined under `MISC-COL`')
+,new hhlp('-MISC-ERR','- Unsymemtric Error in Miscellaneous Value')
+,new hhlp('MISC-ERR','Error in Miscellaneous Value')
+,new hhlp('MISC-ERR-D','Digitizng Error in Miscellaneous Value')
+,new hhlp('MOM','Linear Momentum of Incident Projectile')
+,new hhlp('MOMENTUM L','Angular Momentum (L) of Resonance')
+,new hhlp('MOM-ERR','Error of Linear Momentum of Incident Projectile')
+,new hhlp('MOM-MAX','Maximum Linear Momentum of Incident Projectile')
+,new hhlp('MOM-MIN','Minimum Linear Momentum of Incident Projectile')
+,new hhlp('MOM-RSL','Incident Projectile Linear Momentum Resolution')
+,new hhlp('MOM-SEC','Linear Momentum of Outgoing Particle')
+,new hhlp('MOM-SEC1','1st Linear Momentum of Outgoing Particle')
+,new hhlp('MOM-SEC2','2nd Linear Momentum of Outgoing Particle')
+,new hhlp('MOM-SEC3','3rd Linear Momentum of Outgoing Particle')
+,new hhlp('MOM-SEC4','4th Linear Momentum of Outgoing Particle')
+,new hhlp('MOM-SEC5','5th Linear Momentum of Outgoing Particle')
+,new hhlp('MOM-SEC-MN','Minimum Linear Momentum of Outgoing Particle')
+,new hhlp('MOM-TR','Momentum transfer (in units MeV/c or equiv.)')
+,new hhlp('MOM-TR-ERR','Error of momentum transfer')
+,new hhlp('MONIT','Normalization Value for Reaction given under `MONITOR`')
+,new hhlp('MONIT1','1st Normalization Value, see `MONITOR`')
+,new hhlp('MONIT1-ERR','Error in 1st Normalization Value')
+,new hhlp('MONIT2','2nd Normalization Value, see `MONITOR`')
+,new hhlp('MONIT2-ERR','Error in 2nd Normalization Value')
+,new hhlp('MONIT3','3rd Normalization Value, see `MONITOR`')
+,new hhlp('MONIT3-ERR','Error in 3rd Normalization Value')
+,new hhlp('MONIT4','4th Normalization Value, see `MONITOR`')
+,new hhlp('MONIT4-ERR','Error in 4th Normalization Value')
+,new hhlp('MONIT5','5th Normalization Value, see `MONITOR`')
+,new hhlp('MONIT5-ERR','Error in 5th Normalization Value')
+,new hhlp('MONIT6','6th Normalization Value, see `MONITOR`')
+,new hhlp('MONIT6-ERR','Error in 6th Normalization Value')
+,new hhlp('MONIT7','7th Normalization Value, see `MONITOR`')
+,new hhlp('MONIT8','8th Normalization Value, see `MONITOR`')
+,new hhlp('MONIT-CM','Normalization Value, C.M. System, see `MONITOR`')
+,new hhlp('MONIT-DN','Normalization Value for denominator of reaction ratio')
+,new hhlp('-MONIT-ERR','- Unsymmetric Error in Value Assumed for Normalization')
+,new hhlp('MONIT-ERR','Error in Normalization Value')
+,new hhlp('MONIT-NM','Normalization value for numerator of ratio')
+,new hhlp('MSS-T','Transverse mass of outgoing proj.')
+,new hhlp('MSS-TK','Transverse - rest mass of outgoing proj.')
+,new hhlp('MSS-TK-MAX','Maximum value of outgoing proj.transverse - rest mass')
+,new hhlp('MSS-TK-MIN','Minimum value of outgoing proj.transverse - rest mass')
+,new hhlp('MU-ADLER','Mu')
+,new hhlp('N-OUT','Number of Emitted Neutrons')
+,new hhlp('NUMBER','Fitting Coefficient Number')
+,new hhlp('NUMBER-CM','Fitting Coefficient Number, for Data in C.M. System')
+,new hhlp('PARITY','Parity of Resonance')
+,new hhlp('PART-OUT','Number of Emitted Particles')
+,new hhlp('POLAR','Polarity')
+,new hhlp('POLAR-DN','Polarity for denominator of reaction ratio')
+,new hhlp('POLAR-NM','Polarity for numerator of reaction ratio')
+,new hhlp('POL-BM','Beam Polarization')
+,new hhlp('POL-BM-ERR','Beam Polarization Error')
+,new hhlp('POL-BM-MAX','Upper Limit of Beam Polarization')
+,new hhlp('POL-BM-MIN','Lower Limit of Beam Polarization')
+,new hhlp('POL-TR','Target Polarization')
+,new hhlp('POL-TR-ERR','Target Polarization Error')
+,new hhlp('P-OUT','Number of Emitted Protons')
+,new hhlp('PRJ','Number of participating projectiles')
+,new hhlp('PRJ-AV','Average number of participating projectiles')
+,new hhlp('q','Momentum transfer, q')
+,new hhlp('q-CM','Momentum transfer, q, center of mass system')
+,new hhlp('Q-VAL','Q-Value')
+,new hhlp('Q-VAL-APRX','Approximate Q-Value')
+,new hhlp('Q-VAL-ERR','Q-Value Uncertainty')
+,new hhlp('Q-VAL-MAX','Upper Limit of Q-Value')
+,new hhlp('Q-VAL-MIN','Lower Limit of Q-Value')
+,new hhlp('Q-VAL-RSL','Q-Value Resolution')
+,new hhlp('RAP','Rapidity (fn En+mom(par)/En-mom(par))')
+,new hhlp('RAP-AV','Avg.Rapidity (fn En+mom(par)/En-mom(par))')
+,new hhlp('RAP-AV-ERR','Avg.Rapidity error')
+,new hhlp('RAP-ERR','Rapidity (relativistic data)')
+,new hhlp('RAP-MAX','Upper limit of rapidity (relativistic data)')
+,new hhlp('RAP-MIN','Lower limit of rapidity (relativistic data)')
+,new hhlp('RAP-PS','Pseudo rapidity (fn mon+mom(par)/mon-mom(par)')
+,new hhlp('RAP-PS-MAX','Upper limit of pseudo rapidity (fn mon+mom(par)/mon-mom(par)')
+,new hhlp('RAP-PS-MIN','Lower limit of pseudo rapidity (fn mon+mom(par)/mon-mom(par)')
+,new hhlp('RATIO','Ratio Value of Quantity specified under `REACTION`')
+,new hhlp('RATIO-APRX','Approximate Value of Ratio')
+,new hhlp('-RATIO-ERR','- Unsymmetric Ratio Error')
+,new hhlp('RATIO-ERR','Ratio Error')
+,new hhlp('RATIO-ERR1','1st Ratio Error')
+,new hhlp('RATIO-ERR2','2nd Ratio Error')
+,new hhlp('RATIO-ERR3','3rd Ratio Error')
+,new hhlp('RATIO-MAX','Upper Limit of Ratio')
+,new hhlp('RATIO-MIN','Lower Limit of Ratio')
+,new hhlp('S','Distance along S-curve for range of E1 and E2')
+,new hhlp('S-MEAN','Mean distance along S-curve for range of E1 and E2')
+,new hhlp('SPIN J','Spin (J)')
+,new hhlp('STAND','Numerical Value Assumed')
+,new hhlp('STAND1','1st Standard Value, see `STANDARD`')
+,new hhlp('STAND1-ERR','Error in 1st Standard Value')
+,new hhlp('STAND2','2nd Standard Value, see `STANDARD`.')
+,new hhlp('STAND2-ERR','Error in 2nd Standard Value')
+,new hhlp('STAND3','3rd Standard Value, see `STANDARD`.')
+,new hhlp('STAND3-ERR','Error in 3rd Standard Value')
+,new hhlp('STAND-ERR','Standard Error')
+,new hhlp('STAT-W G','Statistical-Weight Factor (g)')
+,new hhlp('SUM','Sum value of Quantity specified under `REACTION`')
+,new hhlp('-SUM-ERR','- Unsymmetric Error in Sum')
+,new hhlp('SUM-ERR','Error in Sum')
+,new hhlp('-t','4-momentum transfer squared')
+,new hhlp('TEMP','Sample Temperature')
+,new hhlp('TEMP-ERR','Error in Sample Temperature')
+,new hhlp('THICKNESS','Sample Thickness')
+,new hhlp('WVE-LN','Wave length of incident particle')
+,new hhlp('WVE-NM','Wave Number')
+];
+function kwdhlp(code,help) {
+    this.code=code;
+    this.help=help;
+}
+
+kwhlp=[
+ new kwdhlp('DECAY-MON'	, 'Standard decay data')
+,new kwdhlp('MONITOR'	, 'Standard')
+,new kwdhlp('EN-SEC'	, 'Secondary energy')
+,new kwdhlp('INC-SOURCE', 'Incident particle source')
+,new kwdhlp('INC-SPECT'	, 'Incident spectrum')
+,new kwdhlp('HISTORY'	, 'History of this ENTRY in EXFOR library')
+];
+</script>
+<style>.err0 { color:red; font-weight:bold; font-style:italic;}</style>
+<script language=javascript>
+    function copydata(dataid) {
+	var text=dataid;
+	var xx=document.getElementById(dataid);
+	if (!xx) return;
+	var span=xx.children[0];
+	text=span.innerHTML;
+	span=xx.children[1];
+	text+='\n'+span.innerHTML;
+	text=dataDelSpan(text);
+	try {
+	    navigator.clipboard.writeText(text);
+	    alert('Copied to clipboard OK.\nID: '+dataid);
+//	    console.log('Copied to clipboard:\n'+text);
+//	    console.log('Copied to clipboard:[\n'+text+'\n]');
+//	    console.log('Copied to clipboard: OK.');
+	} catch (e) {
+	    console.log('Error: Copy to clipboard: '+e);
+	}
+    }
+
+    function dataDelSpan(txt0) {
+	var text='';
+	var arr1=[];
+	var arr0=txt0.split('\n');
+	var ii,str,ind0,ind1;
+	for (ii=0; ii<arr0.length; ii++) {
+	    str=arr0[ii];
+	    for (;;) {
+		ind0=str.indexOf('<');	if (ind0<0) break;
+		ind1=str.indexOf('>');	if (ind1<ind0) break;
+		str=str.substring(0,ind0)+str.substring(ind1+1);
+	    }
+	    arr1.push(str);
+	}
+	text=arr1.join('\n');
+	return text;
+    }
+
+</script>
+</head>
+
+<body>
+<small>Converted from EXFOR by [x4tox4+], ver.2025-06-24, V.Zerkin, Vienna, 2007-2025<br></small>
+<pre>
+<tt class="ENTRY"><script language=javascript>outX4kw('ENTRY     ');</script>   O0050001   20230404   20230718   20230716       O095              </tt>
+<tt class="SUBENT"><script language=javascript>outX4kw('SUBENT    ');</script>   O0050001   20230404   20230718   20230716       O095              </tt>
+<tt class="BIB"><script language=javascript>outX4kw('BIB       ');</script>         14         27                                               </tt>
+<tt class="TITLE"><script language=javascript>outX4kw('TITLE     ');</script> Production of Ar-38 and Ar-39 in the interaction of</tt>
+           gold and thorium with 1,2.5 and 24 GeV protons
+<script language=javascript>
+     begKwCode(true,' ',0);
+     endKwCode();
+</script><tt class="AUTHOR"><script language=javascript>outX4kw('AUTHOR    ');</script> (H.Sauvageon,S.Regnier)</tt>
+<script language=javascript>
+     begKwCode(true,' ',0);
+      outX4Code1('(H.Sauvageon, S.Regnier)');
+     endKwCode();
+</script><tt class="INSTITUTE"><script language=javascript>outX4kw('INSTITUTE ');</script> (2FR GRA)</tt>
+<script language=javascript>
+     begKwCode(true,' ',0);
+      outX4Code2('(2FR GRA)','Centre d\'Etudes Nucleaires de Bordeaux-Gradignan, France');
+     endKwCode();
+</script><tt class="REFERENCE"><script language=javascript>outX4kw('REFERENCE ');</script> (J,PR/C,24,2667,1981)</tt>
+           (T,REGNIER,1977)
+<script language=javascript>
+     begKwCode(false,' ',0);
+      outX4Code2('(J,PR/C,24,2667,1981)','#URL=<a href="http://journals.aps.org/prc/abstract/10.1103/PhysRevC.24.2667" target="Journal_window">http://journals.aps.org/prc/abstract/10.1103/PhysRevC.24.2667</a>, Jour: Physical Review, Part C, Nuclear Physics, Vol.24, p.2667 (1981), USA');
+     endKwCode();
+</script><script language=javascript>
+     begKwCode(true,' ',1);
+      outX4Code2('(T,REGNIER,1977)','Thesis: Regnier (1977)');
+     endKwCode();
+</script><tt class="FACILITY"><script language=javascript>outX4kw('FACILITY  ');</script> (SYNCY,2FR SAC) At Saturne I and Saturne II. For 1.05</tt>
+           and 2.5 GeV.
+           (SYNCY,2ZZZCER) For 24 GeV.
+<script language=javascript>
+     begKwCode(false,' ',0);
+      outX4Code2('(SYNCY','Synchro cyclotron');
+      outX4Code2(',2FR SAC)','CEA/Saclay, France');
+     endKwCode();
+</script><script language=javascript>
+     begKwCode(true,' ',1);
+      outX4Code2('(SYNCY','Synchro cyclotron');
+      outX4Code2(',2ZZZCER)','European Org. for Nuclear Research (CERN), Geneva');
+     endKwCode();
+</script><tt class="MONITOR"><script language=javascript>outX4kw('MONITOR   ');</script> (13-AL-27(P,X)11-NA-22,,SIG)</tt>
+<script language=javascript>
+     begKwCode(true,' ',0);
+      outX4Code1('(13-AL-27(P,X)11-NA-22,,SIG)');
+     endKwCode();
+</script><tt class="MONIT-REF"><script language=javascript>outX4kw('MONIT-REF ');</script> (,J.Tobailem+,R,CEA-N-1466,(1),1,1971)</tt>
+<script language=javascript>
+     begKwCode(true,' ',0);
+      outX4Code2('(,J.Tobailem+,R,CEA-N-1466,(1),1,1971)','Author:<font color=green>J.Tobailem+</font>, Rept: Centre d\'Etudes Nucleaires, note, No.1466, Vol.(1), p.1 (1971), France');
+      outX4Code1('(,J.Tobailem+,R,CEA-N-1466,(1),1,1971)');
+     endKwCode();
+</script><tt class="METHOD"><script language=javascript>outX4kw('METHOD    ');</script> (STTA,EXTB,ASEP)</tt>
+<script language=javascript>
+     begKwCode(true,' ',0);
+      outX4Code2('(STTA','Stacked target irradiation');
+      outX4Code2(',EXTB','Irradiation with external beam');
+      outX4Code2(',ASEP)','Off-line mass separation of a product');
+     endKwCode();
+</script><tt class="ADD-RES"><script language=javascript>outX4kw('ADD-RES   ');</script> (RANGE) Mean kinetic energy. Ratio F/B.</tt>
+<script language=javascript>
+     begKwCode(true,' ',0);
+      outX4Code1('(RANGE)');
+     endKwCode();
+</script><tt class="FLAG"><script language=javascript>outX4kw('FLAG      ');</script> (1.) Data from thesis</tt>
+<script language=javascript>
+     begKwCode(true,' ',0);
+      outX4Code1('(1.)');
+     endKwCode();
+</script><tt class="REL-REF"><script language=javascript>outX4kw('REL-REF   ');</script> (M,O0012001,H.Sauvageon+,J,PR/C,25,466,1982) - method</tt>
+           and error analysis
+           (M,O0095001,S.Regnier,J,PR/C,20,1517,1979) - - method
+           and error analysis
+<script language=javascript>
+     begKwCode(false,' ',0);
+      outX4Code2('(M,O0012001,H.Sauvageon+,J,PR/C,25,466,1982)','EXFOR:<a href=http://www-nds.iaea.org/EXFOR/O0012001 target=_blank>O0012001</a> Author:<font color=green>H.Sauvageon+</font>, Jour: Physical Review, Part C, Nuclear Physics, Vol.25, p.466 (1982), USA');
+      outX4Code2('+       ','<font color=green>(M)</font>  Reference to experimental technique');
+      outX4Code1('(M,O0012001,H.Sauvageon+,J,PR/C,25,466,1982)');
+     endKwCode();
+</script><script language=javascript>
+     begKwCode(true,' ',1);
+      outX4Code2('(M,O0095001,S.Regnier,J,PR/C,20,1517,1979)','EXFOR:<a href=http://www-nds.iaea.org/EXFOR/O0095001 target=_blank>O0095001</a> Author:<font color=green>S.Regnier</font>, Jour: Physical Review, Part C, Nuclear Physics, Vol.20, p.1517 (1979), USA');
+      outX4Code1('(M,O0095001,S.Regnier,J,PR/C,20,1517,1979)');
+     endKwCode();
+</script><tt class="ERR-ANALYS"><script language=javascript>outX4kw('ERR-ANALYS');</script> (ERR-T,10.,20.) The total uncertainty of cross section</tt>
+           measurements is generally from 10 to 20%.
+           (ERR-S) Standard deviation from the mean of the
+            independent measurements
+<script language=javascript>
+     begKwCode(false,' ',0);
+      outX4Code1('(ERR-T,10.,20.)');
+     endKwCode();
+</script><script language=javascript>
+     begKwCode(true,' ',1);
+      outX4Code1('(ERR-S)');
+     endKwCode();
+</script><tt class="STATUS"><script language=javascript>outX4kw('STATUS    ');</script> (TABLE,,H.Sauvageon+,J,PR/C,24,2667,1981) Table I</tt>
+<script language=javascript>
+     begKwCode(true,' ',0);
+      outX4Code2('(TABLE,,H.Sauvageon+,J,PR/C,24,2667,1981)','Jour: Physical Review, Part C, Nuclear Physics, Vol.24, p.2667 (1981), USA');
+      outX4Code2('+       ','#TABLE Data presented by authors');
+      outX4Code1('(TABLE,,H.Sauvageon+,J,PR/C,24,2667,1981)');
+     endKwCode();
+</script><tt class="HISTORY"><script language=javascript>outX4kw('HISTORY   ');</script> (19941101C)</tt>
+           (19941209A) The correction of data.
+           (20230404A) SD:Updated to new date formats,lower case.
+           Corrections in all Subents. Subents 002,003 were split.
+<script language=javascript>
+     begKwCode(false,' ',0);
+      outX4Code1('(19941101C)');
+     endKwCode();
+</script><script language=javascript>
+     begKwCode(false,' ',1);
+      outX4Code1('(19941209A)');
+     endKwCode();
+</script><script language=javascript>
+     begKwCode(true,' ',2);
+      outX4Code1('(20230404A)');
+     endKwCode();
+</script>ENDBIB              27
+NOCOMMON
+ENDSUBENT           30
+<tt class="SUBENT"><script language=javascript>outX4kw('SUBENT    ');</script>   O0050002   20230404   20230718   20230716       O095              </tt>
+<tt class="BIB"><script language=javascript>outX4kw('BIB       ');</script>          3          5                                               </tt>
+<tt class="REACTION"><script language=javascript>outX4kw('REACTION  ');</script> (79-AU-197(P,X)18-AR-38,CUM,SIG)</tt>
+<script language=javascript>
+   begReactionCode('(79-AU-197(P,X)18-AR-38,CUM,SIG)','',true,' ');
+     begKwCode(true,' ',-1);
+      outX4Code2('','Target:<span class=x4code>AU-197</span>&nbsp;#Projectile:<span class=x4code>P</span>&nbsp;#Reaction:<span class=x4code>P,X</span> <!br>&nbsp;#Process:<span class=x4code>X</span>:Process unspecified <!br>&nbsp;#Quantity:<span class=x4code>CUM,SIG</span>:CS:Cumulative cross section ');
+      outX4ReacProduct(18, 'AR', 38, '');
+     endKwCode();
+   endReactionCode();
+</script><tt class="SAMPLE"><script language=javascript>outX4kw('SAMPLE    ');</script> The gold target was used.</tt>
+<script language=javascript>
+     begKwCode(true,' ',0);
+     endKwCode();
+</script><tt class="HISTORY"><script language=javascript>outX4kw('HISTORY   ');</script> (20230404A) SD: SF9=EXP deleted from REACTION code.</tt>
+           DATA-ERR -&gt; ERR-S. Data of REACTION (2) moved to
+           Subent 004.
+<script language=javascript>
+     begKwCode(true,' ',0);
+      outX4Code1('(20230404A)');
+     endKwCode();
+</script>ENDBIB               5
+NOCOMMON
+<script language=javascript>
+   begKW_Data('DATA       ','         4','         3','        12','O0050002','',true,true);
+</script><script language=javascript>
+    begLegend(4,3,12);
+outLegendLine('EN','','Energy of incident projectile, laboratory system','GEV','GeV');
+outLegendLine('DATA','','Cumulative cross section <br><font color=#aaaaaa>#+ 79-AU-197(P,X)18-AR-38,CUM,SIG</font>','MB','millibarns');
+outLegendLine('ERR-S','','Statistical uncertainty (1-Sigma)','MB','millibarns');
+outLegendLine('FLAG','','Flag, defined under FLAG.','NO-DIM','no Dimensions');
+    endLegend();
+</script><tt class=x4code>EN          DATA        ERR-S       FLAG        </tt>
+<tt class=x4code>GEV         MB          MB          NO-DIM      </tt>
+<div style="display:table-cell;" id="DATA_O0050002"><div onclick="copydata('DATA_O0050002'); return false;" title="Click to copy CSV to clipboard" style="color:blue;font-family:Arial Narrow;font-size:7pt;">#EN:GEV, DATA:MB, ERR-S:MB, FLAG:NO-DIM</div><span >1.         ,0.43       ,0.03       ,1.         
+2.5        ,4.3        ,1.1        ,           
+24.        ,6.5        ,0.8        ,1.         
+</span></div>ENDDATA
+ENDSUBENT           15
+ENDENTRY
+</body>
+</html>

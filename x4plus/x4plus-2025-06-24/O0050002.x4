@@ -1,0 +1,51 @@
+ENTRY            O0050   20230404   20230718   20230716       O095
+SUBENT        O0050001   20230404   20230718   20230716       O095
+BIB                 14         27
+TITLE      Production of Ar-38 and Ar-39 in the interaction of
+           gold and thorium with 1,2.5 and 24 GeV protons
+AUTHOR     (H.Sauvageon,S.Regnier)
+INSTITUTE  (2FR GRA)
+REFERENCE  (J,PR/C,24,2667,1981)
+           (T,REGNIER,1977)
+FACILITY   (SYNCY,2FR SAC) At Saturne I and Saturne II. For 1.05
+           and 2.5 GeV.
+           (SYNCY,2ZZZCER) For 24 GeV.
+MONITOR    (13-AL-27(P,X)11-NA-22,,SIG)
+MONIT-REF  (,J.Tobailem+,R,CEA-N-1466,(1),1,1971)
+METHOD     (STTA,EXTB,ASEP)
+ADD-RES    (RANGE) Mean kinetic energy. Ratio F/B.
+FLAG       (1.) Data from thesis
+REL-REF    (M,O0012001,H.Sauvageon+,J,PR/C,25,466,1982) - method
+           and error analysis
+           (M,O0095001,S.Regnier,J,PR/C,20,1517,1979) - - method
+           and error analysis
+ERR-ANALYS (ERR-T,10.,20.) The total uncertainty of cross section
+           measurements is generally from 10 to 20%.
+           (ERR-S) Standard deviation from the mean of the
+            independent measurements
+STATUS     (TABLE,,H.Sauvageon+,J,PR/C,24,2667,1981) Table I
+HISTORY    (19941101C)
+           (19941209A) The correction of data.
+           (20230404A) SD:Updated to new date formats,lower case.
+           Corrections in all Subents. Subents 002,003 were split.
+ENDBIB              27
+NOCOMMON             0          0
+ENDSUBENT           30
+SUBENT        O0050002   20230404   20230718   20230716       O095
+BIB                  3          5
+REACTION   (79-AU-197(P,X)18-AR-38,CUM,SIG)
+SAMPLE     The gold target was used.
+HISTORY    (20230404A) SD: SF9=EXP deleted from REACTION code.
+           DATA-ERR -> ERR-S. Data of REACTION (2) moved to
+           Subent 004.
+ENDBIB               5
+NOCOMMON             0          0
+DATA                 4          3
+EN         DATA       ERR-S      FLAG
+GEV        MB         MB         NO-DIM
+         1.       0.43       0.03     1.
+        2.5        4.3        1.1
+        24.        6.5        0.8     1.
+ENDDATA              5
+ENDSUBENT           15
+ENDENTRY             2
