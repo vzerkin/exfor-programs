@@ -1,5 +1,5 @@
 Title     : Program ZCHEX
-Version   : 2025-08-06, NRDC
+Version   : 2025-08-07, NRDC
 Author    : V.McLane, BNL, USA, 1998-2001
           : V.Zerkin, IAEA-NDS, 2001-2023
           : V.Zerkin, NRDC,     2024-2025
@@ -161,10 +161,10 @@ Updated:
          2025-08-05   V.Zerkin
                       - report error for negative uncertainties for *ERR* only
                         if they do not have correlation-flag in ERR-ANALYS
-         2025-08-06   V.Zerkin
+         2025-08-07   V.Zerkin
                       - corrected/extended terminal-output for error of unit-type
                       - added [HEADER] to error-message "Illegal independent variable"
-                      - added Entry statistics to Pass-3 terminal-output: +Errors, +Warnings
+                      - added Entry statistics to Pass2 terminal-output: +Lines, +Errors, +Warnings
                       - added timestamp to terminal-output and report
 
 History:
