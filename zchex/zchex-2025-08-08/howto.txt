@@ -1,0 +1,71 @@
+Title  : Program ZCHEX
+Author : V.McLane, BNL, USA, 1998-2001
+       : V.Zerkin, IAEA-NDS, 2001-2023
+       : V.Zerkin, NRDC, 2024-2025
+
+Purpose: Checking EXFOR file
+
+Contents: (all for Windows, Linux and Mac)
+    - Dictionaries: backup, direct-access
+    - Executables: checking (zchex*.exe), reloading dictionaries (danlo*.exe)
+    - example of EXFOR file: 'a.x4'
+
+Download:
+    - go to: https://www-nds.iaea.org/public/exfor/programs/zchex-2023-04-21/
+    - download compressed package according to your OS-version:
+      ..OS......CPU.....:.package file name
+      - Windows x86/x64 : zchex-win-{date}.zip
+      - MacOS   x64     : zchex-macBigSur_x64-{date}.zip
+      - MacOS   M1      : zchex-macBigSur_M1-{date}.zip
+      - Linux   x64     : zchex-lin64-{date}.zip
+      - Linux   x86     : zchex-lin32-{date}.zip
+      - Linux   x86/x64 : zchex-lin32lf95-{date}.zip
+
+Installation:
+    - start/open Terminal:
+      - Windows: <Win/R> cmd [OK]
+      - Linux: Applications --> Terminal
+      - MacOS: Applications --> Terminal
+    - unzip files in working directory
+    - change directory to working directory
+    - programs are ready to run
+
+Run:
+    - by default, program runs in the directory with dictionaries (DICT_ZVV.*)
+    - run in Windows:  > zchexw.exe
+    - run in Linux:    $ ./zchexl.exe
+    - run in MacOSX:   $ ./zchexm.exe
+    - run with papameters in command line:
+      $ zchex.exe [file.x4] [mode] [warnings] [opt]
+      - parameters:
+        file.x4  - EXFOR file (input file, must exist)
+        mode     - [D/T] Data processing or Transmission
+        warnings - [N/Y] include warnings to error-report
+        -d:dir/  - directory with Dictionary-files DICT_ZVV.*
+        -h       - output help-text on the terminal
+      - examples:
+        $ zchex.exe file.x4
+        $ zchex.exe file.x4 T
+        $ zchex.exe file.x4 D Y
+        $ zchex.exe file.x4 "" Y
+        $ zchex.exe -h
+        $ zchex.exe --help
+        $ zchex.exe file.x4 -d:zchex-win-2025-07-22/
+        $ zchex.exe -d:zchex-win-2025-07-22/ file.x4
+    - option for Windows: using Shortcut from the Desktop
+      a) make Shortcut to zchexw.bat:
+           explorer.exe --> mark "zchexw.bat" -->
+           --> right-mouse: Send to Desktop (create shortcut)
+      b) drag-and-drop EXFOR file to the new shortcut (desktop-icon)
+    - start work in dialog mode:
+      - run program in working directory without parameters
+        $ zchex.exe
+      - use defaults for all parameters:
+        press <Enter> for every question
+      - result you will have in the file 'a.err' (compare with 'a.err00')
+
+How to update dictionaries:
+    copy file DAN_BACK_NEW.xxxx to the working directory and run:
+    - in Windows:      > danlow.exe
+    - in Linux:        $ ./danlol.exe
+    - run in MacOSX:   $ ./danlom.exe
