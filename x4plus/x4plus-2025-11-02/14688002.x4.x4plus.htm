@@ -1,0 +1,700 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>EXFOR-Interpreted, V.Zerkin, IAEA, 2012-2025</title>
+<style>
+
+p,ul,li {
+  font-family:verdana,geneva,helvetica,sans-serif;
+/* font-size:12px;*/
+  color:black;
+/*	font-weight: bold;*/
+}
+
+tt,pre {
+  font-family:courier new,courier;
+  white-space:0px;
+  font-size:8pt;
+  color:black;
+  letter-spacing:0px;
+  font-weight: normal;
+	margin-top: 0;
+/*	line-height:9pt;*/
+}
+
+div.x4top {
+  font-family:verdana,geneva,helvetica,sans-serif;
+  font-size:8pt;
+  color:#777;
+  letter-spacing:0px;
+  font-weight: normal;
+	margin-left: 2px;
+	margin-top: 5px;
+	margin-bottom: 10px;
+/*	line-height:12pt;*/
+  border:1px solid #777;
+  background-color:#ffc;
+  padding: 4px;
+  width: 330pt;
+}
+div.x4top1 {
+  font-family:verdana,geneva,helvetica,sans-serif;
+  font-size:9pt;
+  color:black;
+}
+
+tt.hdr {
+	text-decoration: none;
+	color: red;
+}
+tt.hdr0 {
+	text-decoration: none;
+	color: blue;
+}
+
+tt.lf {
+	line-height:3pt;
+}
+tt.ENTRY {
+	background-color: #d8d0f0;
+}
+tt.SUBENT {
+	background-color: #ffa0a0;
+}
+tt.data {
+	color:blue;
+}
+tt.common {
+	color:blue;
+}
+tt.intr {
+	font-family:verdana,geneva,helvetica,sans-serif;
+	color:#c000c0;
+/*	background-color: #ffffa0;*/
+}
+.intr {
+	font-family:verdana,geneva,helvetica,sans-serif;
+	color:#c000c0;
+}
+
+TABLE {
+	font-size: 9pt; 
+	font-family: verdana,helvetica; 
+	text-decoration: none;
+/*	white-space:nowrap;*/
+/*	vertical-align:top;*/
+/*	border: 0px solid #000;*/
+	border-bottom: 1px solid #000;
+	border-right: 1px solid #000;
+}
+
+TD {
+	font-size: 8pt; 
+	font-family: verdana,helvetica;
+	text-decoration: none;
+	white-space:nowrap;
+	vertical-align:top;
+/*	border: 1px solid #000;*/
+	border-top: 1px solid #000;
+	border-left: 1px solid #000;
+	padding-left: 6px;
+	padding-right: 5px;
+}
+
+form {
+  white-space:11pt;
+	margin-top: 0;
+	margin-left: 0;
+	margin-right: 0;
+	margin-bottom: 0;
+	margin-height: 0;
+	margin-width: 0;
+}
+
+BODY {
+	margin-top: 4px;
+	margin-left: 6px;
+	margin-right: 0;
+	margin-bottom: 0;
+	margin-height: 0;
+	margin-width: 0;
+	background-color: white;
+/*	background-color: #d8d0f0;*/
+  font-family:verdana,geneva,helvetica,sans-serif;
+  font-size:10pt;
+  color:black;
+
+}
+
+A.kw {
+	text-decoration: none;
+	color: #000000;
+/*	font-style:italic;*/
+	background-color: #e0ffff;
+}
+
+a.hdr {
+	text-decoration: none;
+	color: blue;
+	background-color: #e0ffff;
+}
+
+A {
+	text-decoration: none;
+	color: blue;
+}
+
+A:hover   {
+	text-decoration: underline;
+	color: red;
+}
+
+.x4legend {
+  margin:4px;
+  margin-left:0px;
+  font-size:8pt;
+  border: 1px dotted #aaa;
+  border-collapse:collapse;
+  line-height: 8pt;
+  vertical-align:top;
+}
+.x4code {
+    color: green;
+/*    font-weight: bold;*/
+}
+.x4hlp {
+    font-size:8pt;
+/*  font-style: italic;*/
+    color: #a0a;
+    margin-left: 8px;
+}
+.x4ptr {
+    background-color: red;
+    color: yellow;
+/*    padding-left:  3px;
+    padding-right: 3px;
+*/
+}
+
+.err0 {color:red; font-weight:bold; font-style:italic;}
+.monotLT {background-color:#fdd;}
+.monotEQ {background-color:#ddf;}
+</style>
+<script language=javascript>
+
+var href0='http://www.nndc.bnl.gov/nudat3/getdataset.jsp?nucleus=';
+var href1='&unc=nds';
+var hrefDataDecay0='http://www.nndc.bnl.gov/nudat3/decaysearchdirect.jsp?nuc=';
+var hrefDataDecay1='&unc=nds';
+
+//to link to the IAEA-Livechart, uncomment following 2 lines
+//href0='http://nds.iaea.org/relnsd/NdsEnsdf/nuclide.jsp?NUCID='
+//hrefDataDecay0='http://nds.iaea.org/relnsd/NdsEnsdf/nuclide.jsp?NUCID='
+
+
+function kwdhlp(code,help) {
+    this.code=code;
+    this.help=help;
+}
+
+//selected EXFOR Keywords, which require explanation via tool-tip
+kwhlp=[
+     new kwdhlp('DECAY-MON'	, 'Standard decay data')
+    ,new kwdhlp('MONITOR'	, 'Standard')
+    ,new kwdhlp('EN-SEC'	, 'Secondary energy')
+    ,new kwdhlp('INC-SOURCE'	, 'Incident particle source')
+    ,new kwdhlp('INC-SPECT'	, 'Incident spectrum')
+    ,new kwdhlp('HISTORY'	, 'History of this ENTRY in EXFOR library')
+];
+
+    function outX4kw(kw0)
+    {
+	var kw,help;
+//	document.write(kw0);
+	kw=delSpaces(kw0);
+//	if (kw=='SUBENT') document.write("<tt class=lf>\n</tt>");
+	help=getKeywordHelp(kw);
+	if (help=='') {
+	    document.write(kw0);
+	    return;
+	}
+	document.writeln('<a href="javascript:akwlink(\''+kw+'\')" ');
+	document.writeln(' class="kw" ');
+	document.writeln(' title="'+help+'" ');
+//	document.writeln(' onmouseover="javascript:startTipSIG('+mf+')" ');
+//	document.writeln(' onmouseout="javascript:stopTip()" ');
+	document.write('>');
+	document.write(kw0);
+	document.write('</a>');
+    }
+
+    function delSpaces(str0) {
+	var i,n,ll,str;
+        //alert(' addIt: ['+str+'] to:['+str0+']');
+	str=str0;
+	ll=str.length;
+        for (n=0, i=0; n<ll; n++) {
+	    if (str.charAt(i)==' ') {
+		str=str.substring(0,i)+str.substring(i+1,str.length);
+		//break;
+	    }
+	    else i++;
+	}
+	//alert ('str=['+str+']');
+	return(str);
+    }
+
+    function getKeywordHelp00(kw) {
+	var i,n,ll,str,help;
+//	help='---help---['+kw+']---';
+	help='';
+	if (kw=='DECAY-MON')	return('Standard decay data');
+	if (kw=='MONITOR')	return('Standard');
+	if (kw=='EN-SEC')	return('Secondary energy');
+	if (kw=='INC-SOURCE')	return('Incident particle source');
+	if (kw=='INC-SPECT')	return('Incident spectrum');
+	if (kw=='HISTORY')	return('History of this ENTRY in the database');
+	return(help);
+    }
+    function getKeywordHelp(kw) {
+	var i,n,ll,str,help;
+//	help='---help---['+kw+']---';
+	help='';
+	for (i=0; i<kwhlp.length; i++) {
+	    if (kw==kwhlp[i].code) return kwhlp[i].help;
+	}
+	return(help);
+    }
+
+
+    function akwlink(kw)
+    {
+	var str,help;
+	help=getKeywordHelp(kw);
+	str='---BIB Keyword--- \n';
+	str=str+'['+kw+']\n';
+	if (help!='') {
+	    str=str+''+help;
+	}
+	alert(str);
+    }
+
+    function myencodeURI(str0) {
+	var str=str0;
+//	str=encodeURI(str0);
+//	str=encodeURIComponent(str0);
+//	str=str0.replace(/+/g,'%2B');
+	str=str0.replace(/ /g,'%20');
+	return str;
+    }
+
+    function outLinkToEntry(server,accnum,UpdateDateTxt)
+    {
+	var str,link,str1;
+//	alert('host=['+window.location.hostname+']\n'+'server='+server);
+//	if (server=='localhost')
+	server=window.location.hostname;
+	link="http://"+server+"/EXFOR/"+accnum;
+	document.writeln("<div class=x4top>");
+	link="http://"+server+"/EXFOR/"+accnum;
+	document.writeln("<div class=x4top1>");
+	document.writeln("EXFOR data: ");
+	document.writeln("<a href="+link+">");
+	document.writeln(""+link);
+	document.writeln("</a>");
+	document.writeln("</div>");
+	document.writeln("Data retrieved from the EXFOR database version of "+UpdateDateTxt+".");
+	document.writeln("</div>");
+    }
+
+    function outLinkToAuthor(link,author)
+    {
+	var str;
+	link=myencodeURI(link);
+	document.writeln("<a href="+link+">");
+	document.writeln(""+author);
+	document.writeln("</a>");
+	document.writeln("<br>");
+    }
+
+    function outLinkToEntry00(server,accnum,UpdateDateTxt)
+    {
+	var str,link;
+	link="http://"+server+"/EXFOR/"+accnum;
+	document.writeln("<div class=x4top>");
+	link="http://"+server+"/EXFOR/"+accnum;
+	document.writeln("#<br>");
+	document.writeln("#EXFOR data: ");
+	document.writeln("<a href="+link+">");
+	document.writeln(""+link);
+	document.writeln("</a>");
+	document.writeln("<br>");
+	document.writeln("#<br>");
+	document.writeln("#Data retrieved from the EXFOR database (version of "+UpdateDateTxt+")");
+	document.writeln("</div>");
+    }
+
+
+
+    function begKwCode(last,pointer,iinum) {
+    }
+    function endKwCode() {
+    }
+    function begCommon0() {
+    }
+    function outX4Code2(code,shortHelp) {
+//??09	document.write('<div>');
+	if (code.charAt(0)=='+')
+	document.write('           <tt class=intr>#'+code+shortHelp+'</tt>');
+	else
+	document.write('           <tt class=intr>#<tt class=x4code>'+code+'</tt> '+shortHelp+'</tt>');
+//??09	document.write('</div>');
+	document.writeln('');
+    }
+
+//http://www.nndc.bnl.gov/nudat2/getdataset.jsp?nucleus=157HO&unc=nds
+    function outX4ReacProduct(zz,sym,aa,meta) {
+	var str,url,str1,meta1;
+	var shortHelp='';
+	str1=''+zz+'-'+sym+'-'+aa;
+	meta1=meta;
+//	if (meta!='') str1+='-'+meta1;
+	url=href0+aa+sym+href1;
+	str='# Product: ';
+	str=str+'<a href="'+url+'"';
+	str=str+' title="See it in nuclear structure database..." ';
+	str=str+' target="_blank" ';
+	str=str+' >';
+	str=str+'['+str1+']';
+	str=str+'</a>';
+	document.write('           <tt class=intr>'+str+' '+shortHelp+'</tt>');
+	document.writeln('');
+    }
+
+//http://www.nndc.bnl.gov/nudat2/decaysearchdirect.jsp?nuc=131XE&unc=nds
+    function outX4DecayData(zz,sym,aa,meta,shortHelp) {
+	var str,url,str1,meta1;
+//	var shortHelp='';
+	str1=''+zz+'-'+sym+'-'+aa;
+	meta1=meta;
+//	if (meta!='') str1+='-'+meta1;
+	url=hrefDataDecay0+aa+sym+hrefDataDecay1;
+	str='# Decay-data:';
+	str=str+'<a href="'+url+'"';
+	str=str+' title="See it in nuclear structure database..." ';
+	str=str+' target="_blank" ';
+	str=str+' >';
+	str=str+'['+str1+']';
+	str=str+'</a>';
+//	document.write('           <tt class=intr>'+str+' '+shortHelp+'</tt>');
+	document.write('           <tt class=intr>'+str+' <tt class=x4code>'+shortHelp+'</tt></tt>');
+	document.writeln('');
+    }
+
+    function begKW_Data(code,iCol,iRaw,iw,accnum,shortHelp,open,last) {
+	var text='';
+	text+=code;
+//	text=text+' '+iCol+' x '+iRaw+' x 12';
+	text=text+' '+iCol+' '+iRaw+' '+iw;
+	document.writeln(text);
+    }
+    function begLegend(iCol,iRow,iWidth) {
+//	document.write('<tt class=intr>                      #Legend: '+iCol+' x '+iRow+' x '+iWidth+' : data columns * lines * column width'+'</tt>');
+//	document.write('<div style="padding-left:65pt;">');
+//	document.write('<div style="padding-left:60pt;padding-bottom:8pt;">');
+	document.write('<div style="padding-left:60pt;">');
+	document.write('<tt class=intr>#Legend: '+iCol+' x '+iRow+' x '+iWidth
+	+' : data columns &times; lines &times; column width'+'</tt>');
+	document.write('<table border=1 cellpadding=2 cellspacing=0 class="x4legend intr" style="background-color:#e8ffff;">');
+    }
+    function endLegend(flagCommon,dataid,colorMonotData,showCopy2csv) {
+	var str1='DATA';
+	if (flagCommon) str1='COMMON';
+	document.write('</table>');
+
+	if (!flagCommon)
+	if (colorMonotData)
+	{
+/*	    document.write('<div>'
+		+'<span class=intr>#Comparing to previous data value:</span>'
+		+' <span class=monotEQ style="color:black;"> equal </span>'
+		+' <span class=monotLT style="color:black;"> descending </span>'
+		+'</div>'
+		);
+*/
+/*	    document.write('<div>'
+		+'<span class=intr>#Comparing data value a<sub>n</sub> to previous point a<sub>n-1</sub>:</span>'
+		+' <span class=monotEQ style="color:black;"> a<sub>n</sub> </span> - equal;'
+		+' <span class=monotLT style="color:black;"> a<sub>n</sub> </span> - decreasing'
+		+'</div>'
+		);
+*/
+	    document.write('<div>'
+		+'<span class=intr>#Comparing data value a[n][i] with the previous point a[n][i-1]:</span>'
+//		+' <span class=monotEQ style="color:black;">a[i]</span><span class=intr>-equal;</span>'
+//		+' <span class=monotLT style="color:black;">a[i]</span><span class=intr>-decreasing</span>'
+		+' <span class=monotEQ style="color:black;"> a </span><span class=intr>- equal;</span>'
+		+' <span class=monotLT style="color:black;"> a </span><span class=intr>- decreasing</span>'
+		+'</div>'
+		);
+	}
+
+	if (showCopy2csv) {
+	    document.write('<div class=intr>'
+//	+'#Commands: '
+	+'#Operations: '
+		+'<a href="#"'
+		+' onclick="javascript:savedata(\''+dataid+'\'); return false;" '
+		+' title="Save '+str1+' values to Download-area as CSV"'
+		+'>[save]</a> '+str1+' as CSV'
+	+';&nbsp;'
+		+'<a href="#"'
+		+' onclick="javascript:copydata(\''+dataid+'\'); return false;" '
+		+' title="Copy '+str1+' values to clipboard as CSV"'
+		+'>[copy]</a> CSV to clipboard'
+		+'</div>'
+		);
+	}
+
+	document.writeln('<span class=intr>#/Legend</span>');
+
+	document.write('</div>');
+//	document.writeln('<span class=intr>                      #/Legend</span>');
+    }
+    function copydata(dataid) {
+	var text=dataid;
+	var xx=document.getElementById(dataid);
+	if (!xx) return;
+	var span=xx.children[0];
+	text=span.innerHTML;
+	span=xx.children[1];
+	text+='\n'+span.innerHTML;
+	text=dataDelSpan(text);
+	try {
+	    navigator.clipboard.writeText(text);
+	    alert('Copied to clipboard OK.\nID: '+dataid);
+//	    console.log('Copied to clipboard:\n'+text);
+//	    console.log('Copied to clipboard:[\n'+text+'\n]');
+//	    console.log('Copied to clipboard: OK.');
+	} catch (e) {
+	    console.log('Error: Copy to clipboard: '+e);
+	}
+    }
+    function dataDelSpan(txt0) {
+	var text='';
+	var arr1=[];
+	var arr0=txt0.split('\n');
+	var ii,str,ind0,ind1;
+	for (ii=0; ii<arr0.length; ii++) {
+	    str=arr0[ii];
+	    for (;;) {
+		ind0=str.indexOf('<');	if (ind0<0) break;
+		ind1=str.indexOf('>');	if (ind1<ind0) break;
+		str=str.substring(0,ind0)+str.substring(ind1+1);
+	    }
+	    arr1.push(str);
+	}
+	text=arr1.join('\n');
+	return text;
+    }
+    function savedata(dataid) {
+	var text=dataid;
+	var filename=dataid+'.csv';
+	var xx=document.getElementById(dataid);
+	if (!xx) return;
+	var span=xx.children[0];
+	text=span.innerHTML;
+	span=xx.children[1];
+	text+='\n'+span.innerHTML;
+	text=dataDelSpan(text);
+	downloadCSV(text,filename);
+	console.log('Saved to: '+filename);
+    }
+    function downloadCSV(text,filename) {
+	var element=document.createElement('a');
+	element.setAttribute('href',
+	'data:text/csv;charset=utf-8,'+encodeURIComponent(text)
+	);
+	element.setAttribute('download', filename);
+	element.style.display = 'none';
+	document.body.appendChild(element);
+	element.click();
+	document.body.removeChild(element);
+    }
+
+
+var headerHelpImagesDir='../x4js/x4ppimg/';
+    function outLegendLine(header,pointer,help,ucode,uhelp) {
+	var headerOut=header;
+	var ll=header.length;
+	document.writeln('<tr>');
+//	outHdr(header,pointer);
+
+//	document.writeln('<td class=x4legend>#<span class=x4code>'+header+'</span></td>');
+	if (ll>3) if (header.indexOf('-CM')==ll-3)
+	headerOut='<a href="'+headerHelpImagesDir+'header-CM.png" title="Centre of Mass System" target="_blank">'+header+'</a>';
+	document.writeln('<td class=x4legend>#<span class=x4code>'+headerOut+'</span></td>');
+
+	document.writeln('<td class=x4legend><span class=x4ptr>'+pointer+'</span></td>');
+	document.writeln('<td class=x4legend><span class=x4hlp>'+help+'</span></td>');
+	document.writeln('<td class=x4legend><span class=x4code>'+ucode+'</span></td>');
+	document.writeln('<td class=x4legend><span class=x4hlp>'+uhelp+'</span></td>');
+	document.writeln('</tr>');
+    }
+    function begReactionCode(reacode,hlp,last,pointer) {
+	var strPointer='';
+//	outX4Code2(reacode,'');
+	if (pointer)
+	if (pointer!='')
+	if (pointer!=' ')
+	{
+	strPointer='<span class="x4ptr">'+pointer+'</span> ';
+	}
+	document.write('           <tt class=intr># '+strPointer+reacode+'  '+hlp+'</tt>');
+	document.writeln('');
+    }
+    function endReactionCode() {
+    }
+    function outX4Code1(code) {
+//	outX4Code2(code,'');
+    }
+</script>
+</head>
+
+<body>
+<small>Converted from EXFOR by [x4plus], ver.2025-11-02, V.Zerkin, Vienna, 2007-2025<br></small>
+<pre>
+<tt class="ENTRY"><script language=javascript>outX4kw('ENTRY     ');</script>   14688001   20210309   20211108   20211106       1482              </tt>
+<tt class="SUBENT"><script language=javascript>outX4kw('SUBENT    ');</script>   14688001   20210309   20211108   20211106       1482              </tt>
+<tt class="BIB"><script language=javascript>outX4kw('BIB       ');</script>         12         26                                               </tt>
+<tt class="TITLE"><script language=javascript>outX4kw('TITLE     ');</script> The Absorption Cross Section of Gold for Neutrons of</tt>
+           Energies from 0.01 to 0.3 Ev
+<script language=javascript>
+     begKwCode(true,' ',0);
+     endKwCode();
+</script><tt class="AUTHOR"><script language=javascript>outX4kw('AUTHOR    ');</script> (B.D.McDaniel,R.B.Sutton,L.S.Lavatelli,E.E.Anderson)</tt>
+<script language=javascript>
+     begKwCode(true,' ',0);
+      outX4Code1('(B.D.McDaniel, R.B.Sutton, L.S.Lavatelli, E.E.Anderson)');
+     endKwCode();
+</script><tt class="REFERENCE"><script language=javascript>outX4kw('REFERENCE ');</script> (J,PR,72,729(1),1947)</tt>
+           #doi:10.1103/physrev.72.729
+           (R,MDDC-232,1946) Preliminary results.
+<script language=javascript>
+     begKwCode(false,' ',0);
+      outX4Code2('(J,PR,72,729(1),1947)','#URL=<a href="http://journals.aps.org/pr/abstract/10.1103/PhysRev.72.729(1)" target="Journal_window">http://journals.aps.org/pr/abstract/10.1103/PhysRev.72.729(1)</a>, Jour: Physical Review, Vol.72, p.729(1) (1947), USA');
+      outX4Code2('+       ','#DOI=<a href="http://dx.doi.org/10.1103/physrev.72.729" Target="_blank">10.1103/physrev.72.729</a>');
+     endKwCode();
+</script><script language=javascript>
+     begKwCode(true,' ',1);
+      outX4Code2('(R,MDDC-232,1946)','Rept: Manhatten District Reports, No.232 (1946), USA');
+     endKwCode();
+</script><tt class="REL-REF"><script language=javascript>outX4kw('REL-REF   ');</script> (R,12184001,W.W.Havens Jr+,J,PR,71,165,1947) Gold</tt>
+           resonance energy.
+<script language=javascript>
+     begKwCode(true,' ',0);
+      outX4Code2('(R,12184001,W.W.Havens Jr+,J,PR,71,165,1947)','EXFOR:<a href=http://www-nds.iaea.org/EXFOR/12184001 target=_blank>12184001</a> Author:<font color=green>W.W.Havens Jr+</font>, Jour: Physical Review, Vol.71, p.165 (1947), USA');
+      outX4Code2('+       ','<font color=green>(R)</font>  Reference from which data were used');
+      outX4Code1('(R,12184001,W.W.Havens Jr+,J,PR,71,165,1947)');
+     endKwCode();
+</script><tt class="INSTITUTE"><script language=javascript>outX4kw('INSTITUTE ');</script> (1USALAS)</tt>
+<script language=javascript>
+     begKwCode(true,' ',0);
+      outX4Code2('(1USALAS)','Los Alamos National Laboratory, NM, United States of America');
+     endKwCode();
+</script><tt class="FACILITY"><script language=javascript>outX4kw('FACILITY  ');</script> (CYCLO,1USALAS)  42-inch Los Alamos cyclotron.</tt>
+<script language=javascript>
+     begKwCode(true,' ',0);
+      outX4Code2('(CYCLO','Cyclotron');
+      outX4Code2(',1USALAS)','Los Alamos National Laboratory, NM, United States of America');
+     endKwCode();
+</script><tt class="INC-SOURCE"><script language=javascript>outX4kw('INC-SOURCE');</script> (D-BE)</tt>
+<script language=javascript>
+     begKwCode(true,' ',0);
+      outX4Code2('(D-BE)','9Be(d,n)');
+     endKwCode();
+</script><tt class="DETECTOR"><script language=javascript>outX4kw('DETECTOR  ');</script> (BF3)</tt>
+<script language=javascript>
+     begKwCode(true,' ',0);
+      outX4Code2('(BF3)','Boron Trifluoride neutron detector');
+     endKwCode();
+</script><tt class="SAMPLE"><script language=javascript>outX4kw('SAMPLE    ');</script> A gold sheet, 3.01 g/cm2 thick.</tt>
+<script language=javascript>
+     begKwCode(true,' ',0);
+     endKwCode();
+</script><tt class="METHOD"><script language=javascript>outX4kw('METHOD    ');</script> (TOF) Neutrons of high energy were produced by</tt>
+           bombardment of a Be target with deuterons. The
+           neutrons were slowed down in a moderating medium near
+           the cyclotron chamber. The moderator consisted of a
+           5-cm thickness of a solution of 7 g of B203 per
+           liter of water, boron being used to shorten the mean
+           life of the source. Neutron energies were determined
+           by measuring their time of Right over a 7.6-meter
+           path from the moderator to a BF3-ion chamber.
+<script language=javascript>
+     begKwCode(true,' ',0);
+      outX4Code2('(TOF)','Time-of-flight');
+     endKwCode();
+</script><tt class="CORRECTION"><script language=javascript>outX4kw('CORRECTION');</script> Corrections, which amortized to less than 3 percent</tt>
+           of the time of flight, were made to take account of
+           the 68-microsecond mean life of the moderator.
+<script language=javascript>
+     begKwCode(true,' ',0);
+     endKwCode();
+</script><tt class="HISTORY"><script language=javascript>outX4kw('HISTORY   ');</script> (20210309C) BP</tt>
+<script language=javascript>
+     begKwCode(true,' ',0);
+      outX4Code1('(20210309C)');
+     endKwCode();
+</script>ENDBIB              26
+NOCOMMON
+ENDSUBENT           29
+<tt class="SUBENT"><script language=javascript>outX4kw('SUBENT    ');</script>   14688002   20210309   20211108   20211106       1482              </tt>
+<tt class="BIB"><script language=javascript>outX4kw('BIB       ');</script>          3          3                                               </tt>
+<tt class="REACTION"><script language=javascript>outX4kw('REACTION  ');</script> (79-AU-197(N,TOT),,SIG)</tt>
+<script language=javascript>
+   begReactionCode('(79-AU-197(N,TOT),,SIG)','',true,' ');
+     begKwCode(true,' ',-1);
+      outX4Code2('','Target:<span class=x4code>AU-197</span>&nbsp;#Projectile:<span class=x4code>N</span>&nbsp;#Reaction:<span class=x4code>N,TOT</span> <!br>&nbsp;#Process:<span class=x4code>TOT</span>:Total <!br>&nbsp;#Quantity:<span class=x4code>,SIG</span>:CS:Cross section ');
+     endKwCode();
+   endReactionCode();
+</script><tt class="ERR-ANALYS"><script language=javascript>outX4kw('ERR-ANALYS');</script> (DATA-ERR) No details on sources of uncertainties.</tt>
+<script language=javascript>
+     begKwCode(true,' ',0);
+      outX4Code1('(DATA-ERR)');
+     endKwCode();
+</script><tt class="STATUS"><script language=javascript>outX4kw('STATUS    ');</script> (CURVE) Figure, page 729.</tt>
+<script language=javascript>
+     begKwCode(true,' ',0);
+      outX4Code2('(CURVE)','Data read from a curve');
+      outX4Code1('(CURVE)');
+     endKwCode();
+</script>ENDBIB               3
+NOCOMMON
+<script language=javascript>
+   begKW_Data('DATA       ','         3','        12','        12','14688002','',true,true);
+</script><script language=javascript>
+    begLegend(3,12,12);
+outLegendLine('EN','','Energy of incident projectile, laboratory system','EV','electron-Volts');
+outLegendLine('DATA','','Cross section <br><font color=#aaaaaa>#+ 79-AU-197(N,TOT),,SIG</font>','B','barns');
+outLegendLine('DATA-ERR','','Error in value of quantity, defined under ERR-ANALYS','B','barns');
+    endLegend(false,'DATA_14688002',true,true);
+</script><tt class=x4code>EN          DATA        DATA-ERR    </tt>
+<tt class=x4code>EV          B           B           </tt>
+<div style="display:table-cell;" id="DATA_14688002"><div onclick="copydata('DATA_14688002'); return false;" title="Click to copy CSV to clipboard" style="color:blue;font-family:calibri;font-size:7pt;text-align:justify;text-align-last:center;background-color:#ddd;display:none;">#EN:EV, DATA:B, DATA-ERR:B</div><span ><span class=err0>-0.110     </span>,132.030    ,4.743      ,#?warn:EN 
+<span class=err0>-0.047     </span><span class=monotLT>,116.638    </span><span class=monotLT>,3.929      </span>,#?warn:EN 
+0.014      <span class=monotLT>,113.055    </span>,4.723      
+0.078      <span class=monotLT>,108.304    </span><span class=monotLT>,3.536      </span>
+0.138      <span class=monotLT>,94.080     </span>,3.943      
+0.166      <span class=monotLT>,86.367     </span><span class=monotLT>,3.149      </span>
+0.195      ,87.714     ,3.549      
+0.231      <span class=monotLT>,78.467     </span><span class=monotLT>,2.755      </span>
+0.290      <span class=monotLT>,67.786     </span>,3.549      
+0.349      <span class=monotLT>,57.885     </span><span class=monotLT>,2.782      </span>
+0.407      <span class=monotLT>,46.409     </span><span class=monotLT>,2.755      </span>
+0.468      <span class=monotLT>,36.521     </span>,2.762      
+</span></div>ENDDATA
+ENDSUBENT           22
+ENDENTRY
+</body>
+</html>

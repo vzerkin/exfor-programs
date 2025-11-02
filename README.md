@@ -1,5 +1,5 @@
 # Programs for EXFOR compilers
-by V.Zerkin for NRDC, 2025-10-01
+by V.Zerkin for NRDC, 2025-11-02
 
 ## Content
 

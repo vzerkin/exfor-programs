@@ -1,0 +1,662 @@
+REQUEST         837001   20140423          3     143834               0  0    0
+ENTRY            23114   20130924   20140113   20140110       223623114000    1
+SUBENT        23114001   20130924   20140113   20140110       223623114001    1
+BIB                 17        133                                 23114001    2
+TITLE      High resolution measurements of the 241Am(n,2n)        23114001    3
+            reaction cross section                                23114001    4
+AUTHOR     (C.Sage, V.Semkova, O.Bouland, P.Dessagne, A.Fernandez,23114001    5
+            F.Gunsing, C.Naestren, G.Noguere, H.Ottmar,           23114001    6
+            A.J.M.Plompen, P.Romain, G.Rudolf, J.Somers, F.Wastin)23114001    7
+INSTITUTE  (2FR SAC,2ZZZGEL,2FR CAD,2FR STR,3BULBLA,1USALAS,      23114001    8
+           2ZZZITU,2FR BRC)                                       23114001    9
+REFERENCE  (J,PR/C,81,064604,2010)                                23114001   10
+           #doi:10.1103/PhysRevC.81.064604                        23114001   11
+           (T,SAGE,141,2009)                                      23114001   12
+           Derivation of full covariance matrix,                  23114001   13
+           Sage's thesis submitted to Univ. Strasbourg.           23114001   14
+REL-REF    (R,A1007001,H.Liskien+,J,ND/A,11,569,1973)             23114001   15
+            c.s. used for neutron spectra                         23114001   16
+           (R,,A.B.Smith+,R,ANL-NDM-115,1990)                     23114001   17
+            c.s. for unfolding with 115In(n,n')115In              23114001   18
+           (R,,M.Wagner+,B,PH-DAT,13-5,1990)                      23114001   19
+            c.s. for unfolding with 27Al(n,a) and 93Nb(n,2n)      23114001   20
+           (R,,P.M.Endt,J,NP/A,633,1,1998)                        23114001   21
+            Decay data for A=27                                   23114001   22
+           (R,,Huo Junde,J,NDS,86,315,1999)                       23114001   23
+            Decay data for A=56                                   23114001   24
+           (R,,J.Blachot,J,NDS,104,967,2005)                      23114001   25
+            Decay data for A=115                                  23114001   26
+           (R,,R.B.Firestone,J,NDS,108,2319,2007)                 23114001   27
+            Decay data for A=24                                   23114001   28
+           (R,,C.M.Baglin,J,NDS,91,423,2000)                      23114001   29
+            Decay data for A=92                                   23114001   30
+           (R,,M.R.Bhat,J,NDS,80,789,1997)                        23114001   31
+            Decay data for A=58                                   23114001   32
+FACILITY   (VDGT,2ZZZGEL) 7-MV Van de Graaff accelerator          23114001   33
+INC-SOURCE Typical beam current on the target 10 uA.              23114001   34
+           (D-D) 8.34 and 9.15 MeV neutrons by 5.5, 6.3 MeV       23114001   35
+            deuterons using D2 gas target cell of 4 cm length,    23114001   36
+            4 cm diameter, with Mo entrance window at 120 kPa.    23114001   37
+            Samples were placed 1.5 cm from neutron production    23114001   38
+            target.                                               23114001   39
+           (D-T) 16.1 to 20.6 MeV neutrons from solid-state       23114001   40
+            Ti/H-3 target of 2 mg/cm2 thickness on Ag backing of  23114001   41
+            0.4 mm thickness.                                     23114001   42
+            Samples were placed at 0 deg at 2 cm distance from    23114001   43
+            neutron production target.                            23114001   44
+           13.3 MeV neutrons by 1 MeV deuterons.                  23114001   45
+            Sample were placed at 125 deg at 3.9 cm distance from 23114001   46
+            neutron production target.                            23114001   47
+INC-SPECT  Quasi-mono-energetic neutron flux 5.E+7 n/sec/cm2.     23114001   48
+           Mean neutron energy and yield distributions were       23114001   49
+            calculated by code ENERGYSET based on                 23114001   50
+            - cross section evaluations of H.Liskien+ (1973);     23114001   51
+            - energy-loss estimates with stopping powers of       23114001   52
+              H.H.Andersen et al., "Hydrogen stopping powers and  23114001   53
+              ranges in all elements", Pergamon, New York, 1977.  23114001   54
+           To account for contribution of low threshold energies  23114001   55
+            reaction, neutron flux density distributions were     23114001   56
+            determined using previously measured TOF spectra      23114001   57
+            combined with the spectral index method involving     23114001   58
+            various reactions used for unfolding:                 23114001   59
+             115In(n,n')115mIn (A.B.Smith+, 1990),                23114001   60
+             27Al(n,a)24Na (M.Wagner+, 1990),                     23114001   61
+             93Nb(n,2n)92mNb (M.Wagner+, 1990),                   23114001   62
+             27Al(n,p)27Mg (ENDF/B-VI),                           23114001   63
+             56Fe(n,p)56Mn (ENDF/B-VI),                           23114001   64
+             58Ni(n,p)58Co (ENDF/B-VI) .                          23114001   65
+DETECTOR   (HPGE) Pb/Sn/Cu shielding of 5/3/3 mm thickness,       23114001   66
+            respectively, to reduce 241Am natural activity to     23114001   67
+            limit the dead time of the system to <15% (between    23114001   68
+            7% and 15%, typically).                               23114001   69
+           Co-60 standard source was used to check correctness of 23114001   70
+            dead time given by acquisition system Maestro (Ortec).23114001   71
+           Additional shielding of 10-mm-thick Cu cylinder to     23114001   72
+            avoid detection of scattered gamma-rays.              23114001   73
+           Gamma-ray spectra were analyzed using the software     23114001   74
+            package Genie2000 of Canberra.                        23114001   75
+           Energy calibration was made by standard sources:       23114001   76
+            241Am(59.5 keV), 109Cd(88 keV), 57Co(122.1,136.5 keV),23114001   77
+            137Cs(661.66 keV), 54Mn(834.8 keV), 65Zn(1115.5 keV)  23114001   78
+            for different radial positions and detector-source    23114001   79
+            distance.                                             23114001   80
+           The efficiency was determined by MCNP5 taking into     23114001   81
+            account the entire detection geometry.                23114001   82
+           Results of simulation were compared with measured      23114001   83
+            values and efficiency curves by fitting experimental  23114001   84
+            points with polynomial logarithmic functions.         23114001   85
+           Detector geometry parameters have been optimized to    23114001   86
+            obtain agreement between measurements and simulations 23114001   87
+            within the uncertainty limits.                        23114001   88
+           (BF3) BF3-counter operated in multichannel-scaling     23114001   89
+            acquisition mode - to record the time profile on      23114001   90
+            neutron flux.                                         23114001   91
+METHOD     (ACTIV,GSPEC)                                          23114001   92
+           The intensities of the two main gamma-rays emitted in  23114001   93
+            the decay of 240Am were measured as a function of     23114001   94
+            cooling time after irradiation.                       23114001   95
+SAMPLE     The Am samples were prepared at JRC, ITU, Karlsruhe,   23114001   96
+            by method based on production of porous alumina       23114001   97
+            granules by powder metallurgy.                        23114001   98
+           Resulting powder was pressed into pellets of 12 mm     23114001   99
+            diameter, 2mm thickness.                              23114001  100
+           Sample weight was on average 400 mg, average Am        23114001  101
+            content was 40 mg. Encapsulated in Al containers.     23114001  102
+           --------------------------------------------------     23114001  103
+            Total mass   241Am content  Al2O3    241Am Calc'd     23114001  104
+             g             mg            g        wt%             23114001  105
+           --------------------------------------------------     23114001  106
+            0.342        32.2+/-0.1     0.305    9.43             23114001  107
+            0.442        42.2+/-0.1     0.394    9.51             23114001  108
+            0.428        40.3+/-0.1     0.382    9.42             23114001  109
+            0.435        41.0+/-0.1     0.388    9.42             23114001  110
+            0.448        41.2+/-0.1     0.401    9.20             23114001  111
+            0.447        42.1+/-0.1     0.399    9.42 .           23114001  112
+           --------------------------------------------------     23114001  113
+           Distance between monitor foils and sample was 3 mm in  23114001  114
+            front, 10 mm at back.                                 23114001  115
+MONITOR    (13-AL-27(N,A)11-NA-24,,SIG)                           23114001  116
+DECAY-MON  (11-NA-24,14.997HR,DG,1368.6,0.999936)                 23114001  117
+            14.997+/-0.012 hr, 99.9936+/-0.0015%                  23114001  118
+MONIT-REF  (,M.Wagner+,B,PH-DAT,13-5,1990)                        23114001  119
+           (,H.Vonach,R,INDC(SEC)-101,75,1992)                    23114001  120
+DECAY-DATA Decay data used for neutron flux unfolding             23114001  121
+           (12-MG-27,9.458MIN,DG,843.8,0.718)                     23114001  122
+            9.458+/-0.012 min, 71.8+/-0.4%                        23114001  123
+           (25-MN-56,2.5789HR,DG,846.8,0.989)                     23114001  124
+            2.5789+/-0.0001 hr, 98.9+/-0.3%                       23114001  125
+           (49-IN-115-M,4.486HR,DG,336.2,0.46)                    23114001  126
+            4.486+/-0.004 hr, 46+/-2%                             23114001  127
+           (41-NB-92-M,10.15D,DG,934.4,0.9907)                    23114001  128
+            10.15+/-0.02 d, 99.07+/-0.04%                         23114001  129
+           (27-CO-58-G,70.86D,DG,810.8,0.9945)                    23114001  130
+            70.86+/-0.07 d, 99.45+/-0.01%                         23114001  131
+STATUS     (APRVD) V.Semkova (2010-10-19)                         23114001  132
+HISTORY    (20100924C) M.M.                                       23114001  133
+           (20120120A) NDS(VZ): REL-REF: ND/B->NDS                23114001  134
+           (20130924U) On. BIB updated                            23114001  135
+ENDBIB             133                                            23114001  136
+NOCOMMON             0          0                                 23114001  137
+ENDSUBENT          136                                            2311400199999
+SUBENT        23114002   20130924   20140113   20140110       223623114002    1
+BIB                 10         81                                 23114002    2
+REACTION   (95-AM-241(N,2N)95-AM-240,,SIG)                        23114002    3
+DECAY-DATA (95-AM-240,50.8HR,DG,987.79,0.722)                     23114002    4
+            50.8+/-0.3 hr, 987.79+/-0.06 keV, 72.2+/-0.9%         23114002    5
+           The 987.79-keV line is free of interference, while the 23114002    6
+            888.85 keV gamma line is contaminated by the natural  23114002    7
+            activity of the sample itself.                        23114002    8
+           Only 987.79 keV gamma line was used for cross section  23114002    9
+            determination.                                        23114002   10
+REL-REF    (R,,B.Singh+,J,NDS,109,2439,2008)                      23114002   11
+            Decay data for A=240                                  23114002   12
+           (R,,M.S.Basunia,J,NDS,107,2323,2006)                   23114002   13
+            Decay data for A=237                                  23114002   14
+           (A,14172003,A.P.Tonchev+,J,PR/C,77,054610,2008)        23114002   15
+           (A,22936002,G.Perdikakis+,J,PR/C,73,067601,2006)       23114002   16
+           (A,41240071,A.A.Filatenkov+,J,PAN,63,1504,2000)        23114002   17
+           (D,13883003,R.W.Lougheed+,J,RCA,90,833,2002)           23114002   18
+CORRECTION Corrections were done for                              23114002   19
+           - photon absorption, including the disk shape of the   23114002   20
+             samples and monitor foils, were calculated using     23114002   21
+             MCNP5 simulation of the detection geometry, have     23114002   22
+             been incorporated in the efficiency and were         23114002   23
+             estimated to 0.2% and 1.3%, respectively.            23114002   24
+           - coincidence summings of gamma-rays:                  23114002   25
+              25.4% for 27Al(n,a)  1368.6 keV                     23114002   26
+               0.3% for 27Al(n,p)   843.8 keV                     23114002   27
+              13.5% for 58Ni(n,p)   810.8 keV                     23114002   28
+               0.4% for 93Nb(n,2n)  934.4 keV                     23114002   29
+               9.9% for 56Fe(n,p)   846.8 keV                     23114002   30
+           - neutron flux fluctuations (MISC1,MISC2)              23114002   31
+           - low-energy breakup neutrons (MISC3,MISC4)            23114002   32
+MISC-COL   (MISC1) Flux fluctuation correction factor for Am      23114002   33
+           (MISC2) Flux fluctuation correction factor for Al      23114002   34
+           (MISC3) Low energy correction factor for Am            23114002   35
+           (MISC4) Low energy correction factor for Al            23114002   36
+ADD-RES    TALYS, ENDF/B-VII, JENDL-3.3 agree each other;         23114002   37
+           BROND-2.2 close to exp. data only above 18 MeV.        23114002   38
+ERR-ANALYS (ERR-T,,,P) Total uncertainty                          23114002   39
+           (MONIT-ERR,,,P) 27Al(n,a) standard x-section (1.6-5.4%)23114002   40
+           (ERR-1,,,U) Counting of 240Am activity       (1.4-6.3%)23114002   41
+           (ERR-2,,,U) Counting of 24Na activity        (0.7-2.0%)23114002   42
+           (ERR-3,,,F) Intensity of 240Am gamma line        (1.2%)23114002   43
+           (ERR-4,,,U) Number of 27Al in sample             (0.1%)23114002   44
+           (ERR-5,,,P) Number of 241Am in sample            (0.3%)23114002   45
+           (ERR-6,,,F) 24Na/240Am efficiency ratio          (3.0%)23114002   46
+           (ERR-7,,,F) Correction for decay of 240Am    (0.4-0.9%)23114002   47
+           (ERR-8,,,U) Correction for secondary neutron    (<1.4%)23114002   48
+COVARIANCE  (XY,9,EN,MEV) incident neutron energy                 23114002   49
+             8.34 9.15 13.33 16.10 17.16 17.90 19.36 19.95 20.61  23114002   50
+            (Z,45,COR:ERR-T,PER-CENT) macro-correlation           23114002   51
+             100                                                  23114002   52
+              35 100                                              23114002   53
+              37  42 100                                          23114002   54
+              38  43  53 100                                      23114002   55
+              40  45  57  58 100                                  23114002   56
+              41  45  57  59  84 100                              23114002   57
+              21  24  30  31  39  39 100                          23114002   58
+              30  34  44  45  58  59  51 100                      23114002   59
+              20  22  29  30  40  42  39  65 100                  23114002   60
+            (Z,45,COR:MONIT-ERR,PER-CENT) micro-corr.(standard)   23114002   61
+             100                                                  23114002   62
+              43 100                                              23114002   63
+               0   0 100                                          23114002   64
+               0   0   6 100                                      23114002   65
+               0   0   9  12 100                                  23114002   66
+               0   0   9  12 100 100                              23114002   67
+               0   0  11  11  40  40 100                          23114002   68
+               0   0  11  11  40  40 100 100                      23114002   69
+               0   0  11  11  40  40 100 100 100                  23114002   70
+            (Z,45,COR:ERR-5,PER-CENT) micro-corr. (sample mass)   23114002   71
+             100                                                  23114002   72
+               0 100                                              23114002   73
+               0 100 100                                          23114002   74
+               0 100 100 100                                      23114002   75
+               0   0   0   0 100                                  23114002   76
+             100   0   0   0   0 100                              23114002   77
+               0   0   0   0 100   0 100                          23114002   78
+               0   0   0   0   0   0   0 100                      23114002   79
+             100   0   0   0   0 100   0   0 100                  23114002   80
+STATUS     (TABLE) Table V of Phys.Rev.C81(2010)064604,           23114002   81
+                   Appendix B of Sage's thesis (micro correlation)23114002   82
+HISTORY    (20130924A) On. ERR-ANALYS, COVARIANCE etc.            23114002   83
+ENDBIB              81                                            23114002   84
+COMMON               4          3                                 23114002   85
+ERR-3      ERR-4      ERR-5      ERR-6                            23114002   86
+PER-CENT   PER-CENT   PER-CENT   PER-CENT                         23114002   87
+ 1.2        0.1        0.3        3.0                             23114002   88
+ENDCOMMON            3                                            23114002   89
+DATA                13          9                                 23114002   90
+EN         EN-ERR     DATA       ERR-T      MONIT-ERR  ERR-1      23114002   91
+ERR-2      ERR-7      ERR-8      MISC1      MISC2      MISC3      23114002   92
+MISC4                                                             23114002   93
+MEV        MEV        MB         PER-CENT   PER-CENT   PER-CENT   23114002   94
+PER-CENT   PER-CENT   PER-CENT   NO-DIM     NO-DIM     NO-DIM     23114002   95
+NO-DIM                                                            23114002   96
+  8.34      0.15        96.8      6.5        1.9        5.0       23114002   97
+  1.0       0.9                   0.9974     0.9925     1.        23114002   98
+  1.                                                              23114002   99
+  9.15      0.15       162.9      5.7        1.9        4.0       23114002  100
+  1.0       0.6                   1.0731     1.3117     1.        23114002  101
+  1.                                                              23114002  102
+ 13.33      0.15       241.8      4.6        1.6        2.5       23114002  103
+  1.0       0.4          0.3      0.9168     0.8288     1.        23114002  104
+  1.                                                              23114002  105
+ 16.10      0.15       152.4      4.6        2.         2.1       23114002  106
+  1.0       0.6          0.3      1.0749     1.2335     1.        23114002  107
+  1.                                                              23114002  108
+ 17.16      0.03       116.1      4.4        2.         1.5       23114002  109
+  1.0       0.6          0.3      0.9987     0.9878     0.998     23114002  110
+  0.997                                                           23114002  111
+ 17.90      0.10       105.7      4.4        2.2        1.3       23114002  112
+  0.7       0.7          0.3      0.969      0.933      0.998     23114002  113
+  0.997                                                           23114002  114
+ 19.36      0.15        89.5      8.2        3.1        6.3       23114002  115
+  2.0       0.6          1.3      1.0061     1.0157     0.941     23114002  116
+  0.926                                                           23114002  117
+ 19.95      0.07       102.1      5.8        4.1        1.4       23114002  118
+  1.0       0.6          1.4      0.9822     0.9433     0.922     23114002  119
+  0.891                                                           23114002  120
+ 20.61      0.04        77.9      8.8        5.4        5.7       23114002  121
+  1.6       0.6          1.4      0.9938     0.982      0.885     23114002  122
+  0.832                                                           23114002  123
+ENDDATA             33                                            23114002  124
+ENDSUBENT          123                                            2311400299999
+ENDENTRY             2                                            2311499999999
+ENTRY            31714   20130717   20140228   20140212       316231714000    1
+SUBENT        31714001   20130717   20140228   20140212       316231714001    1
+BIB                 11         66                                 31714001    2
+TITLE      Studies of (n,xn) cross-sections in Al, Au, Bi, Cu,    31714001    3
+           Fe, I, In, Mg, Ni, Ta, Y, and Zn by the activation     31714001    4
+           method                                                 31714001    5
+AUTHOR     (J.Vrzalova,O.Svoboda,A.Krasa,A.Kugler,M.Majerle,      31714001    6
+            M.Suchopar,V.Wagner)                                  31714001    7
+INSTITUTE  (3CZRUJF,3CZRCTI)                                      31714001    8
+REFERENCE  (J,NIM/A,726,84,2013)                                  31714001    9
+           #doi:10.1016/j.nima.2013.05.133                        31714001   10
+           (J,KPS,59,1709,2011)                                   31714001   11
+           (J,EPJ/CS,8,07003,2010) Data on graphs.                31714001   12
+           (C,2010KRAKOW,,259,2010) Preliminary data on graphs    31714001   13
+           (J,EPJ/CS,21,10007,2012) Additional results for        31714001   14
+           197Au(n,2n), 197Au(n,4n) and 209Bi(n,4n) cross         31714001   15
+           sections at 59.13, 66.54, 72.73, 89.34 MeV. New        31714001   16
+           results for 63Cu(n,3n) reaction.                       31714001   17
+           (C,2012DUBNA,,090,2012) Data on graphs.                31714001   18
+INC-SOURCE (P-LI7) High energy protons from the cyclotron were    31714001   19
+            directed to a thin lithium target.                    31714001   20
+           The neutron flux density was in the range from         31714001   21
+            10**5/cm2/s (TSL) up to 10**8/cm2/s (NPI).            31714001   22
+           Approximately a half of the intensity was in the peak  31714001   23
+            with FWHM = 1 MeV (corresponds to the ground state    31714001   24
+            and first excited state at 0.43 MeV in 7Be) and half  31714001   25
+            of intensity was in the continuum in lower energies   31714001   26
+            (corresponds to higher excited states, multiple-      31714001   27
+            particle emission etc.).                              31714001   28
+           In TSL, proton beams with energies 50, 62, 70, 80,     31714001   29
+            92 and 97 MeV were used.                              31714001   30
+           In NPI, proton beams with energies 20, 32.5, and       31714001   31
+            37 MeV were used.                                     31714001   32
+METHOD     (ACTIV) The irradiation times were about 20 h.         31714001   33
+           Transport times between end of irradiation and         31714001   34
+            activity counting were from 2 minutes in TSL up to    31714001   35
+            15 minutes in NPI.                                    31714001   36
+DETECTOR   (HPGE) The HPGe detectors were calibrated with the     31714001   37
+            set of laboratory etalons.                            31714001   38
+           Distance between detector-sample was from 10 mm up to  31714001   39
+           173 mm in NPI, respectively 40 mm in TSL               31714001   40
+CORRECTION The following set of corrections were applied:         31714001   41
+            - corr. on decay during cooling, irr. and meas.,      31714001   42
+            - self absorption correction,                         31714001   43
+            - non-point like (square) emitter correction,         31714001   44
+            - real gamma-gamma cascade coinc. correction,         31714001   45
+            - detector efficiency and dead time correction,       31714001   46
+            - gamma line intensity correction,                    31714001   47
+            - beam instability correction,                        31714001   48
+            - background subtraction.                             31714001   49
+ERR-ANALYS (ERR-S,1.,10.) Minimal statistical uncertainty from    31714001   50
+            the Gauss-fit of the gamma peaks was 1%, but lower    31714001   51
+            than 10% for most of the peaks.                       31714001   52
+           (ERR-1,,3.) Uncertainty of the efficiency of the HPGe  31714001   53
+            detector calibration is below 3%.                     31714001   54
+           (ERR-2) Uncertainty of the neutron beam intensity 10%. 31714001   55
+           (ERR-3,,10.) Uncertainties due to background subtr.    31714001   56
+           (ERR-T) Total uncertainty is a square root of the      31714001   57
+            second powers of Gauss-fit, beam intensity            31714001   58
+            determination and neutron spectrum uncertainties.     31714001   59
+DECAY-DATA Decay data were taken from Chu S.Y.F. et al.: The      31714001   60
+            Lund/LBNL Nuclear Data Search web                     31714001   61
+            Numerical values received from authors.               31714001   62
+HISTORY    (20110708C) VS                                         31714001   63
+           (20120626A) VS. New data and new references added:     31714001   64
+             C,2010KRAKOW,,259,2010 and EPJ/CS,21,10007,2012      31714001   65
+             STATUS moved from subent. 001 to 002-017.            31714001   66
+             Subentry 018 added.                                  31714001   67
+           (20130717) VS. Entry revised NIM/A,726,84,2013         31714001   68
+ENDBIB              66                                            31714001   69
+COMMON               1          3                                 31714001   70
+ERR-2                                                             31714001   71
+PER-CENT                                                          31714001   72
+10.                                                               31714001   73
+ENDCOMMON            3                                            31714001   74
+ENDSUBENT           73                                            3171400199999
+SUBENT        31714008   20130717   20140228   20140212       316231714008    1
+BIB                  4          6                                 31714008    2
+REACTION  1(13-AL-27(N,X)11-NA-24,,SIG)                           31714008    3
+          2(13-AL-27(N,X)11-NA-24,,SIG)                           31714008    4
+FACILITY  1(CYCLO,3CZRUJF)                                        31714008    5
+          2(CYCLO,2SWDUPP)                                        31714008    6
+DECAY-DATA (11-NA-24,14.9590HR,DG,1368.633,1.)                    31714008    7
+STATUS     (TABLE) Data from table 6 of NIM/A 726 (2013) 84.      31714008    8
+ENDBIB               6                                            31714008    9
+NOCOMMON             0          0                                 31714008   10
+DATA                 6          8                                 31714008   11
+EN         EN-ERR     DATA      1ERR-T     1DATA      2ERR-T     231714008   12
+MEV        MEV        B          B          B          B          31714008   13
+      30.4        0.8      0.0099     0.0014                      31714008   14
+      35.9        0.8      0.0074      0.001                      31714008   15
+      47.0        0.6                           0.0093    0.0014  31714008   16
+      59.0        0.4                           0.0181    0.0027  31714008   17
+      66.4        0.4                           0.0194    0.0028  31714008   18
+      72.8        0.4                           0.0174    0.0027  31714008   19
+      89.3        0.7                           0.0148    0.0021  31714008   20
+      94.0        0.7                           0.0134    0.0022  31714008   21
+ENDDATA             10                                            31714008   22
+ENDSUBENT           21                                            3171400899999
+ENDENTRY             2                                            3171499999999
+ENTRY            41328   19990401   19990705   20050926       000041328000    1
+SUBENT        41328001   19990401   19990705   20050926       000041328001    1
+BIB                 13         29                                 41328001    2
+INSTITUTE  (4RUSFEI)  FIRST FIVE AUTHORS                          41328001    3
+           (3CUBHAB)  LAST AUTHOR                                 41328001    4
+REFERENCE  (R,INDC(NDS)-272,(131),199203) MAIN REFERENCE          41328001    5
+                            NUMERICAL DATA AND GRAPHS.            41328001    6
+           (C,88SMOLEN,,272,198806)  EXPERIMENTAL DETAILS, GRAPHS 41328001    7
+           (W,SIMAKOV,199903)  NUMERICAL DATA GIVEN VIA INTERNET  41328001    8
+AUTHOR     (S.P.SIMAKOV, B.V.DEVKIN, M.G.KOBOSEV, A.A.LYCHAGIN,   41328001    9
+            V.A.TALALAEV, C.SANDIN)                               41328001   10
+TITLE      .DIFFERENTIAL NEUTRON EMISSION CROSS-SECTIONS FOR      41328001   11
+            BERYLLIUM AND TANGSTEN AT 14 MEV INCIDENT NEUTRON     41328001   12
+            ENERGY                                                41328001   13
+FACILITY   (VDG)  TIME OF FLIGHT SPECTROMETER OF THE              41328001   14
+            INSTITUTE OF PHYSICS AND POWER ENGINEERING, OBNINSK   41328001   15
+METHOD     (TOF) NEUTRON FLIGHT PATH LENGTH WAS 709 CM            41328001   16
+DETECTOR   (SCIN) NE-218 LIQUID SCINTILLATOR 10 CM IN DAMETER     41328001   17
+                  AND 5 CM IN LENGTH.                             41328001   18
+INC-SOURCE (D-T) 2.5 NSEC PULSED NEUTRONS WERE GENERATED BY       41328001   19
+                 KLYSTRON NEUTRON GENERATOR KG-0.3 OF IPPE        41328001   20
+SAMPLE     .METALLIC BE-9 (NATURAL ABUNDANCE), HOLLOW CYLINDER:   41328001   21
+            OUTER DIAMETER 45MM, INNER DIAMETER 30MM, HEIHGT 56MM 41328001   22
+            METALLIC W (NATURAL ABUNDANCE), HOLLOW CYLINDER:      41328001   23
+            OUTER DIAMETER 42MM, INNER DIAMETER 20MM, HEIHGT 50MM 41328001   24
+CORRECTION .DATA WERE CORRECTED FOR MULTIPLE SCATTERING,          41328001   25
+            ELASTICALLY SCATTERED NEUTRONS WERE SUBTRACTED        41328001   26
+STATUS     (APRVD)   SIMAKOV, 19990326                            41328001   27
+HISTORY    (19990331C)  + +   COMPILED AT THE CJD                 41328001   28
+ERR-ANALYS (ERR-T) TOTAL ERROR                                    41328001   29
+           (ERR-1) SYSTEMATIC ERROR 6% HAVE TO BE ADDED TO GET    41328001   30
+                   TOTAL ONE                                      41328001   31
+ENDBIB              29                                            41328001   32
+COMMON               1          3                                 41328001   33
+ERR-1                                                             41328001   34
+PER-CENT                                                          41328001   35
+  6.                                                              41328001   36
+ENDCOMMON            3                                            41328001   37
+ENDSUBENT           36                                            4132800199999
+SUBENT        41328002   19990401   19990705   20050926       000041328002    1
+BIB                  1          1                                 41328002    2
+REACTION   (4-BE-9(N,X)0-NN-1,EM,DA/DE)                           41328002    3
+ENDBIB               1                                            41328002    4
+NOCOMMON             0          0                                 41328002    5
+DATA                 5        245                                 41328002    6
+EN         ANG        E          DATA       ERR-T                 41328002    7
+MEV        ADEG       MEV        MB/SR/MEV  MB/SR/MEV             41328002    8
+  13.45       150.0     .8        19.90      5.45                 41328002    9
+  13.45       150.0    1.0        11.74       .72                 41328002   10
+  13.45       150.0    1.2        11.93      1.04                 41328002   11
+  13.45       150.0    1.4        10.24       .63                 41328002   12
+  13.45       150.0    1.6         8.01      1.16                 41328002   13
+  13.45       150.0    1.8         6.63       .58                 41328002   14
+  13.45       150.0    2.0         6.15       .42                 41328002   15
+  13.45       150.0    2.2         5.60       .60                 41328002   16
+  13.45       150.0    2.4         5.82       .55                 41328002   17
+  13.45       150.0    2.6         4.92       .40                 41328002   18
+  13.45       150.0    2.8         3.98       .27                 41328002   19
+  13.45       150.0    3.0         3.88       .24                 41328002   20
+  13.45       150.0    3.2         3.80       .27                 41328002   21
+  13.45       150.0    3.4         3.90       .32                 41328002   22
+  13.45       150.0    3.6         3.71       .46                 41328002   23
+  13.45       150.0    3.8         3.63       .32                 41328002   24
+  13.45       150.0    4.0         3.38       .22                 41328002   25
+  13.45       150.0    4.2         3.35       .21                 41328002   26
+  13.45       150.0    4.4         3.30       .27                 41328002   27
+  13.45       150.0    4.6         2.70       .51                 41328002   28
+  13.45       150.0    4.8         2.74       .30                 41328002   29
+  13.45       150.0    5.0         2.31       .16                 41328002   30
+  13.45       150.0    5.2         1.80       .15                 41328002   31
+  13.45       150.0    5.4         1.37       .10                 41328002   32
+  13.45       150.0    5.6         1.10       .08                 41328002   33
+  13.45       150.0    5.8          .96       .22                 41328002   34
+  13.45       150.0    6.0         1.01       .06                 41328002   35
+  13.45       150.0    6.2         1.54       .10                 41328002   36
+  13.45       150.0    6.4         2.17       .35                 41328002   37
+  13.45       150.0    6.6         3.11       .34                 41328002   38
+  13.45       150.0    6.8         5.39      1.20                 41328002   39
+  13.45       150.0    7.0         5.06       .62                 41328002   40
+  13.45       150.0    7.2         2.29       .39                 41328002   41
+  13.72       120.0     .8        16.06       .96                 41328002   42
+  13.72       120.0    1.0        15.19      1.03                 41328002   43
+  13.72       120.0    1.2        13.21       .89                 41328002   44
+  13.72       120.0    1.4        11.03       .66                 41328002   45
+  13.72       120.0    1.6         9.43       .58                 41328002   46
+  13.72       120.0    1.8         7.72       .53                 41328002   47
+  13.72       120.0    2.0         6.41       .52                 41328002   48
+  13.72       120.0    2.2         5.27       .32                 41328002   49
+  13.72       120.0    2.4         4.77       .29                 41328002   50
+  13.72       120.0    2.6         4.24       .25                 41328002   51
+  13.72       120.0    2.8         3.93       .35                 41328002   52
+  13.72       120.0    3.0         3.60       .22                 41328002   53
+  13.72       120.0    3.2         3.58       .22                 41328002   54
+  13.72       120.0    3.4         3.33       .22                 41328002   55
+  13.72       120.0    3.6         3.32       .29                 41328002   56
+  13.72       120.0    3.8         3.49       .21                 41328002   57
+  13.72       120.0    4.0         3.97       .24                 41328002   58
+  13.72       120.0    4.2         4.05       .39                 41328002   59
+  13.72       120.0    4.4         3.95       .31                 41328002   60
+  13.72       120.0    4.6         3.40       .30                 41328002   61
+  13.72       120.0    4.8         3.06       .26                 41328002   62
+  13.72       120.0    5.0         2.49       .21                 41328002   63
+  13.72       120.0    5.2         2.14       .18                 41328002   64
+  13.72       120.0    5.4         1.94       .14                 41328002   65
+  13.72       120.0    5.6         1.87       .15                 41328002   66
+  13.72       120.0    5.8         1.72       .12                 41328002   67
+  13.72       120.0    6.0         1.62       .20                 41328002   68
+  13.72       120.0    6.2         1.44       .19                 41328002   69
+  13.72       120.0    6.4         1.47       .14                 41328002   70
+  13.72       120.0    6.6         1.45       .09                 41328002   71
+  13.72       120.0    6.8         1.66       .11                 41328002   72
+  13.72       120.0    7.0         2.03       .17                 41328002   73
+  13.72       120.0    7.2         3.27       .42                 41328002   74
+  13.72       120.0    7.4         4.84       .40                 41328002   75
+  13.72       120.0    7.6         5.99       .52                 41328002   76
+  13.72       120.0    7.8         5.98       .38                 41328002   77
+  13.72       120.0    8.0         5.12       .62                 41328002   78
+  13.72       120.0    8.2         2.78       .52                 41328002   79
+  13.72       120.0    8.4         1.32       .25                 41328002   80
+  13.72       120.0    8.6          .73       .21                 41328002   81
+  13.72       120.0    8.8          .19       .27                 41328002   82
+  14.10        90.0     .8        15.37      1.51                 41328002   83
+  14.10        90.0    1.0        13.70       .99                 41328002   84
+  14.10        90.0    1.2        12.93       .87                 41328002   85
+  14.10        90.0    1.4        11.37       .76                 41328002   86
+  14.10        90.0    1.6        10.66       .70                 41328002   87
+  14.10        90.0    1.8         9.47       .63                 41328002   88
+  14.10        90.0    2.0         8.05       .54                 41328002   89
+  14.10        90.0    2.2         6.47       .45                 41328002   90
+  14.10        90.0    2.4         5.80       .41                 41328002   91
+  14.10        90.0    2.6         5.11       .37                 41328002   92
+  14.10        90.0    2.8         4.33       .34                 41328002   93
+  14.10        90.0    3.0         4.00       .32                 41328002   94
+  14.10        90.0    3.2         3.41       .29                 41328002   95
+  14.10        90.0    3.4         3.03       .26                 41328002   96
+  14.10        90.0    3.6         2.88       .25                 41328002   97
+  14.10        90.0    3.8         2.89       .26                 41328002   98
+  14.10        90.0    4.0         3.08       .26                 41328002   99
+  14.10        90.0    4.2         3.22       .28                 41328002  100
+  14.10        90.0    4.4         3.32       .28                 41328002  101
+  14.10        90.0    4.6         3.60       .30                 41328002  102
+  14.10        90.0    4.8         3.87       .29                 41328002  103
+  14.10        90.0    5.0         4.11       .33                 41328002  104
+  14.10        90.0    5.2         4.30       .32                 41328002  105
+  14.10        90.0    5.4         4.40       .34                 41328002  106
+  14.10        90.0    5.6         4.20       .33                 41328002  107
+  14.10        90.0    5.8         3.74       .29                 41328002  108
+  14.10        90.0    6.0         3.24       .27                 41328002  109
+  14.10        90.0    6.2         2.73       .27                 41328002  110
+  14.10        90.0    6.4         2.31       .22                 41328002  111
+  14.10        90.0    6.6         2.05       .22                 41328002  112
+  14.10        90.0    6.8         1.94       .22                 41328002  113
+  14.10        90.0    7.0         1.94       .21                 41328002  114
+  14.10        90.0    7.2         1.50       .26                 41328002  115
+  14.10        90.0    7.4         1.47       .20                 41328002  116
+  14.10        90.0    7.6         1.51       .19                 41328002  117
+  14.10        90.0    7.8         1.38       .25                 41328002  118
+  14.10        90.0    8.0         1.65       .24                 41328002  119
+  14.10        90.0    8.2         1.82       .19                 41328002  120
+  14.10        90.0    8.4         2.47       .26                 41328002  121
+  14.10        90.0    8.6         4.02       .34                 41328002  122
+  14.10        90.0    8.8         5.60       .42                 41328002  123
+  14.10        90.0    9.0         5.73       .42                 41328002  124
+  14.10        90.0    9.2         6.05       .44                 41328002  125
+  14.10        90.0    9.4         6.20       .44                 41328002  126
+  14.10        90.0    9.6         4.75       .36                 41328002  127
+  14.10        90.0    9.8         2.73       .24                 41328002  128
+  14.10        90.0   10.0         1.25       .29                 41328002  129
+  14.10        90.0   10.2          .46       .35                 41328002  130
+  14.10        90.0   10.4          .08       .21                 41328002  131
+  14.49        60.0     .8        24.29      2.49                 41328002  132
+  14.49        60.0    1.0        17.15      1.38                 41328002  133
+  14.49        60.0    1.2        17.24      1.23                 41328002  134
+  14.49        60.0    1.4        14.48      1.04                 41328002  135
+  14.49        60.0    1.6        13.99       .96                 41328002  136
+  14.49        60.0    1.8        12.22       .85                 41328002  137
+  14.49        60.0    2.0        10.61       .75                 41328002  138
+  14.49        60.0    2.2         9.65       .69                 41328002  139
+  14.49        60.0    2.4         9.36       .66                 41328002  140
+  14.49        60.0    2.6         8.44       .63                 41328002  141
+  14.49        60.0    2.8         7.12       .56                 41328002  142
+  14.49        60.0    3.0         5.95       .50                 41328002  143
+  14.49        60.0    3.2         5.70       .48                 41328002  144
+  14.49        60.0    3.4         4.82       .42                 41328002  145
+  14.49        60.0    3.6         4.66       .41                 41328002  146
+  14.49        60.0    3.8         4.54       .41                 41328002  147
+  14.49        60.0    4.0         4.25       .41                 41328002  148
+  14.49        60.0    4.2         4.43       .40                 41328002  149
+  14.49        60.0    4.4         3.66       .41                 41328002  150
+  14.49        60.0    4.6         3.48       .36                 41328002  151
+  14.49        60.0    4.8         3.62       .38                 41328002  152
+  14.49        60.0    5.0         3.65       .37                 41328002  153
+  14.49        60.0    5.2         3.55       .39                 41328002  154
+  14.49        60.0    5.4         4.04       .40                 41328002  155
+  14.49        60.0    5.6         3.94       .39                 41328002  156
+  14.49        60.0    5.8         3.99       .39                 41328002  157
+  14.49        60.0    6.0         4.63       .41                 41328002  158
+  14.49        60.0    6.2         5.38       .48                 41328002  159
+  14.49        60.0    6.4         5.70       .45                 41328002  160
+  14.49        60.0    6.6         5.89       .48                 41328002  161
+  14.49        60.0    6.8         6.12       .49                 41328002  162
+  14.49        60.0    7.0         5.46       .45                 41328002  163
+  14.49        60.0    7.2         4.80       .51                 41328002  164
+  14.49        60.0    7.4         4.25       .40                 41328002  165
+  14.49        60.0    7.6         4.00       .47                 41328002  166
+  14.49        60.0    7.8         3.89       .38                 41328002  167
+  14.49        60.0    8.0         2.63       .43                 41328002  168
+  14.49        60.0    8.2         2.81       .38                 41328002  169
+  14.49        60.0    8.4         2.77       .29                 41328002  170
+  14.49        60.0    8.6         2.52       .34                 41328002  171
+  14.49        60.0    8.8         2.50       .34                 41328002  172
+  14.49        60.0    9.0         2.25       .32                 41328002  173
+  14.49        60.0    9.2         2.11       .32                 41328002  174
+  14.49        60.0    9.4         2.20       .32                 41328002  175
+  14.49        60.0    9.6         2.35       .32                 41328002  176
+  14.49        60.0    9.8         2.93       .33                 41328002  177
+  14.49        60.0   10.0         4.41       .40                 41328002  178
+  14.49        60.0   10.2         7.10       .54                 41328002  179
+  14.49        60.0   10.4         9.09       .65                 41328002  180
+  14.49        60.0   10.6        10.56       .73                 41328002  181
+  14.49        60.0   10.8        10.41       .72                 41328002  182
+  14.49        60.0   11.0         8.75       .63                 41328002  183
+  14.49        60.0   11.2         5.78       .46                 41328002  184
+  14.49        60.0   11.4         2.90       .29                 41328002  185
+  14.49        60.0   11.6         1.51       .24                 41328002  186
+  14.49        60.0   11.8         1.01       .28                 41328002  187
+  14.49        60.0   12.0          .89       .41                 41328002  188
+  14.49        60.0   12.2          .76       .57                 41328002  189
+  14.49        60.0   12.4          .87       .35                 41328002  190
+  14.49        60.0   12.6          .42       .41                 41328002  191
+  14.78        30.0     .8        33.10     22.93                 41328002  192
+  14.78        30.0    1.0        27.05      8.28                 41328002  193
+  14.78        30.0    1.2        21.41      2.33                 41328002  194
+  14.78        30.0    1.4        19.57      2.98                 41328002  195
+  14.78        30.0    1.6        16.58      1.59                 41328002  196
+  14.78        30.0    1.8        12.76      1.36                 41328002  197
+  14.78        30.0    2.0        15.27      1.40                 41328002  198
+  14.78        30.0    2.2        12.27      1.23                 41328002  199
+  14.78        30.0    2.4        14.80      1.32                 41328002  200
+  14.78        30.0    2.6        17.33      1.43                 41328002  201
+  14.78        30.0    2.8        13.98      1.30                 41328002  202
+  14.78        30.0    3.0        10.78      1.13                 41328002  203
+  14.78        30.0    3.2         8.59      1.00                 41328002  204
+  14.78        30.0    3.4         9.05       .99                 41328002  205
+  14.78        30.0    3.6         7.29       .98                 41328002  206
+  14.78        30.0    3.8         6.71       .90                 41328002  207
+  14.78        30.0    4.0         5.64       .86                 41328002  208
+  14.78        30.0    4.2         6.42       .92                 41328002  209
+  14.78        30.0    4.4         5.23       .99                 41328002  210
+  14.78        30.0    4.6         6.51       .87                 41328002  211
+  14.78        30.0    4.8         5.52       .89                 41328002  212
+  14.78        30.0    5.0         4.90       .98                 41328002  213
+  14.78        30.0    5.2         4.01       .80                 41328002  214
+  14.78        30.0    5.4         4.24       .89                 41328002  215
+  14.78        30.0    5.6         4.64       .84                 41328002  216
+  14.78        30.0    5.8         3.68       .98                 41328002  217
+  14.78        30.0    6.0         4.47       .81                 41328002  218
+  14.78        30.0    6.2         5.76       .93                 41328002  219
+  14.78        30.0    6.4         5.80       .78                 41328002  220
+  14.78        30.0    6.6         4.15       .83                 41328002  221
+  14.78        30.0    6.8         4.57       .82                 41328002  222
+  14.78        30.0    7.0         5.59      1.11                 41328002  223
+  14.78        30.0    7.2         5.52       .84                 41328002  224
+  14.78        30.0    7.4         6.92       .87                 41328002  225
+  14.78        30.0    7.6         7.15      1.15                 41328002  226
+  14.78        30.0    7.8         6.59       .88                 41328002  227
+  14.78        30.0    8.0         5.27      1.05                 41328002  228
+  14.78        30.0    8.2         5.51       .99                 41328002  229
+  14.78        30.0    8.4         5.97       .97                 41328002  230
+  14.78        30.0    8.6         5.33       .91                 41328002  231
+  14.78        30.0    8.8         5.11       .87                 41328002  232
+  14.78        30.0    9.0         4.17       .83                 41328002  233
+  14.78        30.0    9.2         3.80       .79                 41328002  234
+  14.78        30.0    9.4         3.63       .76                 41328002  235
+  14.78        30.0    9.6         3.49       .73                 41328002  236
+  14.78        30.0    9.8         3.26       .71                 41328002  237
+  14.78        30.0   10.0         3.29       .69                 41328002  238
+  14.78        30.0   10.2         2.61       .67                 41328002  239
+  14.78        30.0   10.4         2.91       .66                 41328002  240
+  14.78        30.0   10.6         2.97       .65                 41328002  241
+  14.78        30.0   10.8         3.10       .65                 41328002  242
+  14.78        30.0   11.0         3.56       .68                 41328002  243
+  14.78        30.0   11.2         5.42       .73                 41328002  244
+  14.78        30.0   11.4         6.92       .80                 41328002  245
+  14.78        30.0   11.6        11.77      1.03                 41328002  246
+  14.78        30.0   11.8        15.23      1.21                 41328002  247
+  14.78        30.0   12.0        15.93      1.25                 41328002  248
+  14.78        30.0   12.2        11.78      1.02                 41328002  249
+  14.78        30.0   12.4         7.57       .81                 41328002  250
+  14.78        30.0   12.6         4.49       .64                 41328002  251
+  14.78        30.0   12.8         3.71       .60                 41328002  252
+  14.78        30.0   13.0         3.53      2.69                 41328002  253
+ENDDATA            247                                            41328002  254
+ENDSUBENT          253                                            4132800299999
+ENDENTRY             2                                            4132899999999
+ENDREQUEST           1                                            Z999999999999
