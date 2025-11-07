@@ -1,29 +1,36 @@
 
-  +------------------------------------------+
-  | Program x4read2x4interp, ver.2025-11-02. |
-  | Converting EXFOR file to X4+ interpreted |
-  | by V.Zerkin, IAEA-NDS, Vienna, 2007-2023 |
-  |  v.zerkin@gmail.com, Vienna, 2023-2025.  |
-  +------------------------------------------+
+  +-------------------------------------------+
+  | Program x4read2x4interp, ver.2025-11-07.  |
+  | Translating EXFOR file to X4+ interpreted |
+  | by V.Zerkin, IAEA-NDS, Vienna, 2007-2023, |
+  |    v.zerkin@gmail.com, Vienna, 2023-2025. |
+  +-------------------------------------------+
 
  Run:
-    $ java [flags] x4read2x4interp infile.x4 [out.htm] [options]
+    $ java [flags] x4read2x4interp infile [outfile] [options]
+ Parameters: 
+    infile       input file: EXFOR/text
+    outfile      output file: x4+/html, default: {infile}.x4plus.htm
  Options: 
     -o:file      output file
     -nojs        do not include JS and CSS text to the output
     -nodata      do not display data lines from DATA section
     -nocolor     do not color equal and decreasing values in DATA section
     -nocsv       do not show line: save/copy CSV of DATA/COMMON
-    -showentry   show currently processed Entry
+    -nodup       do not show points with duplicating independent variables
+    -err         check uncertainties (warning: negative and zero)
+    -showentry   show currently processed #Entry
+    -chk         checking mode (valid codes)
     -www2dd:iaea link to www decay data (default: nndc)
     -x4db:file   use EXFOR database (property file)
     -dict:dir/   use dictionaries from dir (must end with /)
  Java flags:
-   -Xmx<size>  set maximum Java heap size
-   -cp <paths> list of directories, JAR archives to search for class files
+    -Xmx<size>  set maximum Java heap size
+    -cp <paths> list of directories, JAR archives to search for class files
  Examples:
     $ java x4read2x4interp file.x4
     $ java -Xmx400M -cp x4tool.jar x4read2x4interp file.x4
-    $ java x4read2x4interp a1.x4 -o:a1.html
+    $ java x4read2x4interp a1.x4 a1.html
     $ java x4read2x4interp a1.x4 -o:a1.html -dict:x4dict/
     $ java x4read2x4interp O0050002.x4 -www2dd:iaea -nocolor -nocsv
+    $ java x4read2x4interp 23147004.x4 -err -chk
