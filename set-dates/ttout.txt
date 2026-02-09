@@ -1,0 +1,57 @@
+
+G:\projects\set_dates>ls --time-style=+"%Y-%m-%d" -tgG F*.x4 L*.x4 O0049.x4 R0013.x4
+-rw-r--r-- 1  84807 2025-12-05 F1041.x4
+-rw-r--r-- 1  17377 2025-12-05 O0049.x4
+-rw-r--r-- 1  17545 2025-12-05 R0013.x4
+-rw-r--r-- 1 179860 2025-12-05 LI6HE3D_da.x4
+
+G:\projects\set_dates>bash setdate2exfor.sh -doc F*.x4 L*.x4 O0049.x4 R0013.x4
+   +------------------------------------------+
+   |   Set modification time of EXFOR files   |
+   | from the latest update date from Entries |
+   +------------------------------------------+
+   | Program: setdate2exfor.sh, v.2025-12-04  |
+   |        /by V.Zerkin, Vienna, 2025/       |
+   +------------------------------------------+
+   Platform: MINGW32_NT-6.2 1.0.19(0.48/3/2) i686
+   Computer: ZVV-MINI-PC
+   Shell:    GNU bash, version 3.1.23(1)-release (i686-pc-msys)
+   Bash-ver: 3.1.23(1)-release
+   Script:   setdate2exfor.sh
+   Now Dir:  /g/projects/set_dates
+   x4Files:  #4 dir=./ F1041.x4 LI6HE3D_da.x4 O0049.x4 ...
+   keyword:  ENTRY
+   setTime:  1200.00    # [YYYYMMDD]hhmm.ss
+---Start:    2025-12-05,17:13:39
+  1 F1041.x4         [20100129-20100129]  size:84807      lines:1047     entries:1
+        #old time: 2025-12-05 17:12:40
+        #new time: 2010-01-29 12:00:00
+        $ touch -t 201001291200.00 F1041.x4
+  2 LI6HE3D_da.x4    [19990324-20210415]  size:179860     lines:4360     entries:10
+        #old time: 2025-12-05 17:12:28
+        #new time: 2021-04-15 12:00:00
+        $ touch -t 202104151200.00 LI6HE3D_da.x4
+  3 O0049.x4         [19950517-19950517]  size:17377      lines:615      entries:1
+        #old time: 2025-12-05 17:12:37
+        #new time: 1995-05-17 12:00:00
+        $ touch -t 199505171200.00 O0049.x4
+  4 R0013.x4         [19840907-19840907]  size:17545      lines:544      entries:1
+        #old time: 2025-12-05 17:12:34
+        #new time: 1984-09-07 12:00:00
+        $ touch -t 198409071200.00 R0013.x4
+---Finish:   2025-12-05,17:13:42
+---Program successfully completed---00:03=3sec
+---Summary---
+   Files:   4
+   Size:    299589(~1M)
+   Lines:   6566
+   Entries: 13
+   Dates:   19840907-20210415
+
+G:\projects\set_dates>ls --time-style=+"%Y-%m-%d" -tgG F*.x4 L*.x4 O0049.x4 R0013.x4
+-rw-r--r-- 1 179860 2021-04-15 LI6HE3D_da.x4
+-rw-r--r-- 1  84807 2010-01-29 F1041.x4
+-rw-r--r-- 1  17377 1995-05-17 O0049.x4
+-rw-r--r-- 1  17545 1984-09-07 R0013.x4
+
+G:\projects\set_dates>
