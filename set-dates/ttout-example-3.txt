@@ -1,0 +1,66 @@
+$
+$ git clone https://github.com/iaea-nrdcnetwork/exfor-entry-file.git master2
+Cloning into 'master2'...
+remote: Enumerating objects: 42886, done.
+remote: Counting objects: 100% (499/499), done.
+remote: Compressing objects: 100% (446/446), done.
+remote: Total 42886 (delta 69), reused 303 (delta 52), pack-reused 42387 (from 3)
+Receiving objects: 100% (42886/42886), 468.57 MiB | 12.49 MiB/s, done.
+Resolving deltas: 100% (13161/13161), done.
+Updating files: 100% (26930/26930), done.
+$
+$ cd master2/entry/
+$
+$ setdate2exfor.sh */*.txt
+   +------------------------------------------+
+   |   Set modification time of EXFOR files   |
+   | from the latest update date from Entries |
+   +------------------------------------------+
+   | Program: setdate2exfor.sh, v.2026-02-10  |
+   |    /by V.Zerkin, Vienna, 2025-2026/      |
+   +------------------------------------------+
+   Platform: Linux 6.8.0-90-generic x86_64
+   Computer: zerkin-VirtualBox
+   Shell:    GNU bash, version 5.1.16(1)-release (x86_64-pc-linux-gnu)
+   Bash-ver: 5.1.16(1)-release
+   Script:   /home/zerkin/bin/setdate2exfor.sh
+   Now Dir:  /home/zerkin/master2/entry
+   x4Files:  #26928 dir=1/ 10001.txt 10002.txt 10003.txt ...
+   keyword:  ENTRY
+   setTime:  1200.00    # [YYYYMMDD]hhmm.ss
+---Start:    2026-02-10,11:13:26
+  1 10001.txt        [19980914-19980914]  size:614466     #line:7586     #entry:1     
+  2 10002.txt        [20120601-20120601]  size:9680067    #line:119507   #entry:1     
+  3 10003.txt        [19990617-19990617]  size:217485     #line:2685     #entry:1     
+  4 10004.txt        [19990617-19990617]  size:277506     #line:3426     #entry:1     
+  5 10005.txt        [19990617-19990617]  size:137943     #line:1703     #entry:1     
+  6 10006.txt        [19990617-19990617]  size:274428     #line:3388     #entry:1     
+  7 10007.txt        [20230707-20230707]  size:239841     #line:2961     #entry:1     
+  8 10008.txt        [19990617-19990617]  size:210843     #line:2603     #entry:1     
+  . . . . . . . . . .
+  . . . . . . . . . .
+  . . . . . . . . . .
+
+12307 41787.txt        [20250925-20250925]  size:8829       #line:109      #entry:1     
+12308 90001.txt        [       0-       0]  size:1290501    #line:15932    #entry:1     
+12309 a0001.txt        [20160207-20160207]  size:30861      #line:381      #entry:1     
+  . . . . . . . . . .
+  . . . . . . . . . .
+  . . . . . . . . . .
+
+26922 v0045.txt        [20130625-20130625]  size:29889      #line:369      #entry:1     
+26923 v0101.txt        [20150710-20150710]  size:20007      #line:247      #entry:1     
+26924 v0102.txt        [20150710-20150710]  size:514107     #line:6347     #entry:1     
+26925 v0103.txt        [20141231-20141231]  size:135837     #line:1677     #entry:1     
+26926 v0104.txt        [20160331-20160331]  size:43659      #line:539      #entry:1     
+26927 v1001.txt        [20220627-20220627]  size:654885     #line:8085     #entry:1     
+26928 v1002.txt        [20220907-20220907]  size:870021     #line:10741    #entry:1     
+---Finish:   2026-02-10,11:43:45
+---Program successfully completed---00:30:19=1819sec
+---Summary---
+   Files:   26928
+   Size:    2229517881(~2127M)
+   Lines:   27524912
+   Entries: 26928
+   Dates:   19730609-20251214
+$

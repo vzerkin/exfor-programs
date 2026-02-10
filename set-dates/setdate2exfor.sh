@@ -4,21 +4,27 @@
 # Created: December 2, 2025
 # License: MIT
 
-cat <<EOF
-   +------------------------------------------+
-   |   Set modification time of EXFOR files   |
-   | from the latest update date from Entries |
-   +------------------------------------------+
-   | Program: setdate2exfor.sh, v.2025-12-04  |
-   |        /by V.Zerkin, Vienna, 2025/       |
-   +------------------------------------------+
-   Platform: `uname -s -m -r`
-   Computer: `uname -n`
-   Shell:    `bash --version|head -n 1`
-   Bash-ver: $BASH_VERSION
-   Script:   $0
-   Now Dir:  `pwd`
-EOF
+outWelcome() {
+    cat <<-EOF
+	   +------------------------------------------+
+	   |   Set modification time of EXFOR files   |
+	   | from the latest update date from Entries |
+	   +------------------------------------------+
+	   | Program: setdate2exfor.sh, v.2026-02-10  |
+	   |    /by V.Zerkin, Vienna, 2025-2026/      |
+	   +------------------------------------------+
+	EOF
+}
+outPlatform() {
+    cat <<-EOF
+	   Platform: `uname -s -m -r`
+	   Computer: `uname -n`
+	   Shell:    `bash --version|head -n 1`
+	   Bash-ver: $BASH_VERSION
+	   Script:   $0
+	   Now Dir:  `pwd`
+	EOF
+}
 
 outHelp() {
 	cat <<-EOF
@@ -34,20 +40,24 @@ outHelp() {
 	Files:
 	  <file>    EXFOR file or files
 	Examples:
-	    $ ./setdate2exfor.sh
-	    $ bash setdate2exfor.sh
-	    $ ~/bin/setdate2exfor.sh file1.x4 file2.x4
-	    $ setdate2exfor.sh *.x4 -co -t:15:30:45
-	    $ setdate2exfor.sh [ORF]*.x4 -ceo -kw:SUBENT
-	    $ setdate2exfor.sh trans.f102 -ceo -kw:TRANS -t:13:05:49
-	    $ setdate2exfor.sh G:\\backup\\EXFOR-2024-09-02.bck -ceo -kw:REQUEST -t:23:48:14
+	   $ ./setdate2exfor.sh
+	   $ bash setdate2exfor.sh
+	   $ setdate2exfor.sh entry/*/*.txt
+	   $ ~/bin/setdate2exfor.sh file1.x4 file2.x4
+	   $ setdate2exfor.sh *.x4 -co -t:15:30:45
+	   $ setdate2exfor.sh [ORF]*.x4 -ceo -kw:SUBENT
+	   $ setdate2exfor.sh trans.f102 -ceo -kw:TRANS -t:13:05:49
+	   $ setdate2exfor.sh prelim.c253 -ceo -kw:TRANS -t:17:04:51
+	   $ setdate2exfor.sh G:\\backup\\EXFOR-2024-09-02.bck -ceo -kw:REQUEST -t:23:48:14
 	EOF
 }
 
+outWelcome
 if [ "$1" = ""       ] ; then outHelp; exit; fi
 if [ "$1" = "--help" ] ; then outHelp; exit; fi
 if [ "$1" = "-help"  ] ; then outHelp; exit; fi
 if [ "$1" = "-h"     ] ; then outHelp; exit; fi
+outPlatform
 
 showEntry=0
 showCmd=0
@@ -144,7 +154,7 @@ echo "---Start:    `date +'%F,%T'`"
 t00=`date +%s`
 ifile=0; nEntry=0; totMax=0; totMin=0
 for name in "${filenames[@]}"; do
-    if [ -f $name ]; then
+    if [ -f "$name" ]; then
 	ifile=$(($ifile+1))
 	nam="${name//\\/\/}"
 	nam=${nam##*/}
@@ -165,6 +175,14 @@ for name in "${filenames[@]}"; do
 	    IFS='\n' #; IFS=$'\n'
 #	    strings=$(grep "^ENTRY" "$name")
 	    strings=$(grep "^$kw" "$name")
+#	    echo "-----strings:[$strings]"
+	    if [ "${strings}" = "" ]; then
+		echo ""
+		echo "---WARNING---"
+		echo "There are no strings starting with [$kw] in the file: $name"
+		echo ""
+		continue
+	    fi
 	    while read -r str0; do
 		ient=$(($ient+1))
 		nEntry=$(($nEntry+1))
@@ -176,7 +194,7 @@ for name in "${filenames[@]}"; do
 #		echo "--${name}--$ient/$nEntry [$Entry] [$dat]"
 		if [ ${#dat} -ne 8 ]; then
 		    echo -en "\007"
-		    echo "---$ifile) file=$name\n"
+		    echo "---$ifile) file=$name"
 		    echo "---ERROR. ENTRY:$Entry DATE:[$dat]:L=${#dat} should contain 8 digits."
 		    echo "---Process interrupted."
 		    exit 1
@@ -190,19 +208,19 @@ for name in "${filenames[@]}"; do
 		    if [ $dat -gt $totMax ]; then totMax=$dat; fi
 		    if [ $dat -lt $totMin ]; then totMin=$dat; fi
 		fi
-		echo -en "#$ifile)file=$nam $ient)$kw:[$Entry] date:[$dat][$mindat-$maxdat]\r"
+		echo -en "#$ifile)file=$nam $ient)$kw:[$Entry] date:[$dat] range:[$mindat-$maxdat]\r"
 		if [ $showEntry -ne 0 ]; then
 		    echo ""
 		fi
-	done <<< "$strings"
-fi
+	    done <<< "$strings"
+	fi
 
 #	echo "#$ifile $nam $ient [$totMin-$maxdat]"
 	ln=`cat "$name"|wc -l`
 	size=`ls -l "$name" | cut -d " " -f5`
 	totLines=$(($totLines+$ln))
 	totSize=$(($totSize+$size))
-	printf "%3d %-16s [%6s-%6s]  size:%-10s lines:%-8d entries:%-5d \x1b[0K\n" \
+	printf "%3d %-16s [%8s-%8s]  size:%-10s #line:%-8d #entry:%-5d \x1b[0K\n" \
 	$ifile "$nam" "$mindat" "$maxdat" "$size" $ln $ient
 	if [ $maxdat -gt 19000000 ]; then
 #	    ftime="${maxdat}1200.00" #noon=12:00:00
@@ -223,9 +241,9 @@ fi
     fi
 done
 t11=`date +%s`; dt=$(($t11-$t00))
-minsec=`printf "%02d:%02d" $((dt/60)) $((dt%60))`
+hhmmss=`printf "%02d:%02d:%02d" $((dt/3600)) $((dt/60%60)) $((dt%60))`
 echo "---Finish:   `date +'%F,%T'`"
-echo "---Program successfully completed---${minsec}=${dt}sec"
+echo "---Program successfully completed---${hhmmss}=${dt}sec"
 
 sizeMB=$((((totSize+1023)/1024+1023)/1024))
 echo "---Summary---"

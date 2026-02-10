@@ -1,0 +1,190 @@
+$
+$ git clone https://github.com/iaea-nrdcnetwork/exfor-entry-file.git master2
+Cloning into 'master2'...
+remote: Enumerating objects: 42886, done.
+remote: Counting objects: 100% (499/499), done.
+remote: Compressing objects: 100% (446/446), done.
+remote: Total 42886 (delta 69), reused 303 (delta 52), pack-reused 42387 (from 3)
+Receiving objects: 100% (42886/42886), 468.57 MiB | 12.49 MiB/s, done.
+Resolving deltas: 100% (13161/13161), done.
+Updating files: 100% (26930/26930), done.
+$
+$ cd master2/entry/
+$
+$ ls --time-style=+"%Y-%m-%d" -tgG v/?????.txt
+-rw-rw-r-- 1  870021 2026-02-10 v/v1002.txt
+-rw-rw-r-- 1  654885 2026-02-10 v/v1001.txt
+-rw-rw-r-- 1  135837 2026-02-10 v/v0103.txt
+-rw-rw-r-- 1   43659 2026-02-10 v/v0104.txt
+-rw-rw-r-- 1  514107 2026-02-10 v/v0102.txt
+-rw-rw-r-- 1    5994 2026-02-10 v/v0044.txt
+-rw-rw-r-- 1   29889 2026-02-10 v/v0045.txt
+-rw-rw-r-- 1   20007 2026-02-10 v/v0101.txt
+-rw-rw-r-- 1   10368 2026-02-10 v/v0034.txt
+-rw-rw-r-- 1   19521 2026-02-10 v/v0035.txt
+-rw-rw-r-- 1   12312 2026-02-10 v/v0036.txt
+-rw-rw-r-- 1   10935 2026-02-10 v/v0037.txt
+-rw-rw-r-- 1    8667 2026-02-10 v/v0038.txt
+-rw-rw-r-- 1   29727 2026-02-10 v/v0039.txt
+-rw-rw-r-- 1    5589 2026-02-10 v/v0041.txt
+-rw-rw-r-- 1   12150 2026-02-10 v/v0042.txt
+-rw-rw-r-- 1   20898 2026-02-10 v/v0043.txt
+-rw-rw-r-- 1  167670 2026-02-10 v/v0027.txt
+-rw-rw-r-- 1   23247 2026-02-10 v/v0028.txt
+-rw-rw-r-- 1   49491 2026-02-10 v/v0029.txt
+-rw-rw-r-- 1   39690 2026-02-10 v/v0030.txt
+-rw-rw-r-- 1   10692 2026-02-10 v/v0031.txt
+-rw-rw-r-- 1   14175 2026-02-10 v/v0032.txt
+-rw-rw-r-- 1   16686 2026-02-10 v/v0033.txt
+-rw-rw-r-- 1   11826 2026-02-10 v/v0026.txt
+-rw-rw-r-- 1   20655 2026-02-10 v/v0020.txt
+-rw-rw-r-- 1   10611 2026-02-10 v/v0021.txt
+-rw-rw-r-- 1   32724 2026-02-10 v/v0022.txt
+-rw-rw-r-- 1   23328 2026-02-10 v/v0023.txt
+-rw-rw-r-- 1  139482 2026-02-10 v/v0025.txt
+-rw-rw-r-- 1  165726 2026-02-10 v/v0017.txt
+-rw-rw-r-- 1   25677 2026-02-10 v/v0018.txt
+-rw-rw-r-- 1   17496 2026-02-10 v/v0019.txt
+-rw-rw-r-- 1  742608 2026-02-10 v/v0016.txt
+-rw-rw-r-- 1  137457 2026-02-10 v/v0015.txt
+-rw-rw-r-- 1   30375 2026-02-10 v/v0014.txt
+-rw-rw-r-- 1 1813671 2026-02-10 v/v0012.txt
+-rw-rw-r-- 1   14823 2026-02-10 v/v0013.txt
+-rw-rw-r-- 1   22842 2026-02-10 v/v0011.txt
+-rw-rw-r-- 1   57429 2026-02-10 v/v0005.txt
+-rw-rw-r-- 1   65529 2026-02-10 v/v0006.txt
+-rw-rw-r-- 1   27702 2026-02-10 v/v0007.txt
+-rw-rw-r-- 1   21060 2026-02-10 v/v0008.txt
+-rw-rw-r-- 1    9720 2026-02-10 v/v0009.txt
+-rw-rw-r-- 1   14985 2026-02-10 v/v0010.txt
+-rw-rw-r-- 1  246321 2026-02-10 v/v0002.txt
+-rw-rw-r-- 1   25515 2026-02-10 v/v0003.txt
+-rw-rw-r-- 1   63018 2026-02-10 v/v0004.txt
+-rw-rw-r-- 1    7857 2026-02-10 v/v0001.txt
+$ setdate2exfor.sh v/?????.txt
+   +------------------------------------------+
+   |   Set modification time of EXFOR files   |
+   | from the latest update date from Entries |
+   +------------------------------------------+
+   | Program: setdate2exfor.sh, v.2026-02-10  |
+   |    /by V.Zerkin, Vienna, 2025-2026/      |
+   +------------------------------------------+
+   Platform: Linux 6.8.0-90-generic x86_64
+   Computer: zerkin-VirtualBox
+   Shell:    GNU bash, version 5.1.16(1)-release (x86_64-pc-linux-gnu)
+   Bash-ver: 5.1.16(1)-release
+   Script:   /home/zerkin/bin/setdate2exfor.sh
+   Now Dir:  /home/zerkin/x4master-tst1/tmp1xx/master2/entry
+   x4Files:  #49 dir=v/ v0001.txt v0002.txt v0003.txt ...
+   keyword:  ENTRY
+   setTime:  1200.00    # [YYYYMMDD]hhmm.ss
+---Start:    2026-02-10,11:09:13
+  1 v0001.txt        [20110715-20110715]  size:7857       #line:97       #entry:1     
+  2 v0002.txt        [20200313-20200313]  size:246321     #line:3041     #entry:1     
+  3 v0003.txt        [20200313-20200313]  size:25515      #line:315      #entry:1     
+  4 v0004.txt        [20110119-20110119]  size:63018      #line:778      #entry:1     
+  5 v0005.txt        [20110119-20110119]  size:57429      #line:709      #entry:1     
+  6 v0006.txt        [20210414-20210414]  size:65529      #line:809      #entry:1     
+  7 v0007.txt        [20110119-20110119]  size:27702      #line:342      #entry:1     
+  8 v0008.txt        [20110120-20110120]  size:21060      #line:260      #entry:1     
+  9 v0009.txt        [20110120-20110120]  size:9720       #line:120      #entry:1     
+ 10 v0010.txt        [20110120-20110120]  size:14985      #line:185      #entry:1     
+ 11 v0011.txt        [20110121-20110121]  size:22842      #line:282      #entry:1     
+ 12 v0012.txt        [20210414-20210414]  size:1813671    #line:22391    #entry:1     
+ 13 v0013.txt        [20110121-20110121]  size:14823      #line:183      #entry:1     
+ 14 v0014.txt        [20110122-20110122]  size:30375      #line:375      #entry:1     
+ 15 v0015.txt        [20110816-20110816]  size:137457     #line:1697     #entry:1     
+ 16 v0016.txt        [20250819-20250819]  size:742608     #line:9168     #entry:1     
+ 17 v0017.txt        [20201231-20201231]  size:165726     #line:2046     #entry:1     
+ 18 v0018.txt        [20110123-20110123]  size:25677      #line:317      #entry:1     
+ 19 v0019.txt        [20110123-20110123]  size:17496      #line:216      #entry:1     
+ 20 v0020.txt        [20191118-20191118]  size:20655      #line:255      #entry:1     
+ 21 v0021.txt        [20110124-20110124]  size:10611      #line:131      #entry:1     
+ 22 v0022.txt        [20110816-20110816]  size:32724      #line:404      #entry:1     
+ 23 v0023.txt        [20110129-20110129]  size:23328      #line:288      #entry:1     
+ 24 v0025.txt        [20130429-20130429]  size:139482     #line:1722     #entry:1     
+ 25 v0026.txt        [20110129-20110129]  size:11826      #line:146      #entry:1     
+ 26 v0027.txt        [20250819-20250819]  size:167670     #line:2070     #entry:1     
+ 27 v0028.txt        [20250819-20250819]  size:23247      #line:287      #entry:1     
+ 28 v0029.txt        [20110131-20110131]  size:49491      #line:611      #entry:1     
+ 29 v0030.txt        [20110207-20110207]  size:39690      #line:490      #entry:1     
+ 30 v0031.txt        [20110208-20110208]  size:10692      #line:132      #entry:1     
+ 31 v0032.txt        [20201231-20201231]  size:14175      #line:175      #entry:1     
+ 32 v0033.txt        [20110209-20110209]  size:16686      #line:206      #entry:1     
+ 33 v0034.txt        [20080830-20080830]  size:10368      #line:128      #entry:1     
+ 34 v0035.txt        [20110209-20110209]  size:19521      #line:241      #entry:1     
+ 35 v0036.txt        [20110211-20110211]  size:12312      #line:152      #entry:1     
+ 36 v0037.txt        [20110211-20110211]  size:10935      #line:135      #entry:1     
+ 37 v0038.txt        [20110211-20110211]  size:8667       #line:107      #entry:1     
+ 38 v0039.txt        [20110211-20110211]  size:29727      #line:367      #entry:1     
+ 39 v0041.txt        [20250726-20250726]  size:5589       #line:69       #entry:1     
+ 40 v0042.txt        [20230405-20230405]  size:12150      #line:150      #entry:1     
+ 41 v0043.txt        [20230508-20230508]  size:20898      #line:258      #entry:1     
+ 42 v0044.txt        [20110212-20110212]  size:5994       #line:74       #entry:1     
+ 43 v0045.txt        [20130625-20130625]  size:29889      #line:369      #entry:1     
+ 44 v0101.txt        [20150710-20150710]  size:20007      #line:247      #entry:1     
+ 45 v0102.txt        [20150710-20150710]  size:514107     #line:6347     #entry:1     
+ 46 v0103.txt        [20141231-20141231]  size:135837     #line:1677     #entry:1     
+ 47 v0104.txt        [20160331-20160331]  size:43659      #line:539      #entry:1     
+ 48 v1001.txt        [20220627-20220627]  size:654885     #line:8085     #entry:1     
+ 49 v1002.txt        [20220907-20220907]  size:870021     #line:10741    #entry:1     
+---Finish:   2026-02-10,11:09:15
+---Program successfully completed---00:00:02=2sec
+---Summary---
+   Files:   49
+   Size:    6474654(~7M)
+   Lines:   79934
+   Entries: 49
+   Dates:   20080830-20250819
+$
+$ ls --time-style=+"%Y-%m-%d" -tgG v/?????.txt
+-rw-rw-r-- 1  742608 2025-08-19 v/v0016.txt
+-rw-rw-r-- 1  167670 2025-08-19 v/v0027.txt
+-rw-rw-r-- 1   23247 2025-08-19 v/v0028.txt
+-rw-rw-r-- 1    5589 2025-07-26 v/v0041.txt
+-rw-rw-r-- 1   20898 2023-05-08 v/v0043.txt
+-rw-rw-r-- 1   12150 2023-04-05 v/v0042.txt
+-rw-rw-r-- 1  870021 2022-09-07 v/v1002.txt
+-rw-rw-r-- 1  654885 2022-06-27 v/v1001.txt
+-rw-rw-r-- 1   65529 2021-04-14 v/v0006.txt
+-rw-rw-r-- 1 1813671 2021-04-14 v/v0012.txt
+-rw-rw-r-- 1  165726 2020-12-31 v/v0017.txt
+-rw-rw-r-- 1   14175 2020-12-31 v/v0032.txt
+-rw-rw-r-- 1  246321 2020-03-13 v/v0002.txt
+-rw-rw-r-- 1   25515 2020-03-13 v/v0003.txt
+-rw-rw-r-- 1   20655 2019-11-18 v/v0020.txt
+-rw-rw-r-- 1   43659 2016-03-31 v/v0104.txt
+-rw-rw-r-- 1   20007 2015-07-10 v/v0101.txt
+-rw-rw-r-- 1  514107 2015-07-10 v/v0102.txt
+-rw-rw-r-- 1  135837 2014-12-31 v/v0103.txt
+-rw-rw-r-- 1   29889 2013-06-25 v/v0045.txt
+-rw-rw-r-- 1  139482 2013-04-29 v/v0025.txt
+-rw-rw-r-- 1  137457 2011-08-16 v/v0015.txt
+-rw-rw-r-- 1   32724 2011-08-16 v/v0022.txt
+-rw-rw-r-- 1    7857 2011-07-15 v/v0001.txt
+-rw-rw-r-- 1    5994 2011-02-12 v/v0044.txt
+-rw-rw-r-- 1   12312 2011-02-11 v/v0036.txt
+-rw-rw-r-- 1   10935 2011-02-11 v/v0037.txt
+-rw-rw-r-- 1    8667 2011-02-11 v/v0038.txt
+-rw-rw-r-- 1   29727 2011-02-11 v/v0039.txt
+-rw-rw-r-- 1   16686 2011-02-09 v/v0033.txt
+-rw-rw-r-- 1   19521 2011-02-09 v/v0035.txt
+-rw-rw-r-- 1   10692 2011-02-08 v/v0031.txt
+-rw-rw-r-- 1   39690 2011-02-07 v/v0030.txt
+-rw-rw-r-- 1   49491 2011-01-31 v/v0029.txt
+-rw-rw-r-- 1   23328 2011-01-29 v/v0023.txt
+-rw-rw-r-- 1   11826 2011-01-29 v/v0026.txt
+-rw-rw-r-- 1   10611 2011-01-24 v/v0021.txt
+-rw-rw-r-- 1   25677 2011-01-23 v/v0018.txt
+-rw-rw-r-- 1   17496 2011-01-23 v/v0019.txt
+-rw-rw-r-- 1   30375 2011-01-22 v/v0014.txt
+-rw-rw-r-- 1   22842 2011-01-21 v/v0011.txt
+-rw-rw-r-- 1   14823 2011-01-21 v/v0013.txt
+-rw-rw-r-- 1   21060 2011-01-20 v/v0008.txt
+-rw-rw-r-- 1    9720 2011-01-20 v/v0009.txt
+-rw-rw-r-- 1   14985 2011-01-20 v/v0010.txt
+-rw-rw-r-- 1   63018 2011-01-19 v/v0004.txt
+-rw-rw-r-- 1   57429 2011-01-19 v/v0005.txt
+-rw-rw-r-- 1   27702 2011-01-19 v/v0007.txt
+-rw-rw-r-- 1   10368 2008-08-30 v/v0034.txt
+$ 
