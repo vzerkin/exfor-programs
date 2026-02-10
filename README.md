@@ -1,5 +1,5 @@
 # Programs for EXFOR compilers
-by V.Zerkin for NRDC, 2026-02-09
+by V.Zerkin for NRDC, 2026-02-10
 
 ## Content
 
@@ -10,7 +10,7 @@ by V.Zerkin for NRDC, 2026-02-09
   - **ZORDER** - adds record identification and bookkeeping information to an EXFOR file producing TRANS file
 - **[set-dates](set-dates)** /_bash-shell_/ - setting dates of EXFOR files
     - sets modification date of EXFOR file/s from the latest date /N2/ from ENTRY or TRANS
-    - optianally, can setup specific date and time
+    - optionally, can set a specific date and time
 
 ## Links
 
