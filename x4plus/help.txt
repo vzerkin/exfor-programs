@@ -1,9 +1,9 @@
 
   +-------------------------------------------+
-  | Program x4read2x4interp, ver.2025-11-07.  |
+  | Program x4read2x4interp, ver.2026-07-16.  |
   | Translating EXFOR file to X4+ interpreted |
   | by V.Zerkin, IAEA-NDS, Vienna, 2007-2023, |
-  |    v.zerkin@gmail.com, Vienna, 2023-2025. |
+  |    v.zerkin@gmail.com, Vienna, 2023-2026. |
   +-------------------------------------------+
 
  Run:
